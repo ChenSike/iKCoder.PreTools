@@ -39,7 +39,7 @@
             // 
             this.url.Location = new System.Drawing.Point(93, 12);
             this.url.Name = "url";
-            this.url.Size = new System.Drawing.Size(604, 20);
+            this.url.Size = new System.Drawing.Size(604, 21);
             this.url.TabIndex = 0;
             // 
             // label1
@@ -47,7 +47,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.Size = new System.Drawing.Size(77, 12);
             this.label1.TabIndex = 1;
             this.label1.Text = "Request URL:";
             // 
@@ -79,7 +79,7 @@
             // 
             // Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 460);
             this.Controls.Add(this.Output);

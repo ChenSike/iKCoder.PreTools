@@ -17,5 +17,11 @@ namespace ApiTestor
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            class_Net_RemoteRequest netObject = new class_Net_RemoteRequest();
+            Output.Text= netObject.getRemoteRequestToString(Input.Text, url.Text, 9999, 4096, null);
+        }
     }
 }
