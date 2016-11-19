@@ -23,5 +23,10 @@ namespace ApiTestor
             class_Net_RemoteRequest netObject = new class_Net_RemoteRequest();
             Output.Text= netObject.getRemoteRequestToString(Input.Text, url.Text, 9999, 4096, null);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -33,6 +33,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.Input = new System.Windows.Forms.TextBox();
             this.Output = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // url
@@ -74,14 +75,25 @@
             this.Output.Location = new System.Drawing.Point(15, 208);
             this.Output.Multiline = true;
             this.Output.Name = "Output";
-            this.Output.Size = new System.Drawing.Size(772, 240);
+            this.Output.Size = new System.Drawing.Size(772, 201);
             this.Output.TabIndex = 4;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(712, 425);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Quit";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 460);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.Output);
             this.Controls.Add(this.Input);
             this.Controls.Add(this.button1);
@@ -101,5 +113,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox Input;
         private System.Windows.Forms.TextBox Output;
+        private System.Windows.Forms.Button button2;
     }
 }
