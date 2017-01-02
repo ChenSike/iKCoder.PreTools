@@ -78,5 +78,26 @@ namespace iKCoderDU
                 MessageBox.Show("请先取得服务器授权后再进行动作.");
             
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (is_connected)
+            {
+                string requestURL = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Data/api_BuildAllSPS.aspx?keycode=AllowPlatformOperation";
+                string responseFromServer = object_remote.getRemoteRequestToString("<root></root>", requestURL, 1000, 1000, null);
+                XmlDocument responseDoc = new XmlDocument();
+                responseDoc.LoadXml(responseFromServer);
+                XmlNode msgNode = responseDoc.SelectSingleNode("/root/msg[@code='executed']");
+                if (msgNode != null)
+                    MessageBox.Show("已经成功完成自定动作.");
+                else
+                {
+                    MessageBox.Show("无法完成指定动作,请点击确定后查看文档.");
+                    MessageBox.Show(responseFromServer);
+                }
+            }
+            else
+                MessageBox.Show("请先取得服务器授权后再进行动作.");
+        }
     }
 }
