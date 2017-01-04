@@ -36,6 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cmb_code = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dv_datasource = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -46,12 +47,10 @@
             this.lst_cookies = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.dv_datasource = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dv_datasource)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dv_datasource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -125,16 +124,25 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dv_datasource);
-            this.groupBox1.Location = new System.Drawing.Point(23, 140);
+            this.groupBox1.Location = new System.Drawing.Point(23, 191);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(404, 671);
+            this.groupBox1.Size = new System.Drawing.Size(427, 617);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "数据资源";
             // 
+            // dv_datasource
+            // 
+            this.dv_datasource.AllowUserToOrderColumns = true;
+            this.dv_datasource.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dv_datasource.Location = new System.Drawing.Point(18, 20);
+            this.dv_datasource.Name = "dv_datasource";
+            this.dv_datasource.RowTemplate.Height = 23;
+            this.dv_datasource.Size = new System.Drawing.Size(392, 576);
+            this.dv_datasource.TabIndex = 0;
+            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Location = new System.Drawing.Point(23, 93);
@@ -195,9 +203,9 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.lst_cookies);
-            this.groupBox3.Location = new System.Drawing.Point(433, 140);
+            this.groupBox3.Location = new System.Drawing.Point(456, 191);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(538, 104);
+            this.groupBox3.Size = new System.Drawing.Size(515, 113);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cookies";
@@ -210,7 +218,7 @@
             this.lst_cookies.GridLines = true;
             this.lst_cookies.Location = new System.Drawing.Point(6, 20);
             this.lst_cookies.Name = "lst_cookies";
-            this.lst_cookies.Size = new System.Drawing.Size(526, 78);
+            this.lst_cookies.Size = new System.Drawing.Size(503, 78);
             this.lst_cookies.TabIndex = 0;
             this.lst_cookies.UseCompatibleStateImageBehavior = false;
             this.lst_cookies.View = System.Windows.Forms.View.Details;
@@ -224,26 +232,6 @@
             // 
             this.columnHeader2.Text = "Value";
             this.columnHeader2.Width = 281;
-            // 
-            // dv_datasource
-            // 
-            this.dv_datasource.AllowUserToOrderColumns = true;
-            this.dv_datasource.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dv_datasource.Location = new System.Drawing.Point(6, 20);
-            this.dv_datasource.Name = "dv_datasource";
-            this.dv_datasource.RowTemplate.Height = 23;
-            this.dv_datasource.Size = new System.Drawing.Size(392, 645);
-            this.dv_datasource.TabIndex = 0;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(117, 12);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(105, 23);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "读取数据API";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Mainform
             // 
@@ -266,9 +254,9 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dv_datasource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dv_datasource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,7 +283,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.DataGridView dv_datasource;
-        private System.Windows.Forms.Button button4;
     }
 }
 
