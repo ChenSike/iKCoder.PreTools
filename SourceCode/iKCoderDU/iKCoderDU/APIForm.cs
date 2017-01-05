@@ -13,21 +13,22 @@ using System.Xml;
 
 namespace iKCoderDU
 {
-    public partial class Mainform : Forms_NoBorderBaseform
+    public partial class APIForm : Forms_NoBorderBaseform
     {
 
         class_Net_RemoteRequest object_remote = new class_Net_RemoteRequest();
         List<Cookie> object_cookies = new List<Cookie>();
         bool is_connected = false;
+        Dictionary<string, string> urlMap = new Dictionary<string, string>();
 
-        public Mainform()
+        public APIForm()
         {
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
