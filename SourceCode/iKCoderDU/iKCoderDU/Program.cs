@@ -16,7 +16,7 @@ namespace iKCoderDU
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new APIForm());
+            Application.Run(new Splash());
         }
     }
 }
