@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Gma.QrCodeNet.Encoding.Net45, Version=0.4.0.0, Culture=neutral, PublicKeyToken=e8a75d24b142be49, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\BinaryPackage\Gma.QrCodeNet.Encoding.Net45.dll</HintPath>
+    </Reference>
     <Reference Include="iKCoder_Platform_SDK_Kit">
       <HintPath>..\..\..\..\BinaryPackage\iKCoder_Platform_SDK_Kit.dll</HintPath>
     </Reference>

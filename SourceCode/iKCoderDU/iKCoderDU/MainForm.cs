@@ -11,6 +11,8 @@ using iKCoder_Platform_SDK_Kit;
 using System.Net;
 using System.Xml;
 using System.IO;
+using Gma.QrCodeNet.Encoding;
+using Gma.QrCodeNet.Encoding.Windows.Render;
 
 namespace iKCoderDU
 {
@@ -152,6 +154,19 @@ namespace iKCoderDU
             {
                 MessageBox.Show("系统访问API出差，请检查参数或者网络。");
             }
+        }
+
+        private void button4_Click_2(object sender, EventArgs e)
+        {
+            Gma.QrCodeNet.Encoding.QrEncoder obj = new Gma.QrCodeNet.Encoding.QrEncoder();
+            Gma.QrCodeNet.Encoding.QrCode qrcode;
+            obj.TryEncode("http://ikcoder.iok.la:24525/IKCoder/Data/GET_UrlMap.aspx?mapkey=reg&fulurl=1", out qrcode);
+            QuietZoneModules QuietZones = QuietZoneModules.Two;
+            Gma.QrCodeNet.Encoding.Windows.Render.GraphicsRenderer newRender = new Gma.QrCodeNet.Encoding.Windows.Render.GraphicsRenderer(new FixedModuleSize(12, QuietZones));
+            FileStream fs = new FileStream("test.png", FileMode.Create);
+            newRender.WriteToStream(qrcode.Matrix, System.Drawing.Imaging.ImageFormat.Png, fs);
+            fs.Close();
+            
         }
     }
 }
