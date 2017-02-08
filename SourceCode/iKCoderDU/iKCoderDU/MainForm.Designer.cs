@@ -58,6 +58,9 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.pic_bindata = new System.Windows.Forms.PictureBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.txt_datasearchkey = new System.Windows.Forms.TextBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.button5 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -71,10 +74,12 @@
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -368,6 +373,11 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.button8);
+            this.tabPage4.Controls.Add(this.button7);
+            this.tabPage4.Controls.Add(this.button6);
+            this.tabPage4.Controls.Add(this.txt_datasearchkey);
+            this.tabPage4.Controls.Add(this.linkLabel1);
             this.tabPage4.Controls.Add(this.button5);
             this.tabPage4.Controls.Add(this.textBox1);
             this.tabPage4.Controls.Add(this.pictureBox2);
@@ -381,6 +391,34 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Resource Explorer";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // txt_datasearchkey
+            // 
+            this.txt_datasearchkey.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_datasearchkey.Location = new System.Drawing.Point(119, 20);
+            this.txt_datasearchkey.Name = "txt_datasearchkey";
+            this.txt_datasearchkey.Size = new System.Drawing.Size(713, 13);
+            this.txt_datasearchkey.TabIndex = 7;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(860, 20);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(41, 13);
+            this.linkLabel1.TabIndex = 6;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Search";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(84, 62);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(116, 23);
+            this.button5.TabIndex = 5;
+            this.button5.Text = "导入文本数据";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // textBox1
             // 
@@ -406,7 +444,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 2;
-            this.button4.Text = "Load";
+            this.button4.Text = "加载数据";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click_2);
             // 
@@ -474,6 +512,15 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(927, 687);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Relation Ship";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(304, 136);
@@ -494,23 +541,32 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
-            // tabPage5
+            // button6
             // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(927, 687);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Relation Ship";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.button6.Location = new System.Drawing.Point(534, 99);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 8;
+            this.button6.Text = "删除";
+            this.button6.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // button7
             // 
-            this.button5.Location = new System.Drawing.Point(94, 62);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Import Data";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button7.Location = new System.Drawing.Point(456, 99);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 9;
+            this.button7.Text = "查看";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(206, 62);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(116, 23);
+            this.button8.TabIndex = 10;
+            this.button8.Text = "导入二进制数据";
+            this.button8.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -606,6 +662,11 @@
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox txt_datasearchkey;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button7;
     }
 }
 

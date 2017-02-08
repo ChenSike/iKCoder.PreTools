@@ -165,11 +165,18 @@ namespace iKCoderDU
                 string result = object_remote.getRemoteXMLRequestToString("<root></root>", requestURL, 1000 * 60, 100000, null);
                 XmlDocument resultDoc = new XmlDocument();
                 resultDoc.LoadXml(result);
+
             }
             catch
             {
                 MessageBox.Show("系统访问API出差，请检查参数或者网络。");
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ImportTextData form = new ImportTextData();
+            form.ShowDialog();
         }
   
     }
