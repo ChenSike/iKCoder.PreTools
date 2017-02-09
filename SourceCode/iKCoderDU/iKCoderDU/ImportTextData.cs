@@ -17,22 +17,24 @@ namespace iKCoderDU
     {
 
         class_Net_RemoteRequest object_remote;
-        CookieContainer activeContainer = new CookieContainer();
-
+        
         public string activeServerUrl
         {
             set;
             get;
         }
 
-        public ImportTextData()
+
+
+        public ImportTextData(class_Net_RemoteRequest refObjectRemote)
         {
+            object_remote = refObjectRemote;
             InitializeComponent();
         }
 
         private void ImportTextData_Load(object sender, EventArgs e)
         {
-            this.object_remote = new class_Net_RemoteRequest(ref activeContainer);
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -49,14 +51,25 @@ namespace iKCoderDU
                     if (!string.IsNullOrEmpty(cmb_produce.Text))
                     {
                         string verifiedSymbolExistedURL = activeServerUrl + "/Data/api_GetVerifySymbolExisted.aspx?symbol=" + txt_symbol.Text + "&produce=" + cmb_produce.Text;
-                        string result = object_remote.getRemoteXMLRequestToString("<root></root>", activeServerUrl, 1000 * 60, 100000, null);                        
+                        string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", activeServerUrl, 1000 * 60, 100000);                        
                         if(result.Contains("true"))
                         {
                             MessageBox.Show("很抱歉，您输入的标识数据已经存在，请更改后导入数据。");
                         }
                         else
                         {
-                            
+                            string inputDoc = "<root><symbol>" + txt_symbol.Text + "</symbol><type>text</type><data>" + txt_data.Text + "</data></root>";
+                            verifiedSymbolExistedURL = activeServerUrl + "/Data/api_SetMetaTextData.aspx";
+                            result = object_remote.getRemoteRequestToStringWithCookieHeader(inputDoc, verifiedSymbolExistedURL, 1000 * 60, 100000);
+                            if (result.Contains("true"))
+                            {
+                                MessageBox.Show("您已经成功导入数据，取数据URL已经生成，如有需要请复制。");
+                                txt_getdata.Text = activeServerUrl + "/data/api_GetMetaText.aspx?symbol=" + txt_symbol.Text;
+                            }
+                            else
+                            {
+                                MessageBox.Show("很抱歉，遇到无法处理的错误，请联系系统管理员。");
+                            }
                         }
                     }
                     else
