@@ -64,7 +64,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lst_resource = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -382,7 +382,7 @@
             this.tabPage4.Controls.Add(this.textBox1);
             this.tabPage4.Controls.Add(this.pictureBox2);
             this.tabPage4.Controls.Add(this.button4);
-            this.tabPage4.Controls.Add(this.listView1);
+            this.tabPage4.Controls.Add(this.lst_resource);
             this.tabPage4.Controls.Add(this.pictureBox1);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
@@ -448,9 +448,9 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click_2);
             // 
-            // listView1
+            // lst_resource
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lst_resource.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
@@ -459,13 +459,13 @@
             this.columnHeader8,
             this.columnHeader9,
             this.columnHeader10});
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(3, 125);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(608, 556);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.lst_resource.GridLines = true;
+            this.lst_resource.Location = new System.Drawing.Point(3, 125);
+            this.lst_resource.Name = "lst_resource";
+            this.lst_resource.Size = new System.Drawing.Size(608, 556);
+            this.lst_resource.TabIndex = 1;
+            this.lst_resource.UseCompatibleStateImageBehavior = false;
+            this.lst_resource.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader3
             // 
@@ -649,7 +649,7 @@
         private System.Windows.Forms.ToolStripMenuItem accountToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lst_resource;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ColumnHeader columnHeader3;

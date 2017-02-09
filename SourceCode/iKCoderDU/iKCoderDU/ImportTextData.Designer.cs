@@ -116,6 +116,7 @@
             // 
             // txt_DESKey
             // 
+            this.txt_DESKey.Enabled = false;
             this.txt_DESKey.Location = new System.Drawing.Point(186, 157);
             this.txt_DESKey.Name = "txt_DESKey";
             this.txt_DESKey.Size = new System.Drawing.Size(575, 20);
@@ -125,6 +126,7 @@
             // 
             this.chk_isDES.AutoSize = true;
             this.chk_isDES.BackColor = System.Drawing.Color.Transparent;
+            this.chk_isDES.Enabled = false;
             this.chk_isDES.Location = new System.Drawing.Point(186, 131);
             this.chk_isDES.Name = "chk_isDES";
             this.chk_isDES.Size = new System.Drawing.Size(15, 14);
@@ -135,6 +137,7 @@
             // 
             this.chk_isBase64.AutoSize = true;
             this.chk_isBase64.BackColor = System.Drawing.Color.Transparent;
+            this.chk_isBase64.Enabled = false;
             this.chk_isBase64.Location = new System.Drawing.Point(186, 190);
             this.chk_isBase64.Name = "chk_isBase64";
             this.chk_isBase64.Size = new System.Drawing.Size(15, 14);

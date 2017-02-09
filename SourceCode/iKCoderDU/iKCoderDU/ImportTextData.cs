@@ -53,10 +53,21 @@ namespace iKCoderDU
                         if(result.Contains("true"))
                         {
                             MessageBox.Show("很抱歉，您输入的标识数据已经存在，请更改后导入数据。");
+                            this.Close();
                         }
                         else
                         {
-                            
+                            string inputDoc = "<root><symbol>" + txt_symbol.Text + "</symbol><data>" + txt_data.Text + "</data><type>text</type></root>";
+                            verifiedSymbolExistedURL = activeServerUrl + "/Data/api_SetMetaTextData.aspx";
+                            result = object_remote.getRemoteXMLRequestToString(inputDoc, activeServerUrl, 1000 * 60, 100000, null);
+                            if (result.Contains("true"))
+                            {
+                                MessageBox.Show("您已经成功导入数据，点击确定返回主界面。");
+                            }
+                            else
+                            {
+                                MessageBox.Show("很抱歉，导入数据失败，无法处理此错误，请联系管理员。");
+                            }
                         }
                     }
                     else

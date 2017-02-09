@@ -156,7 +156,7 @@ namespace iKCoderDU
             }
         }
 
-        private void button4_Click_2(object sender, EventArgs e)
+        protected void Flush_ResourceLst()
         {
             try
             {
@@ -165,7 +165,30 @@ namespace iKCoderDU
                 string result = object_remote.getRemoteXMLRequestToString("<root></root>", requestURL, 1000 * 60, 100000, null);
                 XmlDocument resultDoc = new XmlDocument();
                 resultDoc.LoadXml(result);
-
+                XmlNodeList msgNodeList = resultDoc.SelectNodes("/root/msg");
+                if (msgNodeList.Count == 0)
+                {
+                    MessageBox.Show("没有发现数据。");
+                    return;
+                }
+                else
+                {
+                    lst_resource.Items.Clear();
+                    foreach (XmlNode activeMsgNode in msgNodeList)
+                    {
+                        string id = class_XmlHelper.GetAttrValue(activeMsgNode, "id");
+                        ListViewItem lstRootItem = new ListViewItem();
+                        lstRootItem.Text = id;
+                        lstRootItem.SubItems.Add(class_XmlHelper.GetAttrValue(activeMsgNode, "symbol"));
+                        lstRootItem.SubItems.Add(class_XmlHelper.GetAttrValue(activeMsgNode, "type"));
+                        lstRootItem.SubItems.Add(class_XmlHelper.GetAttrValue(activeMsgNode, "produce"));
+                        lstRootItem.SubItems.Add(class_XmlHelper.GetAttrValue(activeMsgNode, "isBinary"));
+                        lstRootItem.SubItems.Add(class_XmlHelper.GetAttrValue(activeMsgNode, "isBase64"));
+                        lstRootItem.SubItems.Add(class_XmlHelper.GetAttrValue(activeMsgNode, "isDES"));
+                        lstRootItem.SubItems.Add(class_XmlHelper.GetAttrValue(activeMsgNode, "DESKey"));
+                        lst_resource.Items.Add(lstRootItem);
+                    }
+                }
             }
             catch
             {
@@ -173,10 +196,17 @@ namespace iKCoderDU
             }
         }
 
+        private void button4_Click_2(object sender, EventArgs e)
+        {
+            Flush_ResourceLst();
+        }
+
         private void button5_Click(object sender, EventArgs e)
         {
             ImportTextData form = new ImportTextData();
+            form.activeServerUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text;
             form.ShowDialog();
+            Flush_ResourceLst();
         }
   
     }
