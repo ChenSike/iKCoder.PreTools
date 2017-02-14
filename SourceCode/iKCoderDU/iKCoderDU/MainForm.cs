@@ -208,6 +208,14 @@ namespace iKCoderDU
             form.ShowDialog();
             Flush_ResourceLst();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            ImportBinData form = new ImportBinData(this.object_remote);
+            form.activeServerUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text;
+            form.ShowDialog();
+            Flush_ResourceLst();
+        }
   
     }
 }
