@@ -80,6 +80,12 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.serverLogExportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.performanceReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -97,7 +103,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(13, 93);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "服务器：";
             // 
@@ -109,7 +115,7 @@
             "localhost"});
             this.cmb_server.Location = new System.Drawing.Point(71, 90);
             this.cmb_server.Name = "cmb_server";
-            this.cmb_server.Size = new System.Drawing.Size(176, 20);
+            this.cmb_server.Size = new System.Drawing.Size(176, 21);
             this.cmb_server.TabIndex = 1;
             // 
             // button1
@@ -128,7 +134,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(24, 156);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "产品：";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -140,7 +146,7 @@
             "iKCoder"});
             this.cmb_produce.Location = new System.Drawing.Point(71, 151);
             this.cmb_produce.Name = "cmb_produce";
-            this.cmb_produce.Size = new System.Drawing.Size(176, 20);
+            this.cmb_produce.Size = new System.Drawing.Size(176, 21);
             this.cmb_produce.TabIndex = 4;
             // 
             // label3
@@ -149,7 +155,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(24, 189);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 12);
+            this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "代码：";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -161,7 +167,7 @@
             "12345678"});
             this.cmb_code.Location = new System.Drawing.Point(71, 185);
             this.cmb_code.Name = "cmb_code";
-            this.cmb_code.Size = new System.Drawing.Size(176, 20);
+            this.cmb_code.Size = new System.Drawing.Size(176, 21);
             this.cmb_code.TabIndex = 6;
             // 
             // txtResult
@@ -179,7 +185,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(24, 124);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 12);
+            this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "目录：";
             // 
@@ -191,7 +197,7 @@
             "iKCoder"});
             this.cmb_vfolder.Location = new System.Drawing.Point(71, 120);
             this.cmb_vfolder.Name = "cmb_vfolder";
-            this.cmb_vfolder.Size = new System.Drawing.Size(176, 20);
+            this.cmb_vfolder.Size = new System.Drawing.Size(176, 21);
             this.cmb_vfolder.TabIndex = 10;
             this.cmb_vfolder.Text = "PlatformAPI";
             // 
@@ -201,7 +207,7 @@
             this.lb_serverstatus.BackColor = System.Drawing.Color.Transparent;
             this.lb_serverstatus.Location = new System.Drawing.Point(13, 262);
             this.lb_serverstatus.Name = "lb_serverstatus";
-            this.lb_serverstatus.Size = new System.Drawing.Size(173, 12);
+            this.lb_serverstatus.Size = new System.Drawing.Size(175, 13);
             this.lb_serverstatus.TabIndex = 11;
             this.lb_serverstatus.Text = "服务器状态：未获得服务器授权";
             // 
@@ -238,7 +244,7 @@
             "/Account/api_VerifyAccountExisted.aspx?username=18675521735"});
             this.cmb_URL.Location = new System.Drawing.Point(304, 68);
             this.cmb_URL.Name = "cmb_URL";
-            this.cmb_URL.Size = new System.Drawing.Size(884, 20);
+            this.cmb_URL.Size = new System.Drawing.Size(884, 21);
             this.cmb_URL.TabIndex = 14;
             // 
             // txtInput
@@ -259,7 +265,7 @@
             this.退出ToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(9, 31);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(140, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(137, 24);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -268,13 +274,13 @@
             this.操作ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.重新创建对应服务器的所有SPToolStripMenuItem});
             this.操作ToolStripMenuItem.Name = "操作ToolStripMenuItem";
-            this.操作ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.操作ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.操作ToolStripMenuItem.Text = "操作";
             // 
             // 重新创建对应服务器的所有SPToolStripMenuItem
             // 
             this.重新创建对应服务器的所有SPToolStripMenuItem.Name = "重新创建对应服务器的所有SPToolStripMenuItem";
-            this.重新创建对应服务器的所有SPToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.重新创建对应服务器的所有SPToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.重新创建对应服务器的所有SPToolStripMenuItem.Text = "重新创建对应服务器的所有SP";
             this.重新创建对应服务器的所有SPToolStripMenuItem.Click += new System.EventHandler(this.重新创建对应服务器的所有SPToolStripMenuItem_Click);
             // 
@@ -282,27 +288,29 @@
             // 
             this.退出ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.qRCoderToolStripMenuItem,
-            this.accountToolStripMenuItem});
+            this.accountToolStripMenuItem,
+            this.serverLogExportToolStripMenuItem,
+            this.performanceReportToolStripMenuItem});
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.退出ToolStripMenuItem.Text = "工具";
             // 
             // qRCoderToolStripMenuItem
             // 
             this.qRCoderToolStripMenuItem.Name = "qRCoderToolStripMenuItem";
-            this.qRCoderToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.qRCoderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.qRCoderToolStripMenuItem.Text = "QR Coder";
             // 
             // accountToolStripMenuItem
             // 
             this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            this.accountToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.accountToolStripMenuItem.Text = "Token Config";
             // 
             // 退出ToolStripMenuItem1
             // 
             this.退出ToolStripMenuItem1.Name = "退出ToolStripMenuItem1";
-            this.退出ToolStripMenuItem1.Size = new System.Drawing.Size(44, 21);
+            this.退出ToolStripMenuItem1.Size = new System.Drawing.Size(43, 20);
             this.退出ToolStripMenuItem1.Text = "退出";
             this.退出ToolStripMenuItem1.Click += new System.EventHandler(this.退出ToolStripMenuItem1_Click);
             // 
@@ -312,7 +320,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Location = new System.Drawing.Point(272, 71);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 12);
+            this.label6.Size = new System.Drawing.Size(36, 13);
             this.label6.TabIndex = 17;
             this.label6.Text = "API：";
             // 
@@ -323,6 +331,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Location = new System.Drawing.Point(262, 185);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -424,7 +433,7 @@
             this.txt_datasearchkey.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_datasearchkey.Location = new System.Drawing.Point(119, 20);
             this.txt_datasearchkey.Name = "txt_datasearchkey";
-            this.txt_datasearchkey.Size = new System.Drawing.Size(713, 14);
+            this.txt_datasearchkey.Size = new System.Drawing.Size(713, 13);
             this.txt_datasearchkey.TabIndex = 7;
             // 
             // linkLabel1
@@ -432,7 +441,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Location = new System.Drawing.Point(860, 20);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(41, 12);
+            this.linkLabel1.Size = new System.Drawing.Size(41, 13);
             this.linkLabel1.TabIndex = 6;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Search";
@@ -477,7 +486,6 @@
             // 
             // lst_resource
             // 
-            this.lst_resource.BackColor = System.Drawing.Color.Gainsboro;
             this.lst_resource.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader3,
             this.columnHeader4,
@@ -569,11 +577,56 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
+            // serverLogExportToolStripMenuItem
+            // 
+            this.serverLogExportToolStripMenuItem.Name = "serverLogExportToolStripMenuItem";
+            this.serverLogExportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.serverLogExportToolStripMenuItem.Text = "Server Log Export";
+            // 
+            // performanceReportToolStripMenuItem
+            // 
+            this.performanceReportToolStripMenuItem.Name = "performanceReportToolStripMenuItem";
+            this.performanceReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.performanceReportToolStripMenuItem.Text = "Performance Report";
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(927, 687);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Account Managment";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader12,
+            this.columnHeader13});
+            this.listView1.GridLines = true;
+            this.listView1.Location = new System.Drawing.Point(12, 454);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(235, 427);
+            this.listView1.TabIndex = 22;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Status Name";
+            this.columnHeader12.Width = 119;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Value";
+            this.columnHeader13.Width = 93;
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::iKCoderDU.Properties.Resources.mainform_fw;
             this.ClientSize = new System.Drawing.Size(1200, 900);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.tabControl1);
@@ -668,6 +721,12 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.ToolStripMenuItem serverLogExportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem performanceReportToolStripMenuItem;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
     }
 }
 

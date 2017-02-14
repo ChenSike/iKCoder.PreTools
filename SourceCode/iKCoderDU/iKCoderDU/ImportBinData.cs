@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using iKCoder_Platform_SDK_Kit;
+using System.Net;
 
 namespace iKCoderDU
 {
@@ -16,6 +17,8 @@ namespace iKCoderDU
 
         class_Net_RemoteRequest object_remote;
         bool isLoaded = false;
+        string extendsname;
+        string filename;
 
         public string activeServerUrl
         {
@@ -23,9 +26,9 @@ namespace iKCoderDU
             get;
         }
 
-        public ImportBinData(class_Net_RemoteRequest refNetRemoteObject)
+        public ImportBinData(class_Net_RemoteRequest refNetObject)
         {
-            object_remote = refNetRemoteObject;
+            object_remote = refNetObject;
             InitializeComponent();
         }
 
@@ -34,22 +37,19 @@ namespace iKCoderDU
 
         }
 
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            if(openFileDialog1.ShowDialog()==DialogResult.OK)
             {
+                filename = openFileDialog1.FileName;
+                extendsname = filename.Split('.')[1];
                 
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -17,18 +17,16 @@ namespace iKCoderDU
     {
 
         class_Net_RemoteRequest object_remote;
-        
+
         public string activeServerUrl
         {
             set;
             get;
         }
 
-
-
-        public ImportTextData(class_Net_RemoteRequest refObjectRemote)
+        public ImportTextData(class_Net_RemoteRequest refNetObject)
         {
-            object_remote = refObjectRemote;
+            object_remote = refNetObject;
             InitializeComponent();
         }
 
@@ -51,24 +49,25 @@ namespace iKCoderDU
                     if (!string.IsNullOrEmpty(cmb_produce.Text))
                     {
                         string verifiedSymbolExistedURL = activeServerUrl + "/Data/api_GetVerifySymbolExisted.aspx?symbol=" + txt_symbol.Text + "&produce=" + cmb_produce.Text;
-                        string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", activeServerUrl, 1000 * 60, 100000);                        
+                        string result = object_remote.getRemoteXMLRequestToString("<root></root>", activeServerUrl, 1000 * 60, 100000, null);                        
                         if(result.Contains("true"))
                         {
                             MessageBox.Show("很抱歉，您输入的标识数据已经存在，请更改后导入数据。");
+                            this.Close();
                         }
                         else
                         {
-                            string inputDoc = "<root><symbol>" + txt_symbol.Text + "</symbol><type>text</type><data>" + txt_data.Text + "</data></root>";
+                            string inputDoc = "<root><symbol>" + txt_symbol.Text + "</symbol><data>" + txt_data.Text + "</data><type>text</type></root>";
                             verifiedSymbolExistedURL = activeServerUrl + "/Data/api_SetMetaTextData.aspx";
-                            result = object_remote.getRemoteRequestToStringWithCookieHeader(inputDoc, verifiedSymbolExistedURL, 1000 * 60, 100000);
+                            result = object_remote.getRemoteXMLRequestToString(inputDoc, activeServerUrl, 1000 * 60, 100000, null);
                             if (result.Contains("true"))
                             {
-                                MessageBox.Show("您已经成功导入数据，取数据URL已经生成，如有需要请复制。");
-                                txt_getdata.Text = activeServerUrl + "/data/api_GetMetaText.aspx?symbol=" + txt_symbol.Text;
+                                MessageBox.Show("您已经成功导入数据，点击确定返回主界面。");
+                                txt_url.Text = activeServerUrl + "/Data/api_GetMetaText.aspx?symbol=" + txt_symbol.Text;
                             }
                             else
                             {
-                                MessageBox.Show("很抱歉，遇到无法处理的错误，请联系系统管理员。");
+                                MessageBox.Show("很抱歉，导入数据失败，无法处理此错误，请联系管理员。");
                             }
                         }
                     }
