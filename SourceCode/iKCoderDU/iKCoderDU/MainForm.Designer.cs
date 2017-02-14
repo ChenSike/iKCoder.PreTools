@@ -58,6 +58,9 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.pic_bindata = new System.Windows.Forms.PictureBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.txt_datasearchkey = new System.Windows.Forms.TextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.button5 = new System.Windows.Forms.Button();
@@ -77,9 +80,12 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.serverLogExportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.performanceReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -282,7 +288,9 @@
             // 
             this.退出ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.qRCoderToolStripMenuItem,
-            this.accountToolStripMenuItem});
+            this.accountToolStripMenuItem,
+            this.serverLogExportToolStripMenuItem,
+            this.performanceReportToolStripMenuItem});
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
             this.退出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.退出ToolStripMenuItem.Text = "工具";
@@ -290,13 +298,13 @@
             // qRCoderToolStripMenuItem
             // 
             this.qRCoderToolStripMenuItem.Name = "qRCoderToolStripMenuItem";
-            this.qRCoderToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.qRCoderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.qRCoderToolStripMenuItem.Text = "QR Coder";
             // 
             // accountToolStripMenuItem
             // 
             this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            this.accountToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.accountToolStripMenuItem.Text = "Token Config";
             // 
             // 退出ToolStripMenuItem1
@@ -323,6 +331,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Location = new System.Drawing.Point(262, 185);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -391,6 +400,33 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Resource Explorer";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(206, 62);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(116, 23);
+            this.button8.TabIndex = 10;
+            this.button8.Text = "导入二进制数据";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(456, 99);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 9;
+            this.button7.Text = "查看";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(534, 99);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 8;
+            this.button6.Text = "删除";
+            this.button6.UseVisualStyleBackColor = true;
             // 
             // txt_datasearchkey
             // 
@@ -541,38 +577,56 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
-            // button6
+            // serverLogExportToolStripMenuItem
             // 
-            this.button6.Location = new System.Drawing.Point(534, 99);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "删除";
-            this.button6.UseVisualStyleBackColor = true;
+            this.serverLogExportToolStripMenuItem.Name = "serverLogExportToolStripMenuItem";
+            this.serverLogExportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.serverLogExportToolStripMenuItem.Text = "Server Log Export";
             // 
-            // button7
+            // performanceReportToolStripMenuItem
             // 
-            this.button7.Location = new System.Drawing.Point(456, 99);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 9;
-            this.button7.Text = "查看";
-            this.button7.UseVisualStyleBackColor = true;
+            this.performanceReportToolStripMenuItem.Name = "performanceReportToolStripMenuItem";
+            this.performanceReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.performanceReportToolStripMenuItem.Text = "Performance Report";
             // 
-            // button8
+            // tabPage6
             // 
-            this.button8.Location = new System.Drawing.Point(206, 62);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(116, 23);
-            this.button8.TabIndex = 10;
-            this.button8.Text = "导入二进制数据";
-            this.button8.UseVisualStyleBackColor = true;
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(927, 687);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Account Managment";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader12,
+            this.columnHeader13});
+            this.listView1.GridLines = true;
+            this.listView1.Location = new System.Drawing.Point(12, 454);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(235, 427);
+            this.listView1.TabIndex = 22;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Status Name";
+            this.columnHeader12.Width = 119;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Value";
+            this.columnHeader13.Width = 93;
             // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::iKCoderDU.Properties.Resources.mainform_fw;
             this.ClientSize = new System.Drawing.Size(1200, 900);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.tabControl1);
@@ -667,6 +721,12 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.ToolStripMenuItem serverLogExportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem performanceReportToolStripMenuItem;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
     }
 }
 

@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ImportBinData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportBinData.Designer.cs">
+      <DependentUpon>ImportBinData.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImportTextData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     <Compile Include="Splash.Designer.cs">
       <DependentUpon>Splash.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ImportBinData.resx">
+      <DependentUpon>ImportBinData.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ImportTextData.resx">
       <DependentUpon>ImportTextData.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,6 +126,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="img\importTextData.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\importBinData.fw.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

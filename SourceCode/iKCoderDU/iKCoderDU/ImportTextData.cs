@@ -17,7 +17,6 @@ namespace iKCoderDU
     {
 
         class_Net_RemoteRequest object_remote;
-        CookieContainer activeContainer = new CookieContainer();
 
         public string activeServerUrl
         {
@@ -25,14 +24,15 @@ namespace iKCoderDU
             get;
         }
 
-        public ImportTextData()
+        public ImportTextData(class_Net_RemoteRequest refNetObject)
         {
+            object_remote = refNetObject;
             InitializeComponent();
         }
 
         private void ImportTextData_Load(object sender, EventArgs e)
         {
-            this.object_remote = new class_Net_RemoteRequest(ref activeContainer);
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -63,6 +63,7 @@ namespace iKCoderDU
                             if (result.Contains("true"))
                             {
                                 MessageBox.Show("您已经成功导入数据，点击确定返回主界面。");
+                                txt_url.Text = activeServerUrl + "/Data/api_GetMetaText.aspx?symbol=" + txt_symbol.Text;
                             }
                             else
                             {

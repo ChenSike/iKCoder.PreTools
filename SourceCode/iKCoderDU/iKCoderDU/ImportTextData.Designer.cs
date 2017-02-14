@@ -42,6 +42,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.cmb_produce = new System.Windows.Forms.ComboBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.txt_url = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -104,7 +106,7 @@
             this.txt_data.Location = new System.Drawing.Point(31, 238);
             this.txt_data.Multiline = true;
             this.txt_data.Name = "txt_data";
-            this.txt_data.Size = new System.Drawing.Size(730, 312);
+            this.txt_data.Size = new System.Drawing.Size(730, 275);
             this.txt_data.TabIndex = 5;
             // 
             // txt_symbol
@@ -187,12 +189,33 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "如何命名一个数据资源";
             // 
+            // txt_url
+            // 
+            this.txt_url.Enabled = false;
+            this.txt_url.Location = new System.Drawing.Point(228, 528);
+            this.txt_url.Name = "txt_url";
+            this.txt_url.Size = new System.Drawing.Size(533, 20);
+            this.txt_url.TabIndex = 33;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(38, 528);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(184, 13);
+            this.label7.TabIndex = 32;
+            this.label7.Text = "取数据的API URL （自动生成）：";
+            // 
             // ImportTextData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::iKCoderDU.Properties.Resources.importTextData_fw;
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.txt_url);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.cmb_produce);
             this.Controls.Add(this.button2);
@@ -231,5 +254,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox cmb_produce;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.TextBox txt_url;
+        private System.Windows.Forms.Label label7;
     }
 }

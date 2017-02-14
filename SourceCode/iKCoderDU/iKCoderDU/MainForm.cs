@@ -203,7 +203,7 @@ namespace iKCoderDU
 
         private void button5_Click(object sender, EventArgs e)
         {
-            ImportTextData form = new ImportTextData();
+            ImportTextData form = new ImportTextData(this.object_remote);
             form.activeServerUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text;
             form.ShowDialog();
             Flush_ResourceLst();
