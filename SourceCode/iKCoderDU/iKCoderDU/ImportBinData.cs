@@ -65,5 +65,51 @@ namespace iKCoderDU
         {
             this.Close();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(activeServerUrl))
+            {
+                if (!string.IsNullOrEmpty(txt_symbol.Text))
+                {
+                    if (!string.IsNullOrEmpty(cmb_produce.Text))
+                    {
+                        string verifiedSymbolExistedURL = activeServerUrl + "/Data/api_GetVerifySymbolExisted.aspx?symbol=" + txt_symbol.Text + "&produce=" + cmb_produce.Text;
+                        string result = object_remote.getRemoteXMLRequestToString("<root></root>", activeServerUrl, 1000 * 60, 100000, null);
+                        if (result.Contains("true"))
+                        {
+                            MessageBox.Show("很抱歉，您输入的标识数据已经存在，请更改后导入数据。");
+                        }
+                        else
+                        {
+                            string inputDoc = "<root><symbol>" + txt_symbol.Text + "</symbol><data>" + txt_base64data.Text + "</data><type>text</type></root>";
+                            verifiedSymbolExistedURL = activeServerUrl + "/Data/api_SetBinData.aspx";
+                            result = object_remote.getRemoteXMLRequestToString(inputDoc, activeServerUrl, 1000 * 60, 100000, null);
+                            if (result.Contains("true"))
+                            {
+                                MessageBox.Show("您已经成功导入数据，点击确定返回主界面。");
+                                txt_url.Text = activeServerUrl + "/Data/api_GetBinDataWithBase64.aspx?symbol=" + txt_symbol.Text;
+                            }
+                            else
+                            {
+                                MessageBox.Show("很抱歉，导入数据失败，无法处理此错误，请联系管理员。");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("很抱歉，归属产品不可空。");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("很抱歉，数据标识不可空。");
+                }
+            }
+            else
+            {
+                MessageBox.Show("没有选择正确的服务器配置，请先选择后再导入数据。");
+            }
+        }
     }
 }

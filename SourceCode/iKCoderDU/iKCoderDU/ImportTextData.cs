@@ -53,7 +53,6 @@ namespace iKCoderDU
                         if(result.Contains("true"))
                         {
                             MessageBox.Show("很抱歉，您输入的标识数据已经存在，请更改后导入数据。");
-                            this.Close();
                         }
                         else
                         {
