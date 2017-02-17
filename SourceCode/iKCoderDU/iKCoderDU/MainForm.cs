@@ -39,21 +39,23 @@ namespace iKCoderDU
         {
             if (!string.IsNullOrEmpty(cmb_server.Text) && !string.IsNullOrEmpty(cmb_produce.Text))
             {
+                string requestURL = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Domain/api_RegDomain.aspx?cid=" + GlobalVars.cid + "&domain=http://ikcoder.iok.la:24525";
+                object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", requestURL, 1000, 1024 * 1024);
                 string input = "<root><name>" + cmb_produce.Text + "</name><code>" + cmb_code.Text + "</code></root>";
-                string requestURL = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Token/api_getToken.aspx";
+                requestURL = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Token/api_getToken.aspx?cid=" + GlobalVars.cid;
                 object_cookies = object_remote.getRemoteServerCookie(requestURL,input);
-                if(object_cookies.Count>0)
+                if(object_cookies!=null && object_cookies.Count>0)
                 {
-                    lst_cookies.Items.Clear();
-                    foreach(Cookie activeCookie in object_cookies)
+                    lst_cookies.Items.Clear();                   
+                    lb_serverstatus.Text = "服务器状态：已经取得服务器TOKEN授权.";
+                    is_connected = true;                   
+                    foreach (Cookie activeCookie in object_cookies)
                     {
                         ListViewItem newItem = new ListViewItem(activeCookie.Name);
                         newItem.SubItems.Add(activeCookie.Value);
                         lst_cookies.Items.Add(newItem);
                         activeContainer.Add(activeCookie);
                     }
-                    lb_serverstatus.Text = "服务器状态：已经取得服务器TOKEN授权.";
-                    is_connected = true;
                 }
             }
         }
@@ -160,9 +162,9 @@ namespace iKCoderDU
         {
             try
             {
-                string getArrUrl = "api_GetDataAggInfo.aspx";
+                string getArrUrl = "api_GetDataAggInfo.aspx?cid="+GlobalVars.cid;
                 string requestURL = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/data/" + getArrUrl;
-                string result = object_remote.getRemoteXMLRequestToString("<root></root>", requestURL, 1000 * 60, 100000, null);
+                string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", requestURL, 1000 * 60, 100000);
                 XmlDocument resultDoc = new XmlDocument();
                 resultDoc.LoadXml(result);
                 XmlNodeList msgNodeList = resultDoc.SelectNodes("/root/msg");
@@ -215,6 +217,56 @@ namespace iKCoderDU
             form.activeServerUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text;
             form.ShowDialog();
             Flush_ResourceLst();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                string getArrUrl = "api_GetDataAggInfo.aspx";
+                string requestURL = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/data/" + getArrUrl;
+                string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", requestURL, 1000 * 60, 100000);
+                XmlDocument resultDoc = new XmlDocument();
+                resultDoc.LoadXml(result);
+                lst_resource.Items.Clear();
+                XmlNodeList searchNodes = resultDoc.SelectNodes("/root/msg[@symbol='" + txt_datasearchkey.Text + "']");
+                foreach (XmlNode activeMsgNode in searchNodes)
+                {
+                    string id = class_XmlHelper.GetAttrValue(activeMsgNode, "id");
+                    ListViewItem lstRootItem = new ListViewItem();
+                    lstRootItem.Text = id;
+                    lstRootItem.SubItems.Add(class_XmlHelper.GetAttrValue(activeMsgNode, "symbol"));
+                    lstRootItem.SubItems.Add(class_XmlHelper.GetAttrValue(activeMsgNode, "type"));
+                    lstRootItem.SubItems.Add(class_XmlHelper.GetAttrValue(activeMsgNode, "produce"));
+                    lstRootItem.SubItems.Add(class_XmlHelper.GetAttrValue(activeMsgNode, "isBinary"));
+                    lstRootItem.SubItems.Add(class_XmlHelper.GetAttrValue(activeMsgNode, "isBase64"));
+                    lstRootItem.SubItems.Add(class_XmlHelper.GetAttrValue(activeMsgNode, "isDES"));
+                    lstRootItem.SubItems.Add(class_XmlHelper.GetAttrValue(activeMsgNode, "DESKey"));
+                    lst_resource.Items.Add(lstRootItem);
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("系统访问API出差，请检查参数或者网络。");
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if(lst_resource.SelectedItems.Count>0)
+            {
+                ListViewItem selectedItem = lst_resource.SelectedItems[0];
+                string symbol = selectedItem.SubItems[1].Text;
+                string type = selectedItem.SubItems[2].Text;
+                if(type=="text")
+                {
+                    txt_getingdata.Text = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Data/api_GetMetaText.aspx?symbol=" + symbol;
+                    string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", requestURL, 1000 * 60, 100000);
+                    XmlDocument resultDoc = new XmlDocument();
+                    resultDoc.LoadXml(result);
+                }
+            }
         }
   
     }

@@ -74,17 +74,17 @@ namespace iKCoderDU
                 {
                     if (!string.IsNullOrEmpty(cmb_produce.Text))
                     {
-                        string verifiedSymbolExistedURL = activeServerUrl + "/Data/api_GetVerifySymbolExisted.aspx?symbol=" + txt_symbol.Text + "&produce=" + cmb_produce.Text;
-                        string result = object_remote.getRemoteXMLRequestToString("<root></root>", activeServerUrl, 1000 * 60, 100000, null);
+                        string verifiedSymbolExistedURL = activeServerUrl + "/Data/api_GetVerifySymbolExisted.aspx?symbol=" + txt_symbol.Text + "&cid=" + GlobalVars.cid;
+                        string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", verifiedSymbolExistedURL, 1000 * 60, 100000);
                         if (result.Contains("true"))
                         {
                             MessageBox.Show("很抱歉，您输入的标识数据已经存在，请更改后导入数据。");
                         }
                         else
                         {
-                            string inputDoc = "<root><symbol>" + txt_symbol.Text + "</symbol><data>" + txt_base64data.Text + "</data><type>text</type></root>";
-                            verifiedSymbolExistedURL = activeServerUrl + "/Data/api_SetBinData.aspx";
-                            result = object_remote.getRemoteXMLRequestToString(inputDoc, activeServerUrl, 1000 * 60, 100000, null);
+                            string inputDoc = "<root><symbol>" + txt_symbol.Text + "</symbol><data>" + txt_base64data.Text + "</data><type>" + cmb_type.Text + "</type></root>";
+                            verifiedSymbolExistedURL = activeServerUrl + "/Data/api_SetBinBase64Data.aspx?cid=" + GlobalVars.cid;
+                            result = object_remote.getRemoteRequestToStringWithCookieHeader(inputDoc, verifiedSymbolExistedURL, 1000 * 60, 100000);
                             if (result.Contains("true"))
                             {
                                 MessageBox.Show("您已经成功导入数据，点击确定返回主界面。");
