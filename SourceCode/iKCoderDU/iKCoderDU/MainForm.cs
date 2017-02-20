@@ -261,10 +261,22 @@ namespace iKCoderDU
                 string type = selectedItem.SubItems[2].Text;
                 if(type=="text")
                 {
-                    txt_getingdata.Text = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Data/api_GetMetaText.aspx?symbol=" + symbol;
-                    string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", requestURL, 1000 * 60, 100000);
+                    txt_getingdata.Text = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Data/api_GetMetaText.aspx?cid=" + GlobalVars.cid + "&symbol=" + symbol;
+                    string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", txt_getingdata.Text, 1000 * 60, 100000);
                     XmlDocument resultDoc = new XmlDocument();
                     resultDoc.LoadXml(result);
+                    XmlNode msgNode = resultDoc.SelectSingleNode("/root/msg");
+                    if (msgNode != null)
+                    {
+                        string data = class_XmlHelper.GetAttrValue(msgNode, "msg");
+                        txt_prevText.Text = class_CommonUtil.Decoder_Base64(data);
+                    }
+                    else                    
+                        MessageBox.Show("无法获取数据，请联系系统管理员.");
+                }
+                else if(type == "png")
+                {
+
                 }
             }
         }

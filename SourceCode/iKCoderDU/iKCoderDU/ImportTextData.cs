@@ -48,7 +48,7 @@ namespace iKCoderDU
                 {
                     if (!string.IsNullOrEmpty(cmb_produce.Text))
                     {
-                        string verifiedSymbolExistedURL = activeServerUrl + "/Data/api_GetVerifySymbolExisted.aspx?symbol=" + txt_symbol.Text + "&produce=" + cmb_produce.Text + "&cid=" + GlobalVars.cid;
+                        string verifiedSymbolExistedURL = activeServerUrl + "/Data/api_GetVerifySymbolExisted.aspx?symbol=" + txt_symbol.Text + "&cid=" + GlobalVars.cid;
                         string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", verifiedSymbolExistedURL, 1000 * 60, 100000);                        
                         if(result.Contains("true"))
                         {
@@ -56,8 +56,9 @@ namespace iKCoderDU
                         }
                         else
                         {
-                            string inputDoc = "<root><symbol>" + txt_symbol.Text + "</symbol><data>" + txt_data.Text + "</data><type>text</type></root>";
-                            verifiedSymbolExistedURL = activeServerUrl + "/Data/api_SetMetaTextData.aspx&cid=" + GlobalVars.cid;
+                            string inputData = class_CommonUtil.Encoder_Base64(txt_data.Text);
+                            string inputDoc = "<root><symbol>" + txt_symbol.Text + "</symbol><data>" + inputData + "</data><type>text</type></root>";
+                            verifiedSymbolExistedURL = activeServerUrl + "/Data/api_SetMetaTextData.aspx?cid=" + GlobalVars.cid;
                             result = object_remote.getRemoteRequestToStringWithCookieHeader(inputDoc, verifiedSymbolExistedURL, 1000 * 60, 100000);
                             if (result.Contains("true"))
                             {

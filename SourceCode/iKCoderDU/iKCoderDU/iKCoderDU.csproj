@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EncoderMetrixImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EncoderMetrixImage.Designer.cs">
+      <DependentUpon>EncoderMetrixImage.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlobalVars.cs" />
     <Compile Include="ImportBinData.cs">
       <SubType>Form</SubType>
@@ -78,6 +84,9 @@
     <Compile Include="Splash.Designer.cs">
       <DependentUpon>Splash.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EncoderMetrixImage.resx">
+      <DependentUpon>EncoderMetrixImage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ImportBinData.resx">
       <DependentUpon>ImportBinData.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +142,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="img\relationShipExplorer.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\encoderMetroData.fw.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

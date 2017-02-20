@@ -52,6 +52,7 @@
             this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serverLogExportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.performanceReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageCoderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label6 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -60,14 +61,16 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.pic_bindata = new System.Windows.Forms.PictureBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.txt_getingdata = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.txt_datasearchkey = new System.Windows.Forms.TextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.button5 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txt_prevText = new System.Windows.Forms.TextBox();
+            this.pic_previmg = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.lst_resource = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -102,9 +105,6 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.imageCoderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txt_getingdata = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -112,7 +112,7 @@
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_bindata)).BeginInit();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_previmg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.SuspendLayout();
@@ -340,6 +340,12 @@
             this.performanceReportToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.performanceReportToolStripMenuItem.Text = "Performance Report";
             // 
+            // imageCoderToolStripMenuItem
+            // 
+            this.imageCoderToolStripMenuItem.Name = "imageCoderToolStripMenuItem";
+            this.imageCoderToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.imageCoderToolStripMenuItem.Text = "Image Coder";
+            // 
             // 退出ToolStripMenuItem1
             // 
             this.退出ToolStripMenuItem1.Name = "退出ToolStripMenuItem1";
@@ -423,8 +429,8 @@
             this.tabPage4.Controls.Add(this.txt_datasearchkey);
             this.tabPage4.Controls.Add(this.linkLabel1);
             this.tabPage4.Controls.Add(this.button5);
-            this.tabPage4.Controls.Add(this.textBox1);
-            this.tabPage4.Controls.Add(this.pictureBox2);
+            this.tabPage4.Controls.Add(this.txt_prevText);
+            this.tabPage4.Controls.Add(this.pic_previmg);
             this.tabPage4.Controls.Add(this.button4);
             this.tabPage4.Controls.Add(this.lst_resource);
             this.tabPage4.Controls.Add(this.pictureBox1);
@@ -435,6 +441,23 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Resource Explorer";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // txt_getingdata
+            // 
+            this.txt_getingdata.Location = new System.Drawing.Point(150, 128);
+            this.txt_getingdata.Name = "txt_getingdata";
+            this.txt_getingdata.Size = new System.Drawing.Size(459, 21);
+            this.txt_getingdata.TabIndex = 24;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Location = new System.Drawing.Point(7, 131);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(137, 12);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "URL For Getting Data :";
             // 
             // button8
             // 
@@ -494,23 +517,23 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // textBox1
+            // txt_prevText
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(626, 328);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(290, 353);
-            this.textBox1.TabIndex = 4;
+            this.txt_prevText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_prevText.Location = new System.Drawing.Point(626, 328);
+            this.txt_prevText.Multiline = true;
+            this.txt_prevText.Name = "txt_prevText";
+            this.txt_prevText.Size = new System.Drawing.Size(290, 353);
+            this.txt_prevText.TabIndex = 4;
             // 
-            // pictureBox2
+            // pic_previmg
             // 
-            this.pictureBox2.BackgroundImage = global::iKCoderDU.Properties.Resources.prevImg_fw;
-            this.pictureBox2.Location = new System.Drawing.Point(626, 62);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(290, 260);
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
+            this.pic_previmg.BackgroundImage = global::iKCoderDU.Properties.Resources.prevImg_fw;
+            this.pic_previmg.Location = new System.Drawing.Point(626, 62);
+            this.pic_previmg.Name = "pic_previmg";
+            this.pic_previmg.Size = new System.Drawing.Size(290, 260);
+            this.pic_previmg.TabIndex = 3;
+            this.pic_previmg.TabStop = false;
             // 
             // button4
             // 
@@ -806,29 +829,6 @@
             this.columnHeader13.Text = "Value";
             this.columnHeader13.Width = 93;
             // 
-            // imageCoderToolStripMenuItem
-            // 
-            this.imageCoderToolStripMenuItem.Name = "imageCoderToolStripMenuItem";
-            this.imageCoderToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.imageCoderToolStripMenuItem.Text = "Image Coder";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Location = new System.Drawing.Point(7, 131);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(137, 12);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "URL For Getting Data :";
-            // 
-            // txt_getingdata
-            // 
-            this.txt_getingdata.Location = new System.Drawing.Point(150, 128);
-            this.txt_getingdata.Name = "txt_getingdata";
-            this.txt_getingdata.Size = new System.Drawing.Size(459, 21);
-            this.txt_getingdata.TabIndex = 24;
-            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -868,7 +868,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_bindata)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_previmg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
@@ -914,8 +914,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ListView lst_resource;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox txt_prevText;
+        private System.Windows.Forms.PictureBox pic_previmg;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
