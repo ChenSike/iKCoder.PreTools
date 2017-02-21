@@ -22,5 +22,14 @@ namespace iKCoderDU
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(openFileDialog1.ShowDialog()==DialogResult.OK)
+            {
+                string fileName = openFileDialog1.FileName;
+                this.pictureBox1.Image = Image.FromFile(fileName);
+            }
+        }
     }
 }

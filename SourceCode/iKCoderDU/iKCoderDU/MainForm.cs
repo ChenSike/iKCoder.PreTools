@@ -280,6 +280,12 @@ namespace iKCoderDU
                 }
             }
         }
+
+        private void imageCoderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EncoderMetrixImage obj = new EncoderMetrixImage();
+            obj.ShowDialog();
+        }
   
     }
 }
