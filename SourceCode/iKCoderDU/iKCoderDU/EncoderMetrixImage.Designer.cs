@@ -123,8 +123,7 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.Filter = "PNG Image File|*.png|BMP Image File|*.bmp|GIF Image File|*.gif|JPEG Image File|*." +
-    "jpeg";
+            this.openFileDialog1.Filter = "BMP Image File|*.bmp";
             // 
             // cmb_produce
             // 
