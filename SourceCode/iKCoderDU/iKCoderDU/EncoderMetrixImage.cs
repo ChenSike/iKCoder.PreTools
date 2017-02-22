@@ -26,8 +26,19 @@ namespace iKCoderDU
 
         public class pixelNode
         {
-            public bool isBack = true;
             public Color pixelColor;
+            public int X;
+            public int Y;
+        }
+
+        public class lineDataStruct
+        {
+            public int R;
+            public int G;
+            public int B;
+            public int StartX;
+            public int EndX;
+            public int LineY;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -37,11 +48,12 @@ namespace iKCoderDU
                 string fileName = openFileDialog1.FileName;
                 this.pictureBox1.Image = Image.FromFile(fileName);
                 Bitmap bitMap = new Bitmap(fileName);
+                StringBuilder dataResult = new StringBuilder();
+                dataResult.Append("<root>");
                 for(int height=0;height<bitMap.Height;height++)
                 {
-                    Color prevPixel;
-                    StringBuilder lineArr;
-
+                    List<pixelNode> lineData = new List<pixelNode>();
+                    StringBuilder strLineData = new StringBuilder();
                     for (int width = 0; width < bitMap.Width; width++)
                     {
                         Color pixelResult = bitMap.GetPixel(width, height);
@@ -49,12 +61,45 @@ namespace iKCoderDU
                             continue;
                         else
                         {
-                            if(prevPixel == pixelResult)
-                            {
-
-                            }
+                            pixelNode newItem = new pixelNode();
+                            newItem.X = width;
+                            newItem.Y = height;
+                            lineData.Add(newItem);
+                        }                        
+                    }
+                    List<lineDataStruct> lineStructDataLst = new List<lineDataStruct>();
+                    foreach(pixelNode activePixel in lineData)
+                    {
+                        if (lineStructDataLst.Count == 0)
+                        {
+                            lineDataStruct newLineDataStructItem = new lineDataStruct();
+                            newLineDataStructItem.StartX = activePixel.X;
+                            newLineDataStructItem.EndX = activePixel.X;
+                            newLineDataStructItem.LineY = activePixel.Y;
+                            newLineDataStructItem.R = activePixel.pixelColor.R;
+                            newLineDataStructItem.G = activePixel.pixelColor.G;
+                            newLineDataStructItem.B = activePixel.pixelColor.B;
+                            lineStructDataLst.Add(newLineDataStructItem);
                         }
-                        
+                        else
+                        {
+                            int lastIndex = lineStructDataLst.Count - 1;
+                            lineDataStruct lastLineDataStruct = lineStructDataLst[lastIndex];
+                            if(lastLineDataStruct.R == activePixel.pixelColor.R && lastLineDataStruct.G == activePixel.pixelColor.G && lastLineDataStruct.B == activePixel.pixelColor.B)                            
+                                lastLineDataStruct.EndX = activePixel.X;
+                            else
+                            {
+                                lineDataStruct newLineDataStructItem = new lineDataStruct();
+                                newLineDataStructItem.StartX = activePixel.X;
+                                newLineDataStructItem.EndX = activePixel.X;
+                                newLineDataStructItem.LineY = activePixel.Y;
+                                newLineDataStructItem.R = activePixel.pixelColor.R;
+                                newLineDataStructItem.G = activePixel.pixelColor.G;
+                                newLineDataStructItem.B = activePixel.pixelColor.B;
+                                lineStructDataLst.Add(newLineDataStructItem);
+                            }
+                            
+                        }
                     }
                 }
                 
