@@ -283,7 +283,7 @@ namespace iKCoderDU
 
         private void imageCoderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EncoderMetrixImage obj = new EncoderMetrixImage();
+            EncoderMetrixImage obj = new EncoderMetrixImage(object_remote);
             obj.ShowDialog();
         }
   
