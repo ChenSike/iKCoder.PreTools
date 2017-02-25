@@ -105,6 +105,10 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.请客服务器长驻留对象ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.场景管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.课程场景ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -282,17 +286,19 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.操作ToolStripMenuItem,
             this.退出ToolStripMenuItem,
+            this.数据ToolStripMenuItem,
             this.退出ToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(9, 31);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(229, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(180, 24);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // 操作ToolStripMenuItem
             // 
             this.操作ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.重新创建对应服务器的所有SPToolStripMenuItem});
+            this.重新创建对应服务器的所有SPToolStripMenuItem,
+            this.请客服务器长驻留对象ToolStripMenuItem});
             this.操作ToolStripMenuItem.Name = "操作ToolStripMenuItem";
             this.操作ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.操作ToolStripMenuItem.Text = "操作";
@@ -830,6 +836,34 @@
             this.columnHeader13.Text = "Value";
             this.columnHeader13.Width = 93;
             // 
+            // 请客服务器长驻留对象ToolStripMenuItem
+            // 
+            this.请客服务器长驻留对象ToolStripMenuItem.Name = "请客服务器长驻留对象ToolStripMenuItem";
+            this.请客服务器长驻留对象ToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.请客服务器长驻留对象ToolStripMenuItem.Text = "清空服务器长驻留对象";
+            // 
+            // 数据ToolStripMenuItem
+            // 
+            this.数据ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.场景管理ToolStripMenuItem});
+            this.数据ToolStripMenuItem.Name = "数据ToolStripMenuItem";
+            this.数据ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.数据ToolStripMenuItem.Text = "数据";
+            // 
+            // 场景管理ToolStripMenuItem
+            // 
+            this.场景管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.课程场景ToolStripMenuItem});
+            this.场景管理ToolStripMenuItem.Name = "场景管理ToolStripMenuItem";
+            this.场景管理ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.场景管理ToolStripMenuItem.Text = "场景管理";
+            // 
+            // 课程场景ToolStripMenuItem
+            // 
+            this.课程场景ToolStripMenuItem.Name = "课程场景ToolStripMenuItem";
+            this.课程场景ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.课程场景ToolStripMenuItem.Text = "课程场景";
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -957,6 +991,10 @@
         private System.Windows.Forms.ToolStripMenuItem imageCoderToolStripMenuItem;
         private System.Windows.Forms.TextBox txt_getingdata;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ToolStripMenuItem 请客服务器长驻留对象ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 数据ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 场景管理ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 课程场景ToolStripMenuItem;
     }
 }
 
