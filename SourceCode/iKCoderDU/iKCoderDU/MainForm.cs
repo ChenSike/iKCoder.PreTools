@@ -274,9 +274,21 @@ namespace iKCoderDU
                     else                    
                         MessageBox.Show("无法获取数据，请联系系统管理员.");
                 }
-                else if(type == "png")
+                else if (type == "png" || type == "jpg" || type == "jpeg" || type == "gif")
                 {
-
+                    txt_getingdata.Text = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Data/api_GetBinData.aspx?cid=" + GlobalVars.cid + "&symbol=" + symbol;
+                    byte[] result = object_remote.getRemoteRequestToByteWithCookieHeader("<root></root>", txt_getingdata.Text, 1000 * 60, 100000);
+                    if (result != null && result.Length > 0)
+                    {                        
+                        FileStream tmpFileStream = new FileStream("tmpimage." + type, FileMode.Create);
+                        BinaryWriter tmpBinWr = new BinaryWriter(tmpFileStream);
+                        tmpBinWr.Write(result);
+                        tmpBinWr.Flush();
+                        tmpFileStream.Close();
+                        pic_previmg.Image = Image.FromFile("tmpimage." + type);                                                
+                    }
+                    else
+                        MessageBox.Show("无法获取数据，请联系系统管理员.");
                 }
             }
         }
@@ -285,6 +297,50 @@ namespace iKCoderDU
         {
             EncoderMetrixImage obj = new EncoderMetrixImage(object_remote);
             obj.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (lst_resource.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = lst_resource.SelectedItems[0];
+                string symbol = selectedItem.SubItems[1].Text;
+                string id = lst_resource.SelectedItems[0].Text;
+                if (MessageBox.Show("请确认需要删除的数据：" + symbol + ",此次删除操作无法恢复！确定吗？","确定操作",MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    txt_getingdata.Text = "不提供删除数据的URL，如有需要，请联系管理员。";
+                    string actionUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Data/api_RemoveMetaData.aspx?cid=" + GlobalVars.cid + "&id=" + id;
+                    string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", actionUrl, 1000 * 60, 100000);
+                    if(result.Contains("true"))                    
+                        Flush_ResourceLst();
+                    else
+                    {
+                        MessageBox.Show("无法执行操作，请联系系统管理员.");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("无法删除数据，请先选择需要删除的数据.");
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_relationsymbol.Text))
+                MessageBox.Show("请先填写标识后在执行操作.");
+            else
+            {
+                string actionUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Data/api_SetNewRelationDoc.aspx?cid=" + GlobalVars.cid + "&symbol=" + txt_relationsymbol.Text + "&type=" + cmb_relationtype.Text;
+                string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", actionUrl, 1000 * 60, 100000);
+                if (result.Contains("true"))
+                    Flush_ResourceLst();
+                else
+                {
+                    MessageBox.Show("无法执行操作，请联系系统管理员.");
+                    
+                }
+            }
         }
   
     }
