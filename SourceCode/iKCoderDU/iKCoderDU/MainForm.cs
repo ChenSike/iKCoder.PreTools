@@ -342,6 +342,34 @@ namespace iKCoderDU
                 }
             }
         }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_relationship_childsymbol.Text))
+                MessageBox.Show("请先填写标识后在执行操作.");
+            else
+            {
+                string actionUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Data/api_SetNewRelationDoc.aspx?cid=" + GlobalVars.cid + "&symbol=" + txt_relationsymbol.Text + "&type=child";
+                string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", actionUrl, 1000 * 60, 100000);
+                if (result.Contains("true"))
+                    Flush_ResourceLst();
+                else
+                {
+                    MessageBox.Show("无法执行操作，请联系系统管理员.");
+
+                }
+            }
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flushChildDocument()
+        {
+            lst_relationshipchild_doclist.Items.Clear();
+        }
   
     }
 }
