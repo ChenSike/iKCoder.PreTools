@@ -127,6 +127,9 @@
   <data name="importBinData.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\importBinData.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="aggreegateInformation.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\aggreegateInformation.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="splash.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\splash.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,7 +148,7 @@
   <data name="relationShipExplorer.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\relationShipExplorer.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="aggreegateInformation.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\aggreegateInformation.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="relationShipParentExplorer.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\relationShipParentExplorer.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
