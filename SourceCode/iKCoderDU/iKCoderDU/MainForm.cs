@@ -331,7 +331,7 @@ namespace iKCoderDU
                 MessageBox.Show("请先填写标识后在执行操作.");
             else
             {
-                string actionUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Data/api_SetNewRelationDoc.aspx?cid=" + GlobalVars.cid + "&symbol=" + txt_relationsymbol.Text + "&type=" + cmb_relationtype.Text;
+                string actionUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Data/api_SetNewRelationDoc.aspx?cid=" + GlobalVars.cid + "&symbol=" + txt_relationsymbol.Text + "&type=parent";
                 string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", actionUrl, 1000 * 60, 100000);
                 if (result.Contains("true"))
                     Flush_ResourceLst();
