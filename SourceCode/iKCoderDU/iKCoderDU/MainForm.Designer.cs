@@ -126,7 +126,6 @@
             this.button28 = new System.Windows.Forms.Button();
             this.cmb_relationshipchild_attrname = new System.Windows.Forms.ComboBox();
             this.button25 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
             this.cmb_relationshipchild_groupname = new System.Windows.Forms.ComboBox();
             this.button20 = new System.Windows.Forms.Button();
@@ -160,7 +159,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(13, 93);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 0;
             this.label1.Text = "服务器：";
             // 
@@ -172,7 +171,7 @@
             "localhost"});
             this.cmb_server.Location = new System.Drawing.Point(71, 90);
             this.cmb_server.Name = "cmb_server";
-            this.cmb_server.Size = new System.Drawing.Size(176, 21);
+            this.cmb_server.Size = new System.Drawing.Size(176, 20);
             this.cmb_server.TabIndex = 1;
             // 
             // button1
@@ -191,7 +190,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(24, 156);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.Size = new System.Drawing.Size(41, 12);
             this.label2.TabIndex = 3;
             this.label2.Text = "产品：";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -203,7 +202,7 @@
             "iKCoder"});
             this.cmb_produce.Location = new System.Drawing.Point(71, 151);
             this.cmb_produce.Name = "cmb_produce";
-            this.cmb_produce.Size = new System.Drawing.Size(176, 21);
+            this.cmb_produce.Size = new System.Drawing.Size(176, 20);
             this.cmb_produce.TabIndex = 4;
             // 
             // label3
@@ -212,7 +211,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(24, 189);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 13);
+            this.label3.Size = new System.Drawing.Size(41, 12);
             this.label3.TabIndex = 5;
             this.label3.Text = "代码：";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -224,7 +223,7 @@
             "12345678"});
             this.cmb_code.Location = new System.Drawing.Point(71, 185);
             this.cmb_code.Name = "cmb_code";
-            this.cmb_code.Size = new System.Drawing.Size(176, 21);
+            this.cmb_code.Size = new System.Drawing.Size(176, 20);
             this.cmb_code.TabIndex = 6;
             // 
             // txtResult
@@ -242,7 +241,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(24, 124);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.Size = new System.Drawing.Size(41, 12);
             this.label4.TabIndex = 9;
             this.label4.Text = "目录：";
             // 
@@ -254,7 +253,7 @@
             "iKCoder"});
             this.cmb_vfolder.Location = new System.Drawing.Point(71, 120);
             this.cmb_vfolder.Name = "cmb_vfolder";
-            this.cmb_vfolder.Size = new System.Drawing.Size(176, 21);
+            this.cmb_vfolder.Size = new System.Drawing.Size(176, 20);
             this.cmb_vfolder.TabIndex = 10;
             this.cmb_vfolder.Text = "PlatformAPI";
             // 
@@ -264,7 +263,7 @@
             this.lb_serverstatus.BackColor = System.Drawing.Color.Transparent;
             this.lb_serverstatus.Location = new System.Drawing.Point(13, 262);
             this.lb_serverstatus.Name = "lb_serverstatus";
-            this.lb_serverstatus.Size = new System.Drawing.Size(175, 13);
+            this.lb_serverstatus.Size = new System.Drawing.Size(173, 12);
             this.lb_serverstatus.TabIndex = 11;
             this.lb_serverstatus.Text = "服务器状态：未获得服务器授权";
             // 
@@ -301,7 +300,7 @@
             "/Account/api_VerifyAccountExisted.aspx?username=18675521735"});
             this.cmb_URL.Location = new System.Drawing.Point(304, 68);
             this.cmb_URL.Name = "cmb_URL";
-            this.cmb_URL.Size = new System.Drawing.Size(884, 21);
+            this.cmb_URL.Size = new System.Drawing.Size(884, 20);
             this.cmb_URL.TabIndex = 14;
             // 
             // txtInput
@@ -323,7 +322,7 @@
             this.退出ToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(9, 31);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(180, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(184, 25);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -333,20 +332,20 @@
             this.重新创建对应服务器的所有SPToolStripMenuItem,
             this.请客服务器长驻留对象ToolStripMenuItem});
             this.操作ToolStripMenuItem.Name = "操作ToolStripMenuItem";
-            this.操作ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.操作ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.操作ToolStripMenuItem.Text = "操作";
             // 
             // 重新创建对应服务器的所有SPToolStripMenuItem
             // 
             this.重新创建对应服务器的所有SPToolStripMenuItem.Name = "重新创建对应服务器的所有SPToolStripMenuItem";
-            this.重新创建对应服务器的所有SPToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.重新创建对应服务器的所有SPToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
             this.重新创建对应服务器的所有SPToolStripMenuItem.Text = "重新创建对应服务器的所有SP";
             this.重新创建对应服务器的所有SPToolStripMenuItem.Click += new System.EventHandler(this.重新创建对应服务器的所有SPToolStripMenuItem_Click);
             // 
             // 请客服务器长驻留对象ToolStripMenuItem
             // 
             this.请客服务器长驻留对象ToolStripMenuItem.Name = "请客服务器长驻留对象ToolStripMenuItem";
-            this.请客服务器长驻留对象ToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.请客服务器长驻留对象ToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
             this.请客服务器长驻留对象ToolStripMenuItem.Text = "清空服务器长驻留对象";
             // 
             // 退出ToolStripMenuItem
@@ -358,37 +357,37 @@
             this.performanceReportToolStripMenuItem,
             this.imageCoderToolStripMenuItem});
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.退出ToolStripMenuItem.Text = "工具";
             // 
             // qRCoderToolStripMenuItem
             // 
             this.qRCoderToolStripMenuItem.Name = "qRCoderToolStripMenuItem";
-            this.qRCoderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.qRCoderToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.qRCoderToolStripMenuItem.Text = "QR Coder";
             // 
             // accountToolStripMenuItem
             // 
             this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            this.accountToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.accountToolStripMenuItem.Text = "Token Config";
             // 
             // serverLogExportToolStripMenuItem
             // 
             this.serverLogExportToolStripMenuItem.Name = "serverLogExportToolStripMenuItem";
-            this.serverLogExportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.serverLogExportToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.serverLogExportToolStripMenuItem.Text = "Server Log Export";
             // 
             // performanceReportToolStripMenuItem
             // 
             this.performanceReportToolStripMenuItem.Name = "performanceReportToolStripMenuItem";
-            this.performanceReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.performanceReportToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.performanceReportToolStripMenuItem.Text = "Performance Report";
             // 
             // imageCoderToolStripMenuItem
             // 
             this.imageCoderToolStripMenuItem.Name = "imageCoderToolStripMenuItem";
-            this.imageCoderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.imageCoderToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.imageCoderToolStripMenuItem.Text = "Image Metrix Coder";
             this.imageCoderToolStripMenuItem.Click += new System.EventHandler(this.imageCoderToolStripMenuItem_Click);
             // 
@@ -397,7 +396,7 @@
             this.数据ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.场景管理ToolStripMenuItem});
             this.数据ToolStripMenuItem.Name = "数据ToolStripMenuItem";
-            this.数据ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.数据ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.数据ToolStripMenuItem.Text = "数据";
             // 
             // 场景管理ToolStripMenuItem
@@ -405,19 +404,19 @@
             this.场景管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.课程场景ToolStripMenuItem});
             this.场景管理ToolStripMenuItem.Name = "场景管理ToolStripMenuItem";
-            this.场景管理ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.场景管理ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.场景管理ToolStripMenuItem.Text = "场景管理";
             // 
             // 课程场景ToolStripMenuItem
             // 
             this.课程场景ToolStripMenuItem.Name = "课程场景ToolStripMenuItem";
-            this.课程场景ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.课程场景ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.课程场景ToolStripMenuItem.Text = "课程场景";
             // 
             // 退出ToolStripMenuItem1
             // 
             this.退出ToolStripMenuItem1.Name = "退出ToolStripMenuItem1";
-            this.退出ToolStripMenuItem1.Size = new System.Drawing.Size(43, 20);
+            this.退出ToolStripMenuItem1.Size = new System.Drawing.Size(44, 21);
             this.退出ToolStripMenuItem1.Text = "退出";
             this.退出ToolStripMenuItem1.Click += new System.EventHandler(this.退出ToolStripMenuItem1_Click);
             // 
@@ -427,7 +426,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Location = new System.Drawing.Point(272, 71);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 13);
+            this.label6.Size = new System.Drawing.Size(35, 12);
             this.label6.TabIndex = 17;
             this.label6.Text = "API：";
             // 
@@ -560,7 +559,7 @@
             // 
             this.txt_getingdata.Location = new System.Drawing.Point(150, 128);
             this.txt_getingdata.Name = "txt_getingdata";
-            this.txt_getingdata.Size = new System.Drawing.Size(459, 20);
+            this.txt_getingdata.Size = new System.Drawing.Size(459, 21);
             this.txt_getingdata.TabIndex = 24;
             // 
             // label10
@@ -569,7 +568,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Location = new System.Drawing.Point(7, 131);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(116, 13);
+            this.label10.Size = new System.Drawing.Size(137, 12);
             this.label10.TabIndex = 23;
             this.label10.Text = "URL For Getting Data :";
             // 
@@ -608,7 +607,7 @@
             this.txt_datasearchkey.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_datasearchkey.Location = new System.Drawing.Point(119, 20);
             this.txt_datasearchkey.Name = "txt_datasearchkey";
-            this.txt_datasearchkey.Size = new System.Drawing.Size(713, 13);
+            this.txt_datasearchkey.Size = new System.Drawing.Size(713, 14);
             this.txt_datasearchkey.TabIndex = 7;
             // 
             // linkLabel1
@@ -616,7 +615,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Location = new System.Drawing.Point(860, 20);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(41, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(41, 12);
             this.linkLabel1.TabIndex = 6;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Search";
@@ -838,7 +837,7 @@
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox5.Location = new System.Drawing.Point(509, 125);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(350, 20);
+            this.textBox5.Size = new System.Drawing.Size(350, 21);
             this.textBox5.TabIndex = 17;
             // 
             // linkLabel3
@@ -846,7 +845,7 @@
             this.linkLabel3.AutoSize = true;
             this.linkLabel3.Location = new System.Drawing.Point(872, 129);
             this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(41, 13);
+            this.linkLabel3.Size = new System.Drawing.Size(41, 12);
             this.linkLabel3.TabIndex = 15;
             this.linkLabel3.TabStop = true;
             this.linkLabel3.Text = "Search";
@@ -856,7 +855,7 @@
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox4.Location = new System.Drawing.Point(103, 99);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(282, 20);
+            this.textBox4.Size = new System.Drawing.Size(282, 21);
             this.textBox4.TabIndex = 14;
             // 
             // button11
@@ -882,7 +881,7 @@
             this.txt_relationsymbol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_relationsymbol.Location = new System.Drawing.Point(110, 31);
             this.txt_relationsymbol.Name = "txt_relationsymbol";
-            this.txt_relationsymbol.Size = new System.Drawing.Size(550, 20);
+            this.txt_relationsymbol.Size = new System.Drawing.Size(550, 21);
             this.txt_relationsymbol.TabIndex = 4;
             // 
             // button9
@@ -918,7 +917,6 @@
             this.tabPage8.Controls.Add(this.button28);
             this.tabPage8.Controls.Add(this.cmb_relationshipchild_attrname);
             this.tabPage8.Controls.Add(this.button25);
-            this.tabPage8.Controls.Add(this.button24);
             this.tabPage8.Controls.Add(this.button23);
             this.tabPage8.Controls.Add(this.cmb_relationshipchild_groupname);
             this.tabPage8.Controls.Add(this.button20);
@@ -938,7 +936,7 @@
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Location = new System.Drawing.Point(409, 352);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(95, 13);
+            this.linkLabel2.Size = new System.Drawing.Size(101, 12);
             this.linkLabel2.TabIndex = 50;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Reflush Document";
@@ -1013,7 +1011,7 @@
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(534, 278);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(280, 21);
+            this.comboBox3.Size = new System.Drawing.Size(280, 20);
             this.comboBox3.TabIndex = 44;
             // 
             // txt_relationshipchild_attrvalue
@@ -1021,7 +1019,7 @@
             this.txt_relationshipchild_attrvalue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_relationshipchild_attrvalue.Location = new System.Drawing.Point(534, 205);
             this.txt_relationshipchild_attrvalue.Name = "txt_relationshipchild_attrvalue";
-            this.txt_relationshipchild_attrvalue.Size = new System.Drawing.Size(387, 20);
+            this.txt_relationshipchild_attrvalue.Size = new System.Drawing.Size(387, 21);
             this.txt_relationshipchild_attrvalue.TabIndex = 43;
             // 
             // button26
@@ -1050,32 +1048,25 @@
             this.button28.TabIndex = 40;
             this.button28.Text = "Add New";
             this.button28.UseVisualStyleBackColor = true;
+            this.button28.Click += new System.EventHandler(this.button28_Click);
             // 
             // cmb_relationshipchild_attrname
             // 
             this.cmb_relationshipchild_attrname.FormattingEnabled = true;
             this.cmb_relationshipchild_attrname.Location = new System.Drawing.Point(534, 171);
             this.cmb_relationshipchild_attrname.Name = "cmb_relationshipchild_attrname";
-            this.cmb_relationshipchild_attrname.Size = new System.Drawing.Size(387, 21);
+            this.cmb_relationshipchild_attrname.Size = new System.Drawing.Size(387, 20);
             this.cmb_relationshipchild_attrname.TabIndex = 39;
             // 
             // button25
             // 
-            this.button25.Location = new System.Drawing.Point(716, 132);
+            this.button25.Location = new System.Drawing.Point(625, 132);
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(85, 23);
             this.button25.TabIndex = 38;
             this.button25.Text = "Delete Group";
             this.button25.UseVisualStyleBackColor = true;
-            // 
-            // button24
-            // 
-            this.button24.Location = new System.Drawing.Point(625, 132);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(85, 23);
-            this.button24.TabIndex = 37;
-            this.button24.Text = "Update Group";
-            this.button24.UseVisualStyleBackColor = true;
+            this.button25.Click += new System.EventHandler(this.button25_Click);
             // 
             // button23
             // 
@@ -1092,7 +1083,7 @@
             this.cmb_relationshipchild_groupname.FormattingEnabled = true;
             this.cmb_relationshipchild_groupname.Location = new System.Drawing.Point(509, 98);
             this.cmb_relationshipchild_groupname.Name = "cmb_relationshipchild_groupname";
-            this.cmb_relationshipchild_groupname.Size = new System.Drawing.Size(412, 21);
+            this.cmb_relationshipchild_groupname.Size = new System.Drawing.Size(412, 20);
             this.cmb_relationshipchild_groupname.TabIndex = 35;
             // 
             // button20
@@ -1128,7 +1119,7 @@
             this.txt_relationship_childsymbol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_relationship_childsymbol.Location = new System.Drawing.Point(109, 31);
             this.txt_relationship_childsymbol.Name = "txt_relationship_childsymbol";
-            this.txt_relationship_childsymbol.Size = new System.Drawing.Size(681, 20);
+            this.txt_relationship_childsymbol.Size = new System.Drawing.Size(681, 21);
             this.txt_relationship_childsymbol.TabIndex = 30;
             // 
             // button19
@@ -1341,7 +1332,6 @@
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.ComboBox cmb_relationshipchild_groupname;
         private System.Windows.Forms.TextBox txt_relationshipchild_attrvalue;
