@@ -110,10 +110,28 @@
             this.button9 = new System.Windows.Forms.Button();
             this.tree_relationship = new System.Windows.Forms.TreeView();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.lst_relationshipchild_doclist = new System.Windows.Forms.ListView();
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txt_relationshipchild_docsource = new System.Windows.Forms.TextBox();
+            this.button31 = new System.Windows.Forms.Button();
+            this.button30 = new System.Windows.Forms.Button();
+            this.button29 = new System.Windows.Forms.Button();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.txt_relationshipchild_attrvalue = new System.Windows.Forms.TextBox();
+            this.button26 = new System.Windows.Forms.Button();
+            this.button27 = new System.Windows.Forms.Button();
+            this.button28 = new System.Windows.Forms.Button();
+            this.cmb_relationshipchild_attrname = new System.Windows.Forms.ComboBox();
+            this.button25 = new System.Windows.Forms.Button();
+            this.button24 = new System.Windows.Forms.Button();
+            this.button23 = new System.Windows.Forms.Button();
+            this.cmb_relationshipchild_groupname = new System.Windows.Forms.ComboBox();
             this.button20 = new System.Windows.Forms.Button();
             this.button21 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
             this.txt_relationship_childsymbol = new System.Windows.Forms.TextBox();
             this.button19 = new System.Windows.Forms.Button();
             this.tabPage6 = new System.Windows.Forms.TabPage();
@@ -122,25 +140,6 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button26 = new System.Windows.Forms.Button();
-            this.button27 = new System.Windows.Forms.Button();
-            this.button28 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.button29 = new System.Windows.Forms.Button();
-            this.button30 = new System.Windows.Forms.Button();
-            this.button31 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.lst_relationshipchild_doclist = new System.Windows.Forms.ListView();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
@@ -161,7 +160,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(13, 93);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "服务器：";
             // 
@@ -173,7 +172,7 @@
             "localhost"});
             this.cmb_server.Location = new System.Drawing.Point(71, 90);
             this.cmb_server.Name = "cmb_server";
-            this.cmb_server.Size = new System.Drawing.Size(176, 20);
+            this.cmb_server.Size = new System.Drawing.Size(176, 21);
             this.cmb_server.TabIndex = 1;
             // 
             // button1
@@ -192,7 +191,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(24, 156);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "产品：";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -204,7 +203,7 @@
             "iKCoder"});
             this.cmb_produce.Location = new System.Drawing.Point(71, 151);
             this.cmb_produce.Name = "cmb_produce";
-            this.cmb_produce.Size = new System.Drawing.Size(176, 20);
+            this.cmb_produce.Size = new System.Drawing.Size(176, 21);
             this.cmb_produce.TabIndex = 4;
             // 
             // label3
@@ -213,7 +212,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(24, 189);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 12);
+            this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "代码：";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -225,7 +224,7 @@
             "12345678"});
             this.cmb_code.Location = new System.Drawing.Point(71, 185);
             this.cmb_code.Name = "cmb_code";
-            this.cmb_code.Size = new System.Drawing.Size(176, 20);
+            this.cmb_code.Size = new System.Drawing.Size(176, 21);
             this.cmb_code.TabIndex = 6;
             // 
             // txtResult
@@ -243,7 +242,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(24, 124);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 12);
+            this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "目录：";
             // 
@@ -255,7 +254,7 @@
             "iKCoder"});
             this.cmb_vfolder.Location = new System.Drawing.Point(71, 120);
             this.cmb_vfolder.Name = "cmb_vfolder";
-            this.cmb_vfolder.Size = new System.Drawing.Size(176, 20);
+            this.cmb_vfolder.Size = new System.Drawing.Size(176, 21);
             this.cmb_vfolder.TabIndex = 10;
             this.cmb_vfolder.Text = "PlatformAPI";
             // 
@@ -265,7 +264,7 @@
             this.lb_serverstatus.BackColor = System.Drawing.Color.Transparent;
             this.lb_serverstatus.Location = new System.Drawing.Point(13, 262);
             this.lb_serverstatus.Name = "lb_serverstatus";
-            this.lb_serverstatus.Size = new System.Drawing.Size(173, 12);
+            this.lb_serverstatus.Size = new System.Drawing.Size(175, 13);
             this.lb_serverstatus.TabIndex = 11;
             this.lb_serverstatus.Text = "服务器状态：未获得服务器授权";
             // 
@@ -302,7 +301,7 @@
             "/Account/api_VerifyAccountExisted.aspx?username=18675521735"});
             this.cmb_URL.Location = new System.Drawing.Point(304, 68);
             this.cmb_URL.Name = "cmb_URL";
-            this.cmb_URL.Size = new System.Drawing.Size(884, 20);
+            this.cmb_URL.Size = new System.Drawing.Size(884, 21);
             this.cmb_URL.TabIndex = 14;
             // 
             // txtInput
@@ -324,7 +323,7 @@
             this.退出ToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(9, 31);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(184, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(180, 24);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -334,20 +333,20 @@
             this.重新创建对应服务器的所有SPToolStripMenuItem,
             this.请客服务器长驻留对象ToolStripMenuItem});
             this.操作ToolStripMenuItem.Name = "操作ToolStripMenuItem";
-            this.操作ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.操作ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.操作ToolStripMenuItem.Text = "操作";
             // 
             // 重新创建对应服务器的所有SPToolStripMenuItem
             // 
             this.重新创建对应服务器的所有SPToolStripMenuItem.Name = "重新创建对应服务器的所有SPToolStripMenuItem";
-            this.重新创建对应服务器的所有SPToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.重新创建对应服务器的所有SPToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.重新创建对应服务器的所有SPToolStripMenuItem.Text = "重新创建对应服务器的所有SP";
             this.重新创建对应服务器的所有SPToolStripMenuItem.Click += new System.EventHandler(this.重新创建对应服务器的所有SPToolStripMenuItem_Click);
             // 
             // 请客服务器长驻留对象ToolStripMenuItem
             // 
             this.请客服务器长驻留对象ToolStripMenuItem.Name = "请客服务器长驻留对象ToolStripMenuItem";
-            this.请客服务器长驻留对象ToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.请客服务器长驻留对象ToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.请客服务器长驻留对象ToolStripMenuItem.Text = "清空服务器长驻留对象";
             // 
             // 退出ToolStripMenuItem
@@ -359,37 +358,37 @@
             this.performanceReportToolStripMenuItem,
             this.imageCoderToolStripMenuItem});
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.退出ToolStripMenuItem.Text = "工具";
             // 
             // qRCoderToolStripMenuItem
             // 
             this.qRCoderToolStripMenuItem.Name = "qRCoderToolStripMenuItem";
-            this.qRCoderToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.qRCoderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.qRCoderToolStripMenuItem.Text = "QR Coder";
             // 
             // accountToolStripMenuItem
             // 
             this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            this.accountToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.accountToolStripMenuItem.Text = "Token Config";
             // 
             // serverLogExportToolStripMenuItem
             // 
             this.serverLogExportToolStripMenuItem.Name = "serverLogExportToolStripMenuItem";
-            this.serverLogExportToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.serverLogExportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.serverLogExportToolStripMenuItem.Text = "Server Log Export";
             // 
             // performanceReportToolStripMenuItem
             // 
             this.performanceReportToolStripMenuItem.Name = "performanceReportToolStripMenuItem";
-            this.performanceReportToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.performanceReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.performanceReportToolStripMenuItem.Text = "Performance Report";
             // 
             // imageCoderToolStripMenuItem
             // 
             this.imageCoderToolStripMenuItem.Name = "imageCoderToolStripMenuItem";
-            this.imageCoderToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.imageCoderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.imageCoderToolStripMenuItem.Text = "Image Metrix Coder";
             this.imageCoderToolStripMenuItem.Click += new System.EventHandler(this.imageCoderToolStripMenuItem_Click);
             // 
@@ -398,7 +397,7 @@
             this.数据ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.场景管理ToolStripMenuItem});
             this.数据ToolStripMenuItem.Name = "数据ToolStripMenuItem";
-            this.数据ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.数据ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.数据ToolStripMenuItem.Text = "数据";
             // 
             // 场景管理ToolStripMenuItem
@@ -406,19 +405,19 @@
             this.场景管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.课程场景ToolStripMenuItem});
             this.场景管理ToolStripMenuItem.Name = "场景管理ToolStripMenuItem";
-            this.场景管理ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.场景管理ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.场景管理ToolStripMenuItem.Text = "场景管理";
             // 
             // 课程场景ToolStripMenuItem
             // 
             this.课程场景ToolStripMenuItem.Name = "课程场景ToolStripMenuItem";
-            this.课程场景ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.课程场景ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.课程场景ToolStripMenuItem.Text = "课程场景";
             // 
             // 退出ToolStripMenuItem1
             // 
             this.退出ToolStripMenuItem1.Name = "退出ToolStripMenuItem1";
-            this.退出ToolStripMenuItem1.Size = new System.Drawing.Size(44, 21);
+            this.退出ToolStripMenuItem1.Size = new System.Drawing.Size(43, 20);
             this.退出ToolStripMenuItem1.Text = "退出";
             this.退出ToolStripMenuItem1.Click += new System.EventHandler(this.退出ToolStripMenuItem1_Click);
             // 
@@ -428,7 +427,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Location = new System.Drawing.Point(272, 71);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 12);
+            this.label6.Size = new System.Drawing.Size(36, 13);
             this.label6.TabIndex = 17;
             this.label6.Text = "API：";
             // 
@@ -561,7 +560,7 @@
             // 
             this.txt_getingdata.Location = new System.Drawing.Point(150, 128);
             this.txt_getingdata.Name = "txt_getingdata";
-            this.txt_getingdata.Size = new System.Drawing.Size(459, 21);
+            this.txt_getingdata.Size = new System.Drawing.Size(459, 20);
             this.txt_getingdata.TabIndex = 24;
             // 
             // label10
@@ -570,7 +569,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Location = new System.Drawing.Point(7, 131);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(137, 12);
+            this.label10.Size = new System.Drawing.Size(116, 13);
             this.label10.TabIndex = 23;
             this.label10.Text = "URL For Getting Data :";
             // 
@@ -609,7 +608,7 @@
             this.txt_datasearchkey.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_datasearchkey.Location = new System.Drawing.Point(119, 20);
             this.txt_datasearchkey.Name = "txt_datasearchkey";
-            this.txt_datasearchkey.Size = new System.Drawing.Size(713, 14);
+            this.txt_datasearchkey.Size = new System.Drawing.Size(713, 13);
             this.txt_datasearchkey.TabIndex = 7;
             // 
             // linkLabel1
@@ -617,7 +616,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Location = new System.Drawing.Point(860, 20);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(41, 12);
+            this.linkLabel1.Size = new System.Drawing.Size(41, 13);
             this.linkLabel1.TabIndex = 6;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Search";
@@ -680,6 +679,7 @@
             this.lst_resource.TabIndex = 1;
             this.lst_resource.UseCompatibleStateImageBehavior = false;
             this.lst_resource.View = System.Windows.Forms.View.Details;
+            this.lst_resource.SelectedIndexChanged += new System.EventHandler(this.lst_resource_SelectedIndexChanged);
             // 
             // columnHeader3
             // 
@@ -838,7 +838,7 @@
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox5.Location = new System.Drawing.Point(509, 125);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(350, 21);
+            this.textBox5.Size = new System.Drawing.Size(350, 20);
             this.textBox5.TabIndex = 17;
             // 
             // linkLabel3
@@ -846,7 +846,7 @@
             this.linkLabel3.AutoSize = true;
             this.linkLabel3.Location = new System.Drawing.Point(872, 129);
             this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(41, 12);
+            this.linkLabel3.Size = new System.Drawing.Size(41, 13);
             this.linkLabel3.TabIndex = 15;
             this.linkLabel3.TabStop = true;
             this.linkLabel3.Text = "Search";
@@ -856,7 +856,7 @@
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox4.Location = new System.Drawing.Point(103, 99);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(282, 21);
+            this.textBox4.Size = new System.Drawing.Size(282, 20);
             this.textBox4.TabIndex = 14;
             // 
             // button11
@@ -882,7 +882,7 @@
             this.txt_relationsymbol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_relationsymbol.Location = new System.Drawing.Point(110, 31);
             this.txt_relationsymbol.Name = "txt_relationsymbol";
-            this.txt_relationsymbol.Size = new System.Drawing.Size(550, 21);
+            this.txt_relationsymbol.Size = new System.Drawing.Size(550, 20);
             this.txt_relationsymbol.TabIndex = 4;
             // 
             // button9
@@ -907,24 +907,23 @@
             this.tabPage8.BackgroundImage = global::iKCoderDU.Properties.Resources.relationShipParentExplorer_fw;
             this.tabPage8.Controls.Add(this.linkLabel2);
             this.tabPage8.Controls.Add(this.lst_relationshipchild_doclist);
-            this.tabPage8.Controls.Add(this.textBox3);
+            this.tabPage8.Controls.Add(this.txt_relationshipchild_docsource);
             this.tabPage8.Controls.Add(this.button31);
             this.tabPage8.Controls.Add(this.button30);
             this.tabPage8.Controls.Add(this.button29);
             this.tabPage8.Controls.Add(this.comboBox3);
-            this.tabPage8.Controls.Add(this.textBox2);
+            this.tabPage8.Controls.Add(this.txt_relationshipchild_attrvalue);
             this.tabPage8.Controls.Add(this.button26);
             this.tabPage8.Controls.Add(this.button27);
             this.tabPage8.Controls.Add(this.button28);
-            this.tabPage8.Controls.Add(this.comboBox2);
+            this.tabPage8.Controls.Add(this.cmb_relationshipchild_attrname);
             this.tabPage8.Controls.Add(this.button25);
             this.tabPage8.Controls.Add(this.button24);
             this.tabPage8.Controls.Add(this.button23);
-            this.tabPage8.Controls.Add(this.comboBox1);
+            this.tabPage8.Controls.Add(this.cmb_relationshipchild_groupname);
             this.tabPage8.Controls.Add(this.button20);
             this.tabPage8.Controls.Add(this.button21);
             this.tabPage8.Controls.Add(this.button22);
-            this.tabPage8.Controls.Add(this.button18);
             this.tabPage8.Controls.Add(this.txt_relationship_childsymbol);
             this.tabPage8.Controls.Add(this.button19);
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
@@ -933,6 +932,168 @@
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "RelationShip For Childs";
             this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Location = new System.Drawing.Point(409, 352);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(95, 13);
+            this.linkLabel2.TabIndex = 50;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Reflush Document";
+            // 
+            // lst_relationshipchild_doclist
+            // 
+            this.lst_relationshipchild_doclist.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader16,
+            this.columnHeader17,
+            this.columnHeader18});
+            this.lst_relationshipchild_doclist.GridLines = true;
+            this.lst_relationshipchild_doclist.Location = new System.Drawing.Point(9, 116);
+            this.lst_relationshipchild_doclist.Name = "lst_relationshipchild_doclist";
+            this.lst_relationshipchild_doclist.Size = new System.Drawing.Size(383, 565);
+            this.lst_relationshipchild_doclist.TabIndex = 49;
+            this.lst_relationshipchild_doclist.UseCompatibleStateImageBehavior = false;
+            this.lst_relationshipchild_doclist.View = System.Windows.Forms.View.Details;
+            this.lst_relationshipchild_doclist.SelectedIndexChanged += new System.EventHandler(this.lst_relationshipchild_doclist_SelectedIndexChanged);
+            // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Text = "id";
+            // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Text = "child document symbol";
+            this.columnHeader17.Width = 168;
+            // 
+            // columnHeader18
+            // 
+            this.columnHeader18.Text = "count of group";
+            this.columnHeader18.Width = 148;
+            // 
+            // txt_relationshipchild_docsource
+            // 
+            this.txt_relationshipchild_docsource.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_relationshipchild_docsource.Location = new System.Drawing.Point(408, 372);
+            this.txt_relationshipchild_docsource.Multiline = true;
+            this.txt_relationshipchild_docsource.Name = "txt_relationshipchild_docsource";
+            this.txt_relationshipchild_docsource.Size = new System.Drawing.Size(513, 309);
+            this.txt_relationshipchild_docsource.TabIndex = 48;
+            // 
+            // button31
+            // 
+            this.button31.Location = new System.Drawing.Point(716, 312);
+            this.button31.Name = "button31";
+            this.button31.Size = new System.Drawing.Size(129, 23);
+            this.button31.TabIndex = 47;
+            this.button31.Text = "Remove From Group";
+            this.button31.UseVisualStyleBackColor = true;
+            // 
+            // button30
+            // 
+            this.button30.Location = new System.Drawing.Point(581, 312);
+            this.button30.Name = "button30";
+            this.button30.Size = new System.Drawing.Size(129, 23);
+            this.button30.TabIndex = 46;
+            this.button30.Text = "Add To Group";
+            this.button30.UseVisualStyleBackColor = true;
+            // 
+            // button29
+            // 
+            this.button29.Location = new System.Drawing.Point(823, 276);
+            this.button29.Name = "button29";
+            this.button29.Size = new System.Drawing.Size(98, 23);
+            this.button29.TabIndex = 45;
+            this.button29.Text = "Searching";
+            this.button29.UseVisualStyleBackColor = true;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(534, 278);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(280, 21);
+            this.comboBox3.TabIndex = 44;
+            // 
+            // txt_relationshipchild_attrvalue
+            // 
+            this.txt_relationshipchild_attrvalue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_relationshipchild_attrvalue.Location = new System.Drawing.Point(534, 205);
+            this.txt_relationshipchild_attrvalue.Name = "txt_relationshipchild_attrvalue";
+            this.txt_relationshipchild_attrvalue.Size = new System.Drawing.Size(387, 20);
+            this.txt_relationshipchild_attrvalue.TabIndex = 43;
+            // 
+            // button26
+            // 
+            this.button26.Location = new System.Drawing.Point(729, 241);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(85, 23);
+            this.button26.TabIndex = 42;
+            this.button26.Text = "Delete";
+            this.button26.UseVisualStyleBackColor = true;
+            // 
+            // button27
+            // 
+            this.button27.Location = new System.Drawing.Point(638, 241);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(85, 23);
+            this.button27.TabIndex = 41;
+            this.button27.Text = "Update";
+            this.button27.UseVisualStyleBackColor = true;
+            // 
+            // button28
+            // 
+            this.button28.Location = new System.Drawing.Point(547, 241);
+            this.button28.Name = "button28";
+            this.button28.Size = new System.Drawing.Size(85, 23);
+            this.button28.TabIndex = 40;
+            this.button28.Text = "Add New";
+            this.button28.UseVisualStyleBackColor = true;
+            // 
+            // cmb_relationshipchild_attrname
+            // 
+            this.cmb_relationshipchild_attrname.FormattingEnabled = true;
+            this.cmb_relationshipchild_attrname.Location = new System.Drawing.Point(534, 171);
+            this.cmb_relationshipchild_attrname.Name = "cmb_relationshipchild_attrname";
+            this.cmb_relationshipchild_attrname.Size = new System.Drawing.Size(387, 21);
+            this.cmb_relationshipchild_attrname.TabIndex = 39;
+            // 
+            // button25
+            // 
+            this.button25.Location = new System.Drawing.Point(716, 132);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(85, 23);
+            this.button25.TabIndex = 38;
+            this.button25.Text = "Delete Group";
+            this.button25.UseVisualStyleBackColor = true;
+            // 
+            // button24
+            // 
+            this.button24.Location = new System.Drawing.Point(625, 132);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(85, 23);
+            this.button24.TabIndex = 37;
+            this.button24.Text = "Update Group";
+            this.button24.UseVisualStyleBackColor = true;
+            // 
+            // button23
+            // 
+            this.button23.Location = new System.Drawing.Point(534, 132);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(85, 23);
+            this.button23.TabIndex = 36;
+            this.button23.Text = "New Group";
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
+            // 
+            // cmb_relationshipchild_groupname
+            // 
+            this.cmb_relationshipchild_groupname.FormattingEnabled = true;
+            this.cmb_relationshipchild_groupname.Location = new System.Drawing.Point(509, 98);
+            this.cmb_relationshipchild_groupname.Name = "cmb_relationshipchild_groupname";
+            this.cmb_relationshipchild_groupname.Size = new System.Drawing.Size(412, 21);
+            this.cmb_relationshipchild_groupname.TabIndex = 35;
             // 
             // button20
             // 
@@ -950,7 +1111,7 @@
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(125, 23);
             this.button21.TabIndex = 33;
-            this.button21.Text = "Update Selected Doc";
+            this.button21.Text = "Save Selected Doc";
             this.button21.UseVisualStyleBackColor = true;
             // 
             // button22
@@ -962,26 +1123,17 @@
             this.button22.Text = "Delete Selected Doc";
             this.button22.UseVisualStyleBackColor = true;
             // 
-            // button18
-            // 
-            this.button18.Location = new System.Drawing.Point(796, 29);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(125, 23);
-            this.button18.TabIndex = 31;
-            this.button18.Text = "Search";
-            this.button18.UseVisualStyleBackColor = true;
-            // 
             // txt_relationship_childsymbol
             // 
             this.txt_relationship_childsymbol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_relationship_childsymbol.Location = new System.Drawing.Point(109, 31);
             this.txt_relationship_childsymbol.Name = "txt_relationship_childsymbol";
-            this.txt_relationship_childsymbol.Size = new System.Drawing.Size(550, 21);
+            this.txt_relationship_childsymbol.Size = new System.Drawing.Size(681, 20);
             this.txt_relationship_childsymbol.TabIndex = 30;
             // 
             // button19
             // 
-            this.button19.Location = new System.Drawing.Point(665, 29);
+            this.button19.Location = new System.Drawing.Point(796, 29);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(125, 23);
             this.button19.TabIndex = 29;
@@ -1040,166 +1192,6 @@
             // 
             this.columnHeader13.Text = "Value";
             this.columnHeader13.Width = 93;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(509, 98);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(412, 20);
-            this.comboBox1.TabIndex = 35;
-            // 
-            // button23
-            // 
-            this.button23.Location = new System.Drawing.Point(534, 132);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(85, 23);
-            this.button23.TabIndex = 36;
-            this.button23.Text = "New Group";
-            this.button23.UseVisualStyleBackColor = true;
-            // 
-            // button24
-            // 
-            this.button24.Location = new System.Drawing.Point(625, 132);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(85, 23);
-            this.button24.TabIndex = 37;
-            this.button24.Text = "Update Group";
-            this.button24.UseVisualStyleBackColor = true;
-            // 
-            // button25
-            // 
-            this.button25.Location = new System.Drawing.Point(716, 132);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(85, 23);
-            this.button25.TabIndex = 38;
-            this.button25.Text = "Delete Group";
-            this.button25.UseVisualStyleBackColor = true;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(534, 171);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(387, 20);
-            this.comboBox2.TabIndex = 39;
-            // 
-            // button26
-            // 
-            this.button26.Location = new System.Drawing.Point(729, 241);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(85, 23);
-            this.button26.TabIndex = 42;
-            this.button26.Text = "Delete";
-            this.button26.UseVisualStyleBackColor = true;
-            // 
-            // button27
-            // 
-            this.button27.Location = new System.Drawing.Point(638, 241);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(85, 23);
-            this.button27.TabIndex = 41;
-            this.button27.Text = "Update";
-            this.button27.UseVisualStyleBackColor = true;
-            // 
-            // button28
-            // 
-            this.button28.Location = new System.Drawing.Point(547, 241);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(85, 23);
-            this.button28.TabIndex = 40;
-            this.button28.Text = "Add New";
-            this.button28.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(534, 205);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(387, 21);
-            this.textBox2.TabIndex = 43;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(534, 278);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(280, 20);
-            this.comboBox3.TabIndex = 44;
-            // 
-            // button29
-            // 
-            this.button29.Location = new System.Drawing.Point(823, 276);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(98, 23);
-            this.button29.TabIndex = 45;
-            this.button29.Text = "Searching";
-            this.button29.UseVisualStyleBackColor = true;
-            // 
-            // button30
-            // 
-            this.button30.Location = new System.Drawing.Point(581, 312);
-            this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(129, 23);
-            this.button30.TabIndex = 46;
-            this.button30.Text = "Add To Group";
-            this.button30.UseVisualStyleBackColor = true;
-            // 
-            // button31
-            // 
-            this.button31.Location = new System.Drawing.Point(716, 312);
-            this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(129, 23);
-            this.button31.TabIndex = 47;
-            this.button31.Text = "Remove From Group";
-            this.button31.UseVisualStyleBackColor = true;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(408, 372);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(513, 309);
-            this.textBox3.TabIndex = 48;
-            // 
-            // lst_relationshipchild_doclist
-            // 
-            this.lst_relationshipchild_doclist.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader16,
-            this.columnHeader17,
-            this.columnHeader18});
-            this.lst_relationshipchild_doclist.GridLines = true;
-            this.lst_relationshipchild_doclist.Location = new System.Drawing.Point(9, 116);
-            this.lst_relationshipchild_doclist.Name = "lst_relationshipchild_doclist";
-            this.lst_relationshipchild_doclist.Size = new System.Drawing.Size(383, 565);
-            this.lst_relationshipchild_doclist.TabIndex = 49;
-            this.lst_relationshipchild_doclist.UseCompatibleStateImageBehavior = false;
-            this.lst_relationshipchild_doclist.View = System.Windows.Forms.View.Details;
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(409, 352);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(101, 12);
-            this.linkLabel2.TabIndex = 50;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Reflush Document";
-            // 
-            // columnHeader16
-            // 
-            this.columnHeader16.Text = "id";
-            // 
-            // columnHeader17
-            // 
-            this.columnHeader17.Text = "child document symbol";
-            this.columnHeader17.Width = 168;
-            // 
-            // columnHeader18
-            // 
-            this.columnHeader18.Text = "count of group";
-            this.columnHeader18.Width = 148;
             // 
             // MainForm
             // 
@@ -1343,7 +1335,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader15;
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button18;
         private System.Windows.Forms.TextBox txt_relationship_childsymbol;
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.Button button20;
@@ -1352,17 +1343,17 @@
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox cmb_relationshipchild_groupname;
+        private System.Windows.Forms.TextBox txt_relationshipchild_attrvalue;
         private System.Windows.Forms.Button button26;
         private System.Windows.Forms.Button button27;
         private System.Windows.Forms.Button button28;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmb_relationshipchild_attrname;
         private System.Windows.Forms.Button button31;
         private System.Windows.Forms.Button button30;
         private System.Windows.Forms.Button button29;
         private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_relationshipchild_docsource;
         private System.Windows.Forms.ListView lst_relationshipchild_doclist;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.ColumnHeader columnHeader16;

@@ -24,6 +24,8 @@ namespace iKCoderDU
         bool is_connected = false;
         Dictionary<string, string> urlMap = new Dictionary<string, string>();
         CookieContainer activeContainer = new CookieContainer();
+        Dictionary<string, XmlDocument> buffer_relationDoc = new Dictionary<string, XmlDocument>();
+        Dictionary<string, bool> changedFlag_relationDoc = new Dictionary<string, bool>();
 
         public MainForm()
         {
@@ -170,7 +172,6 @@ namespace iKCoderDU
                 XmlNodeList msgNodeList = resultDoc.SelectNodes("/root/msg");
                 if (msgNodeList.Count == 0)
                 {
-                    MessageBox.Show("没有发现数据。");
                     return;
                 }
                 else
@@ -349,7 +350,7 @@ namespace iKCoderDU
                 MessageBox.Show("请先填写标识后在执行操作.");
             else
             {
-                string actionUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Data/api_SetNewRelationDoc.aspx?cid=" + GlobalVars.cid + "&symbol=" + txt_relationsymbol.Text + "&type=child";
+                string actionUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Relation/api_SetNewRelationDoc.aspx?cid=" + GlobalVars.cid + "&symbol=" + txt_relationsymbol.Text + "&type=child";
                 string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", actionUrl, 1000 * 60, 100000);
                 if (result.Contains("true"))
                     Flush_ResourceLst();
@@ -363,12 +364,102 @@ namespace iKCoderDU
 
         private void button20_Click(object sender, EventArgs e)
         {
-
+            flushChildDocument();
         }
 
         private void flushChildDocument()
         {
             lst_relationshipchild_doclist.Items.Clear();
+            try
+            {
+                string getArrUrl = "api_GetDataAggInfo.aspx?cid=" + GlobalVars.cid;
+                string requestURL = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/data/" + getArrUrl;
+                string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", requestURL, 1000 * 60, 100000);
+                XmlDocument resultDoc = new XmlDocument();
+                resultDoc.LoadXml(result);
+                XmlNodeList msgNodeList = resultDoc.SelectNodes("/root/msg");
+                if (msgNodeList.Count == 0)
+                {
+                    return;
+                }
+                else
+                {
+                    lst_resource.Items.Clear();
+                    buffer_relationDoc.Clear();
+                    foreach (XmlNode activeMsgNode in msgNodeList)
+                    {
+                        string id = class_XmlHelper.GetAttrValue(activeMsgNode, "id");
+                        string strdoc = class_XmlHelper.GetAttrValue(activeMsgNode, "relationdoc");
+                        string debase64doc = class_CommonUtil.Decoder_Base64(strdoc);
+                        XmlDocument doc = new XmlDocument();
+                        doc.LoadXml(debase64doc);
+                        buffer_relationDoc.Add(id.ToString(), doc);
+                        XmlNodeList groupNodes = doc.SelectNodes("/root/group");
+                        ListViewItem lstRootItem = new ListViewItem();
+                        lstRootItem.Text = id;
+                        lstRootItem.SubItems.Add(class_XmlHelper.GetAttrValue(activeMsgNode, "symbol"));
+                        lstRootItem.SubItems.Add(groupNodes.Count.ToString());                       
+                        lst_resource.Items.Add(lstRootItem);
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("系统访问API出差，请检查参数或者网络。");
+            }
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lst_relationshipchild_doclist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lst_relationshipchild_doclist.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = lst_relationshipchild_doclist.SelectedItems[0];
+                string id = selectedItem.Text;
+                XmlDocument activeDoc = buffer_relationDoc[id.ToString()];
+                cmb_relationshipchild_groupname.Items.Clear();
+                XmlNodeList groupNodes = activeDoc.SelectNodes("/root/group");
+                foreach(XmlNode groupNode in groupNodes)
+                {
+                    string groupName = class_XmlHelper.GetNodeValue(groupNode);
+                    cmb_relationshipchild_groupname.Items.Add(groupName);
+                }
+
+            }
+        }
+
+        private void lst_resource_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            if (lst_relationshipchild_doclist.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = lst_relationshipchild_doclist.SelectedItems[0];
+                string id = selectedItem.Text;
+                XmlDocument activeDoc = buffer_relationDoc[id.ToString()];
+                if (cmb_relationshipchild_groupname.Text != "")
+                {
+                    XmlNode existedNode = activeDoc.SelectSingleNode("/root/group[@name='" + cmb_relationshipchild_groupname.Text + "]");
+                    if(existedNode!=null)
+                    {
+                        MessageBox.Show("Group 已经存在，不可使用重复的名称，请更换.");
+                        return;
+                    }
+                    else
+                    {
+                        XmlNode newGroupNode = class_XmlHelper.CreateNode(activeDoc, "group", "");
+                        class_XmlHelper.SetAttribute(newGroupNode, "name", cmb_relationshipchild_groupname.Text);
+                        activeDoc.SelectSingleNode("/root").AppendChild(newGroupNode);
+                    }
+                }
+            }
         }
   
     }
