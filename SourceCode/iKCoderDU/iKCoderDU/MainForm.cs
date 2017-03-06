@@ -536,6 +536,162 @@ namespace iKCoderDU
                 return;
             }
         }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            if (lst_relationshipchild_doclist.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = lst_relationshipchild_doclist.SelectedItems[0];
+                string id = selectedItem.Text;
+                XmlDocument activeDoc = buffer_relationDoc[id.ToString()];
+                if (cmb_relationshipchild_groupname.Text != "")
+                {
+                    XmlNode existedNode = activeDoc.SelectSingleNode("/root/group[@name='" + cmb_relationshipchild_groupname.Text + "']");
+                    if (existedNode == null)
+                    {
+                        MessageBox.Show("Group 不存在，无法为不存在的节点更新属性.");
+                        return;
+                    }
+                    else
+                    {
+                        if (cmb_relationshipchild_attrname.Text != "")
+                        {
+                            XmlNode activeGroupNode = activeDoc.SelectSingleNode("/root/group[@name='" + cmb_relationshipchild_groupname.Text + "']");
+                            class_XmlHelper.SetAttribute(activeGroupNode, cmb_relationshipchild_attrname.Text, txt_relationshipchild_attrvalue.Text);
+                            changedFlag_relationDoc[id] = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("属性名称不可为空，无法完成操作.");
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("请先选择一个存在的Child Documnet后再进行操作.");
+                return;
+            }
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            if (lst_relationshipchild_doclist.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = lst_relationshipchild_doclist.SelectedItems[0];
+                string id = selectedItem.Text;
+                XmlDocument activeDoc = buffer_relationDoc[id.ToString()];
+                if (cmb_relationshipchild_groupname.Text != "")
+                {
+                    XmlNode existedNode = activeDoc.SelectSingleNode("/root/group[@name='" + cmb_relationshipchild_groupname.Text + "']");
+                    if (existedNode == null)
+                    {
+                        MessageBox.Show("Group 不存在，无法为不存在的节点更新属性.");
+                        return;
+                    }
+                    else
+                    {
+                        if (cmb_relationshipchild_attrname.Text != "")
+                        {
+                            XmlNode activeGroupNode = activeDoc.SelectSingleNode("/root/group[@name='" + cmb_relationshipchild_groupname.Text + "']");
+                            XmlAttribute activeAttr = activeGroupNode.Attributes[cmb_relationshipchild_attrname.Text];
+                            if(activeAttr!=null)
+                            {
+                                activeGroupNode.Attributes.Remove(activeAttr);
+                                cmb_relationshipchild_attrname.Items.Remove(cmb_relationshipchild_attrname.Text);
+                                cmb_relationshipchild_attrname.Text = "";
+                            }
+                            else
+                            {
+                                MessageBox.Show("无法找到属性，无法完成操作.");
+                            }
+                            changedFlag_relationDoc[id] = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("属性名称不可为空，无法完成操作.");
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("请先选择一个存在的Child Documnet后再进行操作.");
+                return;
+            }
+        }
+
+        private void button29_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string getArrUrl = "api_GetDataAggInfo.aspx?cid=" + GlobalVars.cid;
+                string requestURL = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/data/" + getArrUrl;
+                string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", requestURL, 1000 * 60, 100000);
+                XmlDocument resultDoc = new XmlDocument();
+                resultDoc.LoadXml(result);
+                cmb_relationshipchild_symbolsearching.Items.Clear();
+                if (cmb_relationshipchild_symbolsearching.Text == "")
+                {
+                    XmlNodeList msgNodeList = resultDoc.SelectNodes("/root/msg");
+                    foreach (XmlNode activeMsgNode in msgNodeList)
+                    {
+                        string symbol = class_XmlHelper.GetAttrValue(activeMsgNode, "symbol");
+                        cmb_relationshipchild_symbolsearching.Items.Add(symbol);
+                    }
+                }
+                else
+                {
+                    XmlNode searchNode = resultDoc.SelectSingleNode("/root/msg[@symbol='" + cmb_relationshipchild_symbolsearching.Text + "']");
+                    if(searchNode!=null)
+                    {
+                        cmb_relationshipchild_symbolsearching.Items.Add(cmb_relationshipchild_symbolsearching.Text);
+                    }
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("系统访问API出差，请检查参数或者网络。");
+            }
+            
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button30_Click(object sender, EventArgs e)
+        {
+            if (lst_relationshipchild_doclist.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = lst_relationshipchild_doclist.SelectedItems[0];
+                string id = selectedItem.Text;
+                XmlDocument activeDoc = buffer_relationDoc[id.ToString()];
+                if (cmb_relationshipchild_groupname.Text != "")
+                {
+                    XmlNode existedNode = activeDoc.SelectSingleNode("/root/group[@name='" + cmb_relationshipchild_groupname.Text + "']");
+                    if (existedNode == null)
+                    {
+                        MessageBox.Show("Group 不存在，无法为不存在的节点添加属性.");
+                        return;
+                    }
+                    else
+                    {
+                        if(cmb_relationshipchild_symbolsearching.Text != "")
+                        {
+
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("请先选择一个存在的Child Documnet后再进行操作.");
+                return;
+            }
+        }
   
     }
 }

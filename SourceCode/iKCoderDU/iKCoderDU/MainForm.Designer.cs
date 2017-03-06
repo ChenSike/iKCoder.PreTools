@@ -119,7 +119,7 @@
             this.button31 = new System.Windows.Forms.Button();
             this.button30 = new System.Windows.Forms.Button();
             this.button29 = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cmb_relationshipchild_symbolsearching = new System.Windows.Forms.ComboBox();
             this.txt_relationshipchild_attrvalue = new System.Windows.Forms.TextBox();
             this.button26 = new System.Windows.Forms.Button();
             this.button27 = new System.Windows.Forms.Button();
@@ -831,6 +831,7 @@
             this.button13.TabIndex = 22;
             this.button13.Text = "Load Relation Docs";
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // textBox5
             // 
@@ -910,7 +911,7 @@
             this.tabPage8.Controls.Add(this.button31);
             this.tabPage8.Controls.Add(this.button30);
             this.tabPage8.Controls.Add(this.button29);
-            this.tabPage8.Controls.Add(this.comboBox3);
+            this.tabPage8.Controls.Add(this.cmb_relationshipchild_symbolsearching);
             this.tabPage8.Controls.Add(this.txt_relationshipchild_attrvalue);
             this.tabPage8.Controls.Add(this.button26);
             this.tabPage8.Controls.Add(this.button27);
@@ -996,6 +997,7 @@
             this.button30.TabIndex = 46;
             this.button30.Text = "Add To Group";
             this.button30.UseVisualStyleBackColor = true;
+            this.button30.Click += new System.EventHandler(this.button30_Click);
             // 
             // button29
             // 
@@ -1005,14 +1007,15 @@
             this.button29.TabIndex = 45;
             this.button29.Text = "Searching";
             this.button29.UseVisualStyleBackColor = true;
+            this.button29.Click += new System.EventHandler(this.button29_Click);
             // 
-            // comboBox3
+            // cmb_relationshipchild_symbolsearching
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(534, 278);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(280, 20);
-            this.comboBox3.TabIndex = 44;
+            this.cmb_relationshipchild_symbolsearching.FormattingEnabled = true;
+            this.cmb_relationshipchild_symbolsearching.Location = new System.Drawing.Point(534, 278);
+            this.cmb_relationshipchild_symbolsearching.Name = "cmb_relationshipchild_symbolsearching";
+            this.cmb_relationshipchild_symbolsearching.Size = new System.Drawing.Size(280, 20);
+            this.cmb_relationshipchild_symbolsearching.TabIndex = 44;
             // 
             // txt_relationshipchild_attrvalue
             // 
@@ -1030,6 +1033,7 @@
             this.button26.TabIndex = 42;
             this.button26.Text = "Delete";
             this.button26.UseVisualStyleBackColor = true;
+            this.button26.Click += new System.EventHandler(this.button26_Click);
             // 
             // button27
             // 
@@ -1039,6 +1043,7 @@
             this.button27.TabIndex = 41;
             this.button27.Text = "Update";
             this.button27.UseVisualStyleBackColor = true;
+            this.button27.Click += new System.EventHandler(this.button27_Click);
             // 
             // button28
             // 
@@ -1342,7 +1347,7 @@
         private System.Windows.Forms.Button button31;
         private System.Windows.Forms.Button button30;
         private System.Windows.Forms.Button button29;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cmb_relationshipchild_symbolsearching;
         private System.Windows.Forms.TextBox txt_relationshipchild_docsource;
         private System.Windows.Forms.ListView lst_relationshipchild_doclist;
         private System.Windows.Forms.LinkLabel linkLabel2;
