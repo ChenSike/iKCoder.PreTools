@@ -778,9 +778,20 @@ namespace iKCoderDU
         {
            foreach(string activeID in changedFlag_relationDoc.Keys)
            {
-               if(changedFlag_relationDoc[activeID])
+               if (changedFlag_relationDoc[activeID])
                {
-                   
+                   string id = activeID;
+                   string doc = buffer_relationDoc[activeID].OuterXml;
+                   string base64Doc = class_CommonUtil.Encoder_Base64(doc);
+                   string inputDoc = "<root><id>" + id + "</id><doc>" + base64Doc + "</doc>";
+                   string getArrUrl = "api_SetUpdateRelationDoc.aspx?cid=" + GlobalVars.cid;
+                   string requestURL = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Relation/" + getArrUrl;
+                   string result = object_remote.getRemoteRequestToStringWithCookieHeader(inputDoc, requestURL, 1000 * 60, 100000);
+                   if (result.Contains("true"))
+                       MessageBox.Show("你已经成功更新了所有的关系文档.");
+                   else
+                       MessageBox.Show("更新关系文档失败，请联系管理员.");
+
                }
            }
         }
