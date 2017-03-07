@@ -522,6 +522,7 @@ namespace iKCoderDU
                             XmlNode activeGroupNode = activeDoc.SelectSingleNode("/root/group[@name='" + cmb_relationshipchild_groupname.Text + "']");
                             class_XmlHelper.SetAttribute(activeGroupNode, cmb_relationshipchild_attrname.Text, txt_relationshipchild_attrvalue.Text);
                             changedFlag_relationDoc[id] = true;
+                            txt_relationshipchild_docsource.Text = activeDoc.OuterXml;
                         }
                         else
                         {
@@ -559,6 +560,7 @@ namespace iKCoderDU
                             XmlNode activeGroupNode = activeDoc.SelectSingleNode("/root/group[@name='" + cmb_relationshipchild_groupname.Text + "']");
                             class_XmlHelper.SetAttribute(activeGroupNode, cmb_relationshipchild_attrname.Text, txt_relationshipchild_attrvalue.Text);
                             changedFlag_relationDoc[id] = true;
+                            txt_relationshipchild_docsource.Text = activeDoc.OuterXml;
                         }
                         else
                         {
@@ -600,12 +602,14 @@ namespace iKCoderDU
                                 activeGroupNode.Attributes.Remove(activeAttr);
                                 cmb_relationshipchild_attrname.Items.Remove(cmb_relationshipchild_attrname.Text);
                                 cmb_relationshipchild_attrname.Text = "";
+                                txt_relationshipchild_docsource.Text = activeDoc.OuterXml;
+                                changedFlag_relationDoc[id] = true;
                             }
                             else
                             {
                                 MessageBox.Show("无法找到属性，无法完成操作.");
                             }
-                            changedFlag_relationDoc[id] = true;
+                            
                         }
                         else
                         {
@@ -681,7 +685,20 @@ namespace iKCoderDU
                     {
                         if(cmb_relationshipchild_symbolsearching.Text != "")
                         {
-
+                            XmlNode existedResourceNode = existedNode.SelectSingleNode("item[@resource='"+cmb_relationshipchild_symbolsearching.Text+"']");
+                            if (existedResourceNode != null)
+                            {
+                                XmlNode newItemNode = class_XmlHelper.CreateNode(activeDoc, "item", "");
+                                class_XmlHelper.SetAttribute(existedResourceNode, "resource", cmb_relationshipchild_symbolsearching.Text);
+                                existedNode.AppendChild(newItemNode);
+                                txt_relationshipchild_docsource.Text = activeDoc.OuterXml;
+                                changedFlag_relationDoc[id] = true;
+                            }
+                            else
+                            {
+                                MessageBox.Show("添加的资源已经存在，无法重复添加.");
+                                return;
+                            }
                         }
                     }
                 }
@@ -691,6 +708,81 @@ namespace iKCoderDU
                 MessageBox.Show("请先选择一个存在的Child Documnet后再进行操作.");
                 return;
             }
+        }
+
+        private void button31_Click(object sender, EventArgs e)
+        {
+            if (lst_relationshipchild_doclist.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = lst_relationshipchild_doclist.SelectedItems[0];
+                string id = selectedItem.Text;
+                XmlDocument activeDoc = buffer_relationDoc[id.ToString()];
+                if (cmb_relationshipchild_groupname.Text != "")
+                {
+                    XmlNode existedNode = activeDoc.SelectSingleNode("/root/group[@name='" + cmb_relationshipchild_groupname.Text + "']");
+                    if (existedNode == null)
+                    {
+                        MessageBox.Show("Group 不存在，无法为不存在的节点添加属性.");
+                        return;
+                    }
+                    else
+                    {
+                        if (cmb_relationshipchild_symbolsearching.Text != "")
+                        {
+                           XmlNode existedResourceNode = existedNode.SelectSingleNode("item[@resource='" + cmb_relationshipchild_symbolsearching.Text + "']");
+                           if(existedResourceNode!=null)
+                           {
+                               existedResourceNode.RemoveChild(existedResourceNode);
+                               txt_relationshipchild_docsource.Text = activeDoc.OuterXml;
+                               changedFlag_relationDoc[id] = true;
+                           }
+                           else                           
+                           {
+                               MessageBox.Show("无法定位到资源配置，请检查后再操作.");
+                               return;
+                           }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("请先选择一个存在的Child Documnet后再进行操作.");
+                return;
+            }
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (lst_relationshipchild_doclist.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = lst_relationshipchild_doclist.SelectedItems[0];
+                string id = selectedItem.Text;
+                XmlDocument activeDoc = buffer_relationDoc[id.ToString()];                
+                txt_relationshipchild_docsource.Text = activeDoc.OuterXml;                               
+            }
+            else
+            {
+                MessageBox.Show("请先选择一个存在的Child Documnet后再进行操作.");
+                return;
+            }
+           
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+           foreach(string activeID in changedFlag_relationDoc.Keys)
+           {
+               if(changedFlag_relationDoc[activeID])
+               {
+                   
+               }
+           }
         }
   
     }
