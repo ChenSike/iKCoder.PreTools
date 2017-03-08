@@ -350,7 +350,7 @@ namespace iKCoderDU
                 MessageBox.Show("请先填写标识后在执行操作.");
             else
             {
-                string actionUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Relation/api_SetNewRelationDoc.aspx?cid=" + GlobalVars.cid + "&symbol=" + txt_relationsymbol.Text + "&type=child";
+                string actionUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Relation/api_SetNewRelationDoc.aspx?cid=" + GlobalVars.cid + "&symbol=" + txt_relationship_childsymbol.Text + "&type=child";
                 string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", actionUrl, 1000 * 60, 100000);
                 if (result.Contains("true"))
                     Flush_ResourceLst();
@@ -398,8 +398,8 @@ namespace iKCoderDU
                         ListViewItem lstRootItem = new ListViewItem();
                         lstRootItem.Text = id;
                         lstRootItem.SubItems.Add(class_XmlHelper.GetAttrValue(activeMsgNode, "symbol"));
-                        lstRootItem.SubItems.Add(groupNodes.Count.ToString());                       
-                        lst_resource.Items.Add(lstRootItem);
+                        lstRootItem.SubItems.Add(groupNodes.Count.ToString());
+                        lst_relationshipchild_doclist.Items.Add(lstRootItem);
                     }
                 }
             }
@@ -457,6 +457,7 @@ namespace iKCoderDU
                         XmlNode newGroupNode = class_XmlHelper.CreateNode(activeDoc, "group", "");
                         class_XmlHelper.SetAttribute(newGroupNode, "name", cmb_relationshipchild_groupname.Text);
                         activeDoc.SelectSingleNode("/root").AppendChild(newGroupNode);
+                        cmb_relationshipchild_groupname.Items.Add(cmb_relationshipchild_groupname.Text);
                         changedFlag_relationDoc[id] = true;
                     }
                 }
@@ -771,7 +772,26 @@ namespace iKCoderDU
 
         private void button22_Click(object sender, EventArgs e)
         {
-
+            if (lst_relationshipchild_doclist.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = lst_relationshipchild_doclist.SelectedItems[0];
+                string id = selectedItem.Text;
+                string getArrUrl = "api_SetRemoveRelationDoc.aspx?cid=" + GlobalVars.cid + "&id=" + id;
+                string requestURL = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Relation/" + getArrUrl;
+                string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", requestURL, 1000 * 60, 100000);
+                if (result.Contains("true"))
+                {
+                    MessageBox.Show("你已经成功删除了选定的关系文档.");
+                    flushChildDocument();
+                }
+                else
+                    MessageBox.Show("删除关系文档失败，请联系管理员.");
+            }
+            else
+            {
+                MessageBox.Show("请先选择一个存在的Child Documnet后再进行操作.");
+                return;
+            }
         }
 
         private void button21_Click(object sender, EventArgs e)
