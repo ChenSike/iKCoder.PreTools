@@ -678,6 +678,48 @@ namespace iKCoderDU
 
         }
 
+        public void flushParentDocuments()
+        {
+            lst_relationshipchild_doclist.Items.Clear();
+            try
+            {
+                string getArrUrl = "api_GetShipList.aspx?cid=" + GlobalVars.cid + "&type=child";
+                string requestURL = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Relation/" + getArrUrl;
+                string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", requestURL, 1000 * 60, 100000);
+                XmlDocument resultDoc = new XmlDocument();
+                resultDoc.LoadXml(result);
+                XmlNodeList msgNodeList = resultDoc.SelectNodes("/root/msg");
+                if (msgNodeList.Count == 0)
+                {
+                    return;
+                }
+                else
+                {
+                    lst_resource.Items.Clear();
+                    buffer_relationDoc.Clear();
+                    foreach (XmlNode activeMsgNode in msgNodeList)
+                    {
+                        string id = class_XmlHelper.GetAttrValue(activeMsgNode, "id");
+                        string strdoc = class_XmlHelper.GetAttrValue(activeMsgNode, "relationdoc");
+                        string debase64doc = class_CommonUtil.Decoder_Base64(strdoc);
+                        XmlDocument doc = new XmlDocument();
+                        doc.LoadXml(debase64doc);
+                        buffer_relationDoc.Add(id.ToString(), doc);
+                        XmlNodeList groupNodes = doc.SelectNodes("/root/group");
+                        ListViewItem lstRootItem = new ListViewItem();
+                        lstRootItem.Text = id;
+                        lstRootItem.SubItems.Add(class_XmlHelper.GetAttrValue(activeMsgNode, "symbol"));
+                        lstRootItem.SubItems.Add(groupNodes.Count.ToString());
+                        lst_relationshipchild_doclist.Items.Add(lstRootItem);
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("系统访问API出差，请检查参数或者网络。");
+            }
+        }
+
         private void button30_Click(object sender, EventArgs e)
         {
             if (lst_relationshipchild_doclist.SelectedItems.Count > 0)
@@ -825,6 +867,11 @@ namespace iKCoderDU
 
                }
            }
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+
         }
   
     }
