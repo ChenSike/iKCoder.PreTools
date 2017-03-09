@@ -13,6 +13,7 @@ using System.Xml;
 using System.IO;
 using Gma.QrCodeNet.Encoding;
 using Gma.QrCodeNet.Encoding.Windows.Render;
+using System.Threading;
 
 namespace iKCoderDU
 {
@@ -26,6 +27,7 @@ namespace iKCoderDU
         CookieContainer activeContainer = new CookieContainer();
         Dictionary<string, XmlDocument> buffer_relationDoc = new Dictionary<string, XmlDocument>();
         Dictionary<string, bool> changedFlag_relationDoc = new Dictionary<string, bool>();
+        Loading loadingForm = new Loading();
 
         public MainForm()
         {
@@ -34,10 +36,18 @@ namespace iKCoderDU
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Control.CheckForIllegalCrossThreadCalls = false;
             this.object_remote = new class_Net_RemoteRequest(ref activeContainer);
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            Thread newThread = new Thread(new ThreadStart(getToken));
+            newThread.Start();            
+            loadingForm.ShowDialog();
+        }
+
+        public void getToken()
         {
             if (!string.IsNullOrEmpty(cmb_server.Text) && !string.IsNullOrEmpty(cmb_produce.Text))
             {
@@ -45,12 +55,12 @@ namespace iKCoderDU
                 object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", requestURL, 1000, 1024 * 1024);
                 string input = "<root><name>" + cmb_produce.Text + "</name><code>" + cmb_code.Text + "</code></root>";
                 requestURL = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Token/api_getToken.aspx?cid=" + GlobalVars.cid;
-                object_cookies = object_remote.getRemoteServerCookie(requestURL,input);
-                if(object_cookies!=null && object_cookies.Count>0)
+                object_cookies = object_remote.getRemoteServerCookie(requestURL, input);
+                if (object_cookies != null && object_cookies.Count > 0)
                 {
-                    lst_cookies.Items.Clear();                   
+                    lst_cookies.Items.Clear();
                     lb_serverstatus.Text = "服务器状态：已经取得服务器TOKEN授权.";
-                    is_connected = true;                   
+                    is_connected = true;
                     foreach (Cookie activeCookie in object_cookies)
                     {
                         ListViewItem newItem = new ListViewItem(activeCookie.Name);
@@ -60,6 +70,7 @@ namespace iKCoderDU
                     }
                 }
             }
+            loadingForm.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -687,10 +698,10 @@ namespace iKCoderDU
                         if(cmb_relationshipchild_symbolsearching.Text != "")
                         {
                             XmlNode existedResourceNode = existedNode.SelectSingleNode("item[@resource='"+cmb_relationshipchild_symbolsearching.Text+"']");
-                            if (existedResourceNode != null)
+                            if (existedResourceNode == null)
                             {
                                 XmlNode newItemNode = class_XmlHelper.CreateNode(activeDoc, "item", "");
-                                class_XmlHelper.SetAttribute(existedResourceNode, "resource", cmb_relationshipchild_symbolsearching.Text);
+                                class_XmlHelper.SetAttribute(newItemNode, "resource", cmb_relationshipchild_symbolsearching.Text);
                                 existedNode.AppendChild(newItemNode);
                                 txt_relationshipchild_docsource.Text = activeDoc.OuterXml;
                                 changedFlag_relationDoc[id] = true;
@@ -803,7 +814,7 @@ namespace iKCoderDU
                    string id = activeID;
                    string doc = buffer_relationDoc[activeID].OuterXml;
                    string base64Doc = class_CommonUtil.Encoder_Base64(doc);
-                   string inputDoc = "<root><id>" + id + "</id><doc>" + base64Doc + "</doc>";
+                   string inputDoc = "<root><id>" + id + "</id><doc>" + base64Doc + "</doc></root>";
                    string getArrUrl = "api_SetUpdateRelationDoc.aspx?cid=" + GlobalVars.cid;
                    string requestURL = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Relation/" + getArrUrl;
                    string result = object_remote.getRemoteRequestToStringWithCookieHeader(inputDoc, requestURL, 1000 * 60, 100000);
