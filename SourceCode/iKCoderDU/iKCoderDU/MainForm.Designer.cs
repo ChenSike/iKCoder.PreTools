@@ -91,22 +91,22 @@
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.button17 = new System.Windows.Forms.Button();
+            this.tree_parentDocumnets = new System.Windows.Forms.TreeView();
             this.button16 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.lst_relationParentChildList = new System.Windows.Forms.ListView();
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button14 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txt_relationParentChildSearchKey = new System.Windows.Forms.TextBox();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_relationParentGroup = new System.Windows.Forms.TextBox();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.txt_relationsymbol = new System.Windows.Forms.TextBox();
+            this.txt_relationParentSymbol = new System.Windows.Forms.TextBox();
             this.button9 = new System.Windows.Forms.Button();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
@@ -138,7 +138,6 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.tree_parentDocumnets = new System.Windows.Forms.TreeView();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
@@ -729,19 +728,18 @@
             // 
             this.tabPage5.BackgroundImage = global::iKCoderDU.Properties.Resources.relationShipExplorer_fw;
             this.tabPage5.Controls.Add(this.tree_parentDocumnets);
-            this.tabPage5.Controls.Add(this.button17);
             this.tabPage5.Controls.Add(this.button16);
             this.tabPage5.Controls.Add(this.button15);
-            this.tabPage5.Controls.Add(this.listView2);
+            this.tabPage5.Controls.Add(this.lst_relationParentChildList);
             this.tabPage5.Controls.Add(this.button14);
             this.tabPage5.Controls.Add(this.button12);
             this.tabPage5.Controls.Add(this.button13);
-            this.tabPage5.Controls.Add(this.textBox5);
+            this.tabPage5.Controls.Add(this.txt_relationParentChildSearchKey);
             this.tabPage5.Controls.Add(this.linkLabel3);
-            this.tabPage5.Controls.Add(this.textBox4);
+            this.tabPage5.Controls.Add(this.txt_relationParentGroup);
             this.tabPage5.Controls.Add(this.button11);
             this.tabPage5.Controls.Add(this.button10);
-            this.tabPage5.Controls.Add(this.txt_relationsymbol);
+            this.tabPage5.Controls.Add(this.txt_relationParentSymbol);
             this.tabPage5.Controls.Add(this.button9);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
@@ -750,15 +748,12 @@
             this.tabPage5.Text = "RelationShip For Parents";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // button17
+            // tree_parentDocumnets
             // 
-            this.button17.Location = new System.Drawing.Point(797, 29);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(125, 23);
-            this.button17.TabIndex = 28;
-            this.button17.Text = "Search";
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
+            this.tree_parentDocumnets.Location = new System.Drawing.Point(5, 173);
+            this.tree_parentDocumnets.Name = "tree_parentDocumnets";
+            this.tree_parentDocumnets.Size = new System.Drawing.Size(387, 501);
+            this.tree_parentDocumnets.TabIndex = 29;
             // 
             // button16
             // 
@@ -778,19 +773,19 @@
             this.button15.Text = "<<";
             this.button15.UseVisualStyleBackColor = true;
             // 
-            // listView2
+            // lst_relationParentChildList
             // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lst_relationParentChildList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader11,
             this.columnHeader14,
             this.columnHeader15});
-            this.listView2.GridLines = true;
-            this.listView2.Location = new System.Drawing.Point(509, 167);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(404, 507);
-            this.listView2.TabIndex = 25;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
+            this.lst_relationParentChildList.GridLines = true;
+            this.lst_relationParentChildList.Location = new System.Drawing.Point(509, 167);
+            this.lst_relationParentChildList.Name = "lst_relationParentChildList";
+            this.lst_relationParentChildList.Size = new System.Drawing.Size(404, 507);
+            this.lst_relationParentChildList.TabIndex = 25;
+            this.lst_relationParentChildList.UseCompatibleStateImageBehavior = false;
+            this.lst_relationParentChildList.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader11
             // 
@@ -814,6 +809,7 @@
             this.button14.TabIndex = 24;
             this.button14.Text = "Delete Group";
             this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button12
             // 
@@ -823,6 +819,7 @@
             this.button12.TabIndex = 23;
             this.button12.Text = "New Group";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button13
             // 
@@ -834,13 +831,13 @@
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
-            // textBox5
+            // txt_relationParentChildSearchKey
             // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Location = new System.Drawing.Point(509, 125);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(350, 21);
-            this.textBox5.TabIndex = 17;
+            this.txt_relationParentChildSearchKey.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_relationParentChildSearchKey.Location = new System.Drawing.Point(509, 125);
+            this.txt_relationParentChildSearchKey.Name = "txt_relationParentChildSearchKey";
+            this.txt_relationParentChildSearchKey.Size = new System.Drawing.Size(350, 21);
+            this.txt_relationParentChildSearchKey.TabIndex = 17;
             // 
             // linkLabel3
             // 
@@ -852,13 +849,13 @@
             this.linkLabel3.TabStop = true;
             this.linkLabel3.Text = "Search";
             // 
-            // textBox4
+            // txt_relationParentGroup
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Location = new System.Drawing.Point(103, 99);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(282, 21);
-            this.textBox4.TabIndex = 14;
+            this.txt_relationParentGroup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_relationParentGroup.Location = new System.Drawing.Point(103, 99);
+            this.txt_relationParentGroup.Name = "txt_relationParentGroup";
+            this.txt_relationParentGroup.Size = new System.Drawing.Size(282, 21);
+            this.txt_relationParentGroup.TabIndex = 14;
             // 
             // button11
             // 
@@ -878,17 +875,17 @@
             this.button10.Text = "Delete Selected Doc";
             this.button10.UseVisualStyleBackColor = true;
             // 
-            // txt_relationsymbol
+            // txt_relationParentSymbol
             // 
-            this.txt_relationsymbol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_relationsymbol.Location = new System.Drawing.Point(110, 31);
-            this.txt_relationsymbol.Name = "txt_relationsymbol";
-            this.txt_relationsymbol.Size = new System.Drawing.Size(550, 21);
-            this.txt_relationsymbol.TabIndex = 4;
+            this.txt_relationParentSymbol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_relationParentSymbol.Location = new System.Drawing.Point(110, 31);
+            this.txt_relationParentSymbol.Name = "txt_relationParentSymbol";
+            this.txt_relationParentSymbol.Size = new System.Drawing.Size(681, 21);
+            this.txt_relationParentSymbol.TabIndex = 4;
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(666, 29);
+            this.button9.Location = new System.Drawing.Point(796, 30);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(125, 23);
             this.button9.TabIndex = 1;
@@ -1187,13 +1184,6 @@
             this.columnHeader13.Text = "Value";
             this.columnHeader13.Width = 93;
             // 
-            // tree_parentDocumnets
-            // 
-            this.tree_parentDocumnets.Location = new System.Drawing.Point(5, 173);
-            this.tree_parentDocumnets.Name = "tree_parentDocumnets";
-            this.tree_parentDocumnets.Size = new System.Drawing.Size(387, 501);
-            this.tree_parentDocumnets.TabIndex = 29;
-            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1307,12 +1297,12 @@
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.ColumnHeader columnHeader13;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.TextBox txt_relationsymbol;
+        private System.Windows.Forms.TextBox txt_relationParentSymbol;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txt_relationParentChildSearchKey;
         private System.Windows.Forms.LinkLabel linkLabel3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txt_relationParentGroup;
         private System.Windows.Forms.ToolStripMenuItem imageCoderToolStripMenuItem;
         private System.Windows.Forms.TextBox txt_getingdata;
         private System.Windows.Forms.Label label10;
@@ -1327,14 +1317,13 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView lst_relationParentChildList;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.ColumnHeader columnHeader14;
         private System.Windows.Forms.ColumnHeader columnHeader15;
         private System.Windows.Forms.TabPage tabPage8;
-        private System.Windows.Forms.Button button17;
         private System.Windows.Forms.TextBox txt_relationship_childsymbol;
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.Button button20;

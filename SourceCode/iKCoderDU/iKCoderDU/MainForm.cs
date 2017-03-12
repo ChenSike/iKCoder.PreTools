@@ -25,8 +25,10 @@ namespace iKCoderDU
         bool is_connected = false;
         Dictionary<string, string> urlMap = new Dictionary<string, string>();
         CookieContainer activeContainer = new CookieContainer();
-        Dictionary<string, XmlDocument> buffer_relationDoc = new Dictionary<string, XmlDocument>();
-        Dictionary<string, bool> changedFlag_relationDoc = new Dictionary<string, bool>();
+        Dictionary<string, XmlDocument> buffer_relationChildDoc = new Dictionary<string, XmlDocument>();
+        Dictionary<string, bool> changedFlag_relationChildDoc = new Dictionary<string, bool>();
+        Dictionary<string, XmlDocument> buffer_relationParentDoc = new Dictionary<string, XmlDocument>();
+        Dictionary<string, bool> changedFlag_relationParentDoc = new Dictionary<string, bool>();
         Loading loadingForm = new Loading();
 
         public MainForm()
@@ -339,18 +341,18 @@ namespace iKCoderDU
 
         private void button9_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txt_relationsymbol.Text))
+            if (string.IsNullOrEmpty(txt_relationParentSymbol.Text))
                 MessageBox.Show("请先填写标识后在执行操作.");
             else
             {
-                string actionUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Data/api_SetNewRelationDoc.aspx?cid=" + GlobalVars.cid + "&symbol=" + txt_relationsymbol.Text + "&type=parent";
+                string actionUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Data/api_SetNewRelationDoc.aspx?cid=" + GlobalVars.cid + "&symbol=" + txt_relationParentSymbol.Text + "&type=parent";
                 string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", actionUrl, 1000 * 60, 100000);
                 if (result.Contains("true"))
-                    Flush_ResourceLst();
+                    flushParentDocuments();
                 else
                 {
                     MessageBox.Show("无法执行操作，请联系系统管理员.");
-                    
+
                 }
             }
         }
@@ -368,7 +370,6 @@ namespace iKCoderDU
                 else
                 {
                     MessageBox.Show("无法执行操作，请联系系统管理员.");
-
                 }
             }
         }
@@ -396,7 +397,8 @@ namespace iKCoderDU
                 else
                 {
                     lst_resource.Items.Clear();
-                    buffer_relationDoc.Clear();
+                    buffer_relationChildDoc.Clear();
+                    changedFlag_relationParentDoc.Clear();
                     foreach (XmlNode activeMsgNode in msgNodeList)
                     {
                         string id = class_XmlHelper.GetAttrValue(activeMsgNode, "id");
@@ -404,7 +406,8 @@ namespace iKCoderDU
                         string debase64doc = class_CommonUtil.Decoder_Base64(strdoc);
                         XmlDocument doc = new XmlDocument();
                         doc.LoadXml(debase64doc);
-                        buffer_relationDoc.Add(id.ToString(), doc);
+                        buffer_relationChildDoc.Add(id.ToString(), doc);
+                        changedFlag_relationParentDoc.Add(id.ToString(), false);
                         XmlNodeList groupNodes = doc.SelectNodes("/root/group");
                         ListViewItem lstRootItem = new ListViewItem();
                         lstRootItem.Text = id;
@@ -431,7 +434,7 @@ namespace iKCoderDU
             {
                 ListViewItem selectedItem = lst_relationshipchild_doclist.SelectedItems[0];
                 string id = selectedItem.Text;
-                XmlDocument activeDoc = buffer_relationDoc[id.ToString()];
+                XmlDocument activeDoc = buffer_relationChildDoc[id.ToString()];
                 cmb_relationshipchild_groupname.Items.Clear();
                 XmlNodeList groupNodes = activeDoc.SelectNodes("/root/group");
                 foreach(XmlNode groupNode in groupNodes)
@@ -454,7 +457,7 @@ namespace iKCoderDU
             {
                 ListViewItem selectedItem = lst_relationshipchild_doclist.SelectedItems[0];
                 string id = selectedItem.Text;
-                XmlDocument activeDoc = buffer_relationDoc[id.ToString()];
+                XmlDocument activeDoc = buffer_relationChildDoc[id.ToString()];
                 if (cmb_relationshipchild_groupname.Text != "")
                 {
                     XmlNode existedNode = activeDoc.SelectSingleNode("/root/group[@name='" + cmb_relationshipchild_groupname.Text + "']");
@@ -469,7 +472,7 @@ namespace iKCoderDU
                         class_XmlHelper.SetAttribute(newGroupNode, "name", cmb_relationshipchild_groupname.Text);
                         activeDoc.SelectSingleNode("/root").AppendChild(newGroupNode);
                         cmb_relationshipchild_groupname.Items.Add(cmb_relationshipchild_groupname.Text);
-                        changedFlag_relationDoc[id] = true;
+                        changedFlag_relationChildDoc[id] = true;
                     }
                 }
             }
@@ -486,7 +489,7 @@ namespace iKCoderDU
             {
                 ListViewItem selectedItem = lst_relationshipchild_doclist.SelectedItems[0];
                 string id = selectedItem.Text;
-                XmlDocument activeDoc = buffer_relationDoc[id.ToString()];
+                XmlDocument activeDoc = buffer_relationChildDoc[id.ToString()];
                 if (cmb_relationshipchild_groupname.Text != "")
                 {
                     XmlNode existedNode = activeDoc.SelectSingleNode("/root/group[@name='" + cmb_relationshipchild_groupname.Text + "']");
@@ -501,7 +504,7 @@ namespace iKCoderDU
                         activeDoc.SelectSingleNode("/root").RemoveChild(removedGroupNode);
                         cmb_relationshipchild_groupname.Items.Remove(cmb_relationshipchild_groupname.Text);
                         cmb_relationshipchild_groupname.Text = "";
-                        changedFlag_relationDoc[id] = true;
+                        changedFlag_relationChildDoc[id] = true;
                     }
                 }
             }
@@ -518,7 +521,7 @@ namespace iKCoderDU
             {
                 ListViewItem selectedItem = lst_relationshipchild_doclist.SelectedItems[0];
                 string id = selectedItem.Text;
-                XmlDocument activeDoc = buffer_relationDoc[id.ToString()];
+                XmlDocument activeDoc = buffer_relationChildDoc[id.ToString()];
                 if (cmb_relationshipchild_groupname.Text != "")
                 {
                     XmlNode existedNode = activeDoc.SelectSingleNode("/root/group[@name='" + cmb_relationshipchild_groupname.Text + "']");
@@ -533,7 +536,7 @@ namespace iKCoderDU
                         {
                             XmlNode activeGroupNode = activeDoc.SelectSingleNode("/root/group[@name='" + cmb_relationshipchild_groupname.Text + "']");
                             class_XmlHelper.SetAttribute(activeGroupNode, cmb_relationshipchild_attrname.Text, txt_relationshipchild_attrvalue.Text);
-                            changedFlag_relationDoc[id] = true;
+                            changedFlag_relationChildDoc[id] = true;
                             txt_relationshipchild_docsource.Text = activeDoc.OuterXml;
                         }
                         else
@@ -556,7 +559,7 @@ namespace iKCoderDU
             {
                 ListViewItem selectedItem = lst_relationshipchild_doclist.SelectedItems[0];
                 string id = selectedItem.Text;
-                XmlDocument activeDoc = buffer_relationDoc[id.ToString()];
+                XmlDocument activeDoc = buffer_relationChildDoc[id.ToString()];
                 if (cmb_relationshipchild_groupname.Text != "")
                 {
                     XmlNode existedNode = activeDoc.SelectSingleNode("/root/group[@name='" + cmb_relationshipchild_groupname.Text + "']");
@@ -571,7 +574,7 @@ namespace iKCoderDU
                         {
                             XmlNode activeGroupNode = activeDoc.SelectSingleNode("/root/group[@name='" + cmb_relationshipchild_groupname.Text + "']");
                             class_XmlHelper.SetAttribute(activeGroupNode, cmb_relationshipchild_attrname.Text, txt_relationshipchild_attrvalue.Text);
-                            changedFlag_relationDoc[id] = true;
+                            changedFlag_relationChildDoc[id] = true;
                             txt_relationshipchild_docsource.Text = activeDoc.OuterXml;
                         }
                         else
@@ -594,7 +597,7 @@ namespace iKCoderDU
             {
                 ListViewItem selectedItem = lst_relationshipchild_doclist.SelectedItems[0];
                 string id = selectedItem.Text;
-                XmlDocument activeDoc = buffer_relationDoc[id.ToString()];
+                XmlDocument activeDoc = buffer_relationChildDoc[id.ToString()];
                 if (cmb_relationshipchild_groupname.Text != "")
                 {
                     XmlNode existedNode = activeDoc.SelectSingleNode("/root/group[@name='" + cmb_relationshipchild_groupname.Text + "']");
@@ -615,7 +618,7 @@ namespace iKCoderDU
                                 cmb_relationshipchild_attrname.Items.Remove(cmb_relationshipchild_attrname.Text);
                                 cmb_relationshipchild_attrname.Text = "";
                                 txt_relationshipchild_docsource.Text = activeDoc.OuterXml;
-                                changedFlag_relationDoc[id] = true;
+                                changedFlag_relationChildDoc[id] = true;
                             }
                             else
                             {
@@ -675,7 +678,7 @@ namespace iKCoderDU
 
         private void button13_Click(object sender, EventArgs e)
         {
-
+            flushParentDocuments();
         }
 
         public void flushParentDocuments()
@@ -683,7 +686,7 @@ namespace iKCoderDU
             lst_relationshipchild_doclist.Items.Clear();
             try
             {
-                string getArrUrl = "api_GetShipList.aspx?cid=" + GlobalVars.cid + "&type=child";
+                string getArrUrl = "api_GetShipList.aspx?cid=" + GlobalVars.cid + "&type=parent";
                 string requestURL = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Relation/" + getArrUrl;
                 string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", requestURL, 1000 * 60, 100000);
                 XmlDocument resultDoc = new XmlDocument();
@@ -695,22 +698,37 @@ namespace iKCoderDU
                 }
                 else
                 {
-                    lst_resource.Items.Clear();
-                    buffer_relationDoc.Clear();
+                    tree_parentDocumnets.Nodes.Clear();
+                    buffer_relationParentDoc.Clear();
                     foreach (XmlNode activeMsgNode in msgNodeList)
                     {
                         string id = class_XmlHelper.GetAttrValue(activeMsgNode, "id");
                         string strdoc = class_XmlHelper.GetAttrValue(activeMsgNode, "relationdoc");
+                        string symbol = class_XmlHelper.GetAttrValue(activeMsgNode,"symbol");
                         string debase64doc = class_CommonUtil.Decoder_Base64(strdoc);
                         XmlDocument doc = new XmlDocument();
                         doc.LoadXml(debase64doc);
-                        buffer_relationDoc.Add(id.ToString(), doc);
+                        buffer_relationParentDoc.Add(id.ToString(), doc);
                         XmlNodeList groupNodes = doc.SelectNodes("/root/group");
-                        ListViewItem lstRootItem = new ListViewItem();
-                        lstRootItem.Text = id;
-                        lstRootItem.SubItems.Add(class_XmlHelper.GetAttrValue(activeMsgNode, "symbol"));
-                        lstRootItem.SubItems.Add(groupNodes.Count.ToString());
-                        lst_relationshipchild_doclist.Items.Add(lstRootItem);
+                        TreeNode newNode = new TreeNode();
+                        newNode.Text = id;
+                        newNode.Nodes.Add("ID:" + id);
+                        newNode.Nodes.Add("SYMBOL:" + symbol);
+                        TreeNode groupNode = newNode.Nodes.Add("Groups");
+                        foreach(XmlNode activeGroup in groupNodes)
+                        {
+                            TreeNode groupTreeNode = groupNode.Nodes.Add("Group");
+                            XmlNodeList items = activeGroup.SelectNodes("item");
+                            foreach(XmlNode activeItem in items)
+                            {
+                                TreeNode childdocNode = groupTreeNode.Nodes.Add("childdoc");
+                                string childID = class_XmlHelper.GetAttrValue(activeItem, "id");
+                                string childSymbol = class_XmlHelper.GetAttrValue(activeItem, "symbol");
+                                childdocNode.Nodes.Add("Child Document ID:" + childID);
+                                childdocNode.Nodes.Add("Child Documnet Symbol:" + childSymbol);
+                            }
+                        }
+
                     }
                 }
             }
@@ -726,7 +744,7 @@ namespace iKCoderDU
             {
                 ListViewItem selectedItem = lst_relationshipchild_doclist.SelectedItems[0];
                 string id = selectedItem.Text;
-                XmlDocument activeDoc = buffer_relationDoc[id.ToString()];
+                XmlDocument activeDoc = buffer_relationChildDoc[id.ToString()];
                 if (cmb_relationshipchild_groupname.Text != "")
                 {
                     XmlNode existedNode = activeDoc.SelectSingleNode("/root/group[@name='" + cmb_relationshipchild_groupname.Text + "']");
@@ -746,7 +764,7 @@ namespace iKCoderDU
                                 class_XmlHelper.SetAttribute(newItemNode, "resource", cmb_relationshipchild_symbolsearching.Text);
                                 existedNode.AppendChild(newItemNode);
                                 txt_relationshipchild_docsource.Text = activeDoc.OuterXml;
-                                changedFlag_relationDoc[id] = true;
+                                changedFlag_relationChildDoc[id] = true;
                             }
                             else
                             {
@@ -770,7 +788,7 @@ namespace iKCoderDU
             {
                 ListViewItem selectedItem = lst_relationshipchild_doclist.SelectedItems[0];
                 string id = selectedItem.Text;
-                XmlDocument activeDoc = buffer_relationDoc[id.ToString()];
+                XmlDocument activeDoc = buffer_relationChildDoc[id.ToString()];
                 if (cmb_relationshipchild_groupname.Text != "")
                 {
                     XmlNode existedNode = activeDoc.SelectSingleNode("/root/group[@name='" + cmb_relationshipchild_groupname.Text + "']");
@@ -788,7 +806,7 @@ namespace iKCoderDU
                            {
                                existedResourceNode.RemoveChild(existedResourceNode);
                                txt_relationshipchild_docsource.Text = activeDoc.OuterXml;
-                               changedFlag_relationDoc[id] = true;
+                               changedFlag_relationChildDoc[id] = true;
                            }
                            else                           
                            {
@@ -812,7 +830,7 @@ namespace iKCoderDU
             {
                 ListViewItem selectedItem = lst_relationshipchild_doclist.SelectedItems[0];
                 string id = selectedItem.Text;
-                XmlDocument activeDoc = buffer_relationDoc[id.ToString()];                
+                XmlDocument activeDoc = buffer_relationChildDoc[id.ToString()];                
                 txt_relationshipchild_docsource.Text = activeDoc.OuterXml;                               
             }
             else
@@ -849,12 +867,12 @@ namespace iKCoderDU
 
         private void button21_Click(object sender, EventArgs e)
         {
-           foreach(string activeID in changedFlag_relationDoc.Keys)
+           foreach(string activeID in changedFlag_relationChildDoc.Keys)
            {
-               if (changedFlag_relationDoc[activeID])
+               if (changedFlag_relationChildDoc[activeID])
                {
                    string id = activeID;
-                   string doc = buffer_relationDoc[activeID].OuterXml;
+                   string doc = buffer_relationChildDoc[activeID].OuterXml;
                    string base64Doc = class_CommonUtil.Encoder_Base64(doc);
                    string inputDoc = "<root><id>" + id + "</id><doc>" + base64Doc + "</doc></root>";
                    string getArrUrl = "api_SetUpdateRelationDoc.aspx?cid=" + GlobalVars.cid;
@@ -870,6 +888,34 @@ namespace iKCoderDU
         }
 
         private void button17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txt_relationParentGroup.Text))
+            {
+                if(tree_parentDocumnets.SelectedNode.Level==0)
+                {
+                    string id = tree_parentDocumnets.SelectedNode.Text;
+                    XmlNode groupNode = class_XmlHelper.CreateNode(buffer_relationParentDoc[id], "group", "");
+                    class_XmlHelper.SetAttribute(groupNode, "name", txt_relationParentGroup.Text);
+                    buffer_relationParentDoc[id].AppendChild(groupNode);
+                    changedFlag_relationParentDoc[id] = true;
+                }
+                else
+                {
+                    MessageBox.Show("请选择一个PARENT DOCUMENT后进行操作，无法完成操作.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("请填写GROUP NAME后进行操作，无法完成操作.");
+            }
+        }
+
+        private void button14_Click(object sender, EventArgs e)
         {
 
         }
