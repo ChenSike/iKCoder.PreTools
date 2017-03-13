@@ -345,7 +345,7 @@ namespace iKCoderDU
                 MessageBox.Show("请先填写标识后在执行操作.");
             else
             {
-                string actionUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Data/api_SetNewRelationDoc.aspx?cid=" + GlobalVars.cid + "&symbol=" + txt_relationParentSymbol.Text + "&type=parent";
+                string actionUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Relation/api_SetNewRelationDoc.aspx?cid=" + GlobalVars.cid + "&symbol=" + txt_relationParentSymbol.Text + "&type=parent";
                 string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", actionUrl, 1000 * 60, 100000);
                 if (result.Contains("true"))
                     flushParentDocuments();
@@ -918,6 +918,28 @@ namespace iKCoderDU
         private void button14_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            foreach (string activeID in changedFlag_relationParentDoc.Keys)
+            {
+                if (changedFlag_relationParentDoc[activeID])
+                {
+                    string id = activeID;
+                    string doc = buffer_relationParentDoc[activeID].OuterXml;
+                    string base64Doc = class_CommonUtil.Encoder_Base64(doc);
+                    string inputDoc = "<root><id>" + id + "</id><doc>" + base64Doc + "</doc></root>";
+                    string getArrUrl = "api_SetUpdateRelationDoc.aspx?cid=" + GlobalVars.cid;
+                    string requestURL = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Relation/" + getArrUrl;
+                    string result = object_remote.getRemoteRequestToStringWithCookieHeader(inputDoc, requestURL, 1000 * 60, 100000);
+                    if (result.Contains("true"))
+                        MessageBox.Show("你已经成功更新了所有的关系文档.");
+                    else
+                        MessageBox.Show("更新关系文档失败，请联系管理员.");
+
+                }
+            }
         }
   
     }
