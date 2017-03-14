@@ -40,6 +40,8 @@ namespace iKCoderDU
         {
             Control.CheckForIllegalCrossThreadCalls = false;
             this.object_remote = new class_Net_RemoteRequest(ref activeContainer);
+            Thread threadForCheckServer = new Thread(new ThreadStart(connectServer));
+            threadForCheckServer.Start();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,6 +49,23 @@ namespace iKCoderDU
             Thread newThread = new Thread(new ThreadStart(getToken));
             newThread.Start();            
             loadingForm.ShowDialog();
+        }
+
+        public void connectServer()
+        {
+            while (true)
+            {
+                if (!string.IsNullOrEmpty(cmb_server.Text) && !string.IsNullOrEmpty(cmb_produce.Text))
+                {
+                    string requestURL = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/System/api_VerifyStatusOfPlatform.aspx?keycode=AllowPlatformOperation";
+                    string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", requestURL, 1000, 1024 * 1024);
+                    if (result.Contains("true"))
+                    {
+                        lb_serverconnected.Text = "远程服务器通信状态：正常";
+                    }
+                }
+                Thread.Sleep(3000);
+            }
         }
 
         public void getToken()
@@ -728,7 +747,7 @@ namespace iKCoderDU
                                 childdocNode.Nodes.Add("Child Documnet Symbol:" + childSymbol);
                             }
                         }
-
+                        tree_parentDocumnets.Nodes.Add(newNode);
                     }
                 }
             }
@@ -940,6 +959,56 @@ namespace iKCoderDU
 
                 }
             }
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            lst_relationParentChildList.Items.Clear();
+            try
+            {
+                string getArrUrl = "api_GetShipList.aspx?cid=" + GlobalVars.cid + "&type=child";
+                string requestURL = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Relation/" + getArrUrl;
+                string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", requestURL, 1000 * 60, 100000);
+                XmlDocument resultDoc = new XmlDocument();
+                resultDoc.LoadXml(result);
+                XmlNodeList msgNodeList = null;
+                if (txt_relationParentChildSearchKey.Text == string.Empty)
+                    msgNodeList = resultDoc.SelectNodes("/root/msg");
+                else
+                    msgNodeList = resultDoc.SelectNodes("/root/msg[@symbol = '" + txt_relationParentChildSearchKey.Text + "']");
+                if (msgNodeList.Count == 0)
+                {
+                    return;
+                }
+                else
+                {
+
+                    foreach (XmlNode activeMsgNode in msgNodeList)
+                    {
+                        string id = class_XmlHelper.GetAttrValue(activeMsgNode, "id");
+                        string strdoc = class_XmlHelper.GetAttrValue(activeMsgNode, "relationdoc");
+                        string debase64doc = class_CommonUtil.Decoder_Base64(strdoc);
+                        XmlDocument doc = new XmlDocument();
+                        doc.LoadXml(debase64doc);
+                        XmlNodeList groupNodes = doc.SelectNodes("/root/group");
+                        ListViewItem lstRootItem = new ListViewItem();
+                        lstRootItem.Text = id;
+                        lstRootItem.SubItems.Add(class_XmlHelper.GetAttrValue(activeMsgNode, "symbol"));
+                        lstRootItem.SubItems.Add(groupNodes.Count.ToString());
+                        lst_relationParentChildList.Items.Add(lstRootItem);
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("系统访问API出差，请检查参数或者网络。");
+            }
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
   
     }
