@@ -143,6 +143,7 @@ namespace iKCoderDU
 
         private void 退出ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            Application.ExitThread();
             Application.Exit();
         }
 
@@ -1009,6 +1010,68 @@ namespace iKCoderDU
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button17_Click_1(object sender, EventArgs e)
+        {
+            Flush_Profiles();
+        }
+
+        protected void Flush_Profiles()
+        {
+            try
+            {
+                string getArrUrl = "api_GetDataAggInfo.aspx?cid=" + GlobalVars.cid;
+                string requestURL = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/data/" + getArrUrl;
+                string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", requestURL, 1000 * 60, 100000);
+                XmlDocument resultDoc = new XmlDocument();
+                resultDoc.LoadXml(result);
+                XmlNodeList msgNodeList = resultDoc.SelectNodes("/root/msg[starts-with(@symbol,'profile')]");
+                if (msgNodeList.Count == 0)
+                {
+                    return;
+                }
+                else
+                {
+                    cmb_profileresource.Items.Clear();
+                    foreach (XmlNode activeMsgNode in msgNodeList)
+                    {
+                        string symbol = class_XmlHelper.GetAttrValue(activeMsgNode, "symbol");
+                        cmb_profileresource.Items.Add(symbol);
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("系统访问API出差，请检查参数或者网络。");
+            }
+        }
+
+        private void cmb_profileresource_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+
+
+        }
+
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string symbol = cmb_profileresource.SelectedItem.ToString();
+            if (!string.IsNullOrEmpty(symbol))
+            {
+                txt_getingdata.Text = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Data/api_GetMetaText.aspx?cid=" + GlobalVars.cid + "&symbol=" + symbol;
+                string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", txt_getingdata.Text, 1000 * 60, 100000);
+                XmlDocument resultDoc = new XmlDocument();
+                resultDoc.LoadXml(result);
+                XmlNode msgNode = resultDoc.SelectSingleNode("/root/msg");
+                if (msgNode != null)
+                {
+                    string data = class_XmlHelper.GetAttrValue(msgNode, "msg");
+                    txt_profiledocument.Text = class_CommonUtil.Decoder_Base64(data);
+                }
+                else
+                    MessageBox.Show("无法获取数据，请联系系统管理员.");
+            }
         }
   
     }

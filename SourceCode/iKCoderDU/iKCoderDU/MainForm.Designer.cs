@@ -136,10 +136,8 @@
             this.button19 = new System.Windows.Forms.Button();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button32 = new System.Windows.Forms.Button();
+            this.txt_profiledocument = new System.Windows.Forms.TextBox();
+            this.cmb_profileresource = new System.Windows.Forms.ComboBox();
             this.button18 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -148,6 +146,7 @@
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lb_serverconnected = new System.Windows.Forms.Label();
+            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
@@ -1174,9 +1173,8 @@
             // 
             this.tabPage9.BackgroundImage = global::iKCoderDU.Properties.Resources.ProfileDocuments_fw;
             this.tabPage9.Controls.Add(this.linkLabel4);
-            this.tabPage9.Controls.Add(this.textBox1);
-            this.tabPage9.Controls.Add(this.comboBox1);
-            this.tabPage9.Controls.Add(this.button32);
+            this.tabPage9.Controls.Add(this.txt_profiledocument);
+            this.tabPage9.Controls.Add(this.cmb_profileresource);
             this.tabPage9.Controls.Add(this.button18);
             this.tabPage9.Controls.Add(this.button17);
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
@@ -1187,50 +1185,32 @@
             this.tabPage9.Text = "Account Profile";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
-            // linkLabel4
+            // txt_profiledocument
             // 
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.Location = new System.Drawing.Point(862, 114);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(53, 12);
-            this.linkLabel4.TabIndex = 29;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "刷新文档";
+            this.txt_profiledocument.Location = new System.Drawing.Point(11, 129);
+            this.txt_profiledocument.Multiline = true;
+            this.txt_profiledocument.Name = "txt_profiledocument";
+            this.txt_profiledocument.Size = new System.Drawing.Size(904, 545);
+            this.txt_profiledocument.TabIndex = 28;
             // 
-            // textBox1
+            // cmb_profileresource
             // 
-            this.textBox1.Location = new System.Drawing.Point(11, 129);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(904, 545);
-            this.textBox1.TabIndex = 28;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmb_profileresource.FormattingEnabled = true;
+            this.cmb_profileresource.Items.AddRange(new object[] {
             "iKCoder"});
-            this.comboBox1.Location = new System.Drawing.Point(139, 66);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(498, 20);
-            this.comboBox1.TabIndex = 23;
-            // 
-            // button32
-            // 
-            this.button32.Location = new System.Drawing.Point(672, 32);
-            this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(222, 23);
-            this.button32.TabIndex = 26;
-            this.button32.Text = "应用到已经存在的PROFILES";
-            this.button32.UseVisualStyleBackColor = true;
+            this.cmb_profileresource.Location = new System.Drawing.Point(139, 66);
+            this.cmb_profileresource.Name = "cmb_profileresource";
+            this.cmb_profileresource.Size = new System.Drawing.Size(498, 20);
+            this.cmb_profileresource.TabIndex = 23;
+            this.cmb_profileresource.SelectedIndexChanged += new System.EventHandler(this.cmb_profileresource_SelectedIndexChanged);
             // 
             // button18
             // 
             this.button18.Location = new System.Drawing.Point(302, 32);
             this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(134, 23);
+            this.button18.Size = new System.Drawing.Size(227, 23);
             this.button18.TabIndex = 24;
-            this.button18.Text = "同步模板";
+            this.button18.Text = "同步模板到每一个ACCOUNT";
             this.button18.UseVisualStyleBackColor = true;
             // 
             // button17
@@ -1241,6 +1221,7 @@
             this.button17.TabIndex = 23;
             this.button17.Text = "从资源中加载所有的PROFILES";
             this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click_1);
             // 
             // button3
             // 
@@ -1294,6 +1275,17 @@
             this.lb_serverconnected.Size = new System.Drawing.Size(149, 12);
             this.lb_serverconnected.TabIndex = 23;
             this.lb_serverconnected.Text = "远程服务器通信状态：中断";
+            // 
+            // linkLabel4
+            // 
+            this.linkLabel4.AutoSize = true;
+            this.linkLabel4.Location = new System.Drawing.Point(646, 70);
+            this.linkLabel4.Name = "linkLabel4";
+            this.linkLabel4.Size = new System.Drawing.Size(77, 12);
+            this.linkLabel4.TabIndex = 29;
+            this.linkLabel4.TabStop = true;
+            this.linkLabel4.Text = "加载资源文档";
+            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
             // 
             // MainForm
             // 
@@ -1467,11 +1459,10 @@
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.ToolStripMenuItem serverConfigToolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dBBackupLineToolStripMenuItem;
-        private System.Windows.Forms.LinkLabel linkLabel4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button32;
+        private System.Windows.Forms.TextBox txt_profiledocument;
+        private System.Windows.Forms.ComboBox cmb_profileresource;
         private System.Windows.Forms.Label lb_serverconnected;
+        private System.Windows.Forms.LinkLabel linkLabel4;
     }
 }
 
