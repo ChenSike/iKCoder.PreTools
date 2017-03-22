@@ -31,6 +31,8 @@ namespace iKCoderDU
         Dictionary<string, bool> changedFlag_relationParentDoc = new Dictionary<string, bool>();
         Loading loadingForm = new Loading();
 
+        Thread threadForCheckServer;
+
         public MainForm()
         {
             InitializeComponent();
@@ -40,7 +42,7 @@ namespace iKCoderDU
         {
             Control.CheckForIllegalCrossThreadCalls = false;
             this.object_remote = new class_Net_RemoteRequest(ref activeContainer);
-            Thread threadForCheckServer = new Thread(new ThreadStart(connectServer));
+            threadForCheckServer = new Thread(new ThreadStart(connectServer));
             threadForCheckServer.Start();
         }
 
@@ -143,6 +145,7 @@ namespace iKCoderDU
 
         private void 退出ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            threadForCheckServer.Abort();
             Application.ExitThread();
             Application.Exit();
         }
@@ -1072,6 +1075,11 @@ namespace iKCoderDU
                 else
                     MessageBox.Show("无法获取数据，请联系系统管理员.");
             }
+        }
+
+        private void tabPage7_Click(object sender, EventArgs e)
+        {
+
         }
   
     }
