@@ -56,6 +56,7 @@
             this.imageCoderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serverConfigToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dBBackupLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.calcBuilderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.场景管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.课程场景ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -148,7 +149,6 @@
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lb_serverconnected = new System.Windows.Forms.Label();
-            this.calcBuilderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
@@ -308,7 +308,8 @@
             this.cmb_URL.Items.AddRange(new object[] {
             "/Account/SET_Reg.aspx",
             "/Data/GET_CheckCodeNUA.aspx?length=5&name=regusr&width=300&height=50",
-            "/Account/api_VerifyAccountExisted.aspx?username=18675521735"});
+            "/Account/api_VerifyAccountExisted.aspx?username=18675521735",
+            "/Data/api_GetCalcDataPonit.aspx"});
             this.cmb_URL.Location = new System.Drawing.Point(304, 89);
             this.cmb_URL.Name = "cmb_URL";
             this.cmb_URL.Size = new System.Drawing.Size(884, 20);
@@ -416,6 +417,12 @@
             this.dBBackupLineToolStripMenuItem.Name = "dBBackupLineToolStripMenuItem";
             this.dBBackupLineToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.dBBackupLineToolStripMenuItem.Text = "DataBase Backup Line";
+            // 
+            // calcBuilderToolStripMenuItem
+            // 
+            this.calcBuilderToolStripMenuItem.Name = "calcBuilderToolStripMenuItem";
+            this.calcBuilderToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.calcBuilderToolStripMenuItem.Text = "Calc Builder";
             // 
             // 数据ToolStripMenuItem
             // 
@@ -1301,12 +1308,6 @@
             this.lb_serverconnected.Size = new System.Drawing.Size(149, 12);
             this.lb_serverconnected.TabIndex = 23;
             this.lb_serverconnected.Text = "远程服务器通信状态：中断";
-            // 
-            // calcBuilderToolStripMenuItem
-            // 
-            this.calcBuilderToolStripMenuItem.Name = "calcBuilderToolStripMenuItem";
-            this.calcBuilderToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.calcBuilderToolStripMenuItem.Text = "Calc Builder";
             // 
             // MainForm
             // 

@@ -155,7 +155,7 @@ namespace iKCoderDU
             try
             {
                 string requestURL = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + cmb_URL.Text;
-                string result = object_remote.getRemoteXMLRequestToString(txtInput.Text, requestURL, 1000 * 60, 100000, null);
+                string result = object_remote.getRemoteRequestToStringWithCookieHeader(txtInput.Text, requestURL, 1000 * 60, 1000000);
                 txtResult.Text = result;
             }
             catch
@@ -170,7 +170,7 @@ namespace iKCoderDU
             try
             {
                 string requestURL = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + cmb_URL.Text;
-                byte[] data = object_remote.getRemoteXMLRequestToByte("<root></root>", requestURL, 1000 * 60, 100000, null);
+                byte[] data = object_remote.getRemoteRequestToByteWithCookieHeader("<root></root>", requestURL, 1000 * 60, 1000000);
                 MemoryStream ms = new MemoryStream();
                 ms.Write(data, 0, data.Length);
                 Image activeImage = Image.FromStream(ms);
