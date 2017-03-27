@@ -1243,8 +1243,9 @@
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(227, 23);
             this.button18.TabIndex = 24;
-            this.button18.Text = "同步模板到每一个ACCOUNT";
+            this.button18.Text = "同步模板到所选产品的每一个ACCOUNT";
             this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click_1);
             // 
             // button17
             // 
