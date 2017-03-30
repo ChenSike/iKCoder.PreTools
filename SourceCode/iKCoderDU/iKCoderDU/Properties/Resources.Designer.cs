@@ -73,6 +73,16 @@ namespace iKCoderDU.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap configForm_fw {
+            get {
+                object obj = ResourceManager.GetObject("configForm.fw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap encoderMetroData_fw {
             get {
                 object obj = ResourceManager.GetObject("encoderMetroData.fw", resourceCulture);

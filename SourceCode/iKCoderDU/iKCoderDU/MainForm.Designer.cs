@@ -334,7 +334,7 @@
             this.退出ToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(9, 31);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(232, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(324, 25);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -411,6 +411,7 @@
             this.serverConfigToolsToolStripMenuItem.Name = "serverConfigToolsToolStripMenuItem";
             this.serverConfigToolsToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.serverConfigToolsToolStripMenuItem.Text = "Server Config Tools";
+            this.serverConfigToolsToolStripMenuItem.Click += new System.EventHandler(this.serverConfigToolsToolStripMenuItem_Click);
             // 
             // dBBackupLineToolStripMenuItem
             // 

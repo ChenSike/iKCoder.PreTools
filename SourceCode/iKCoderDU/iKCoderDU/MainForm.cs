@@ -1086,6 +1086,12 @@ namespace iKCoderDU
         {
 
         }
+
+        private void serverConfigToolsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConfigForm obj = new ConfigForm();
+            obj.ShowDialog();
+        }
   
     }
 }

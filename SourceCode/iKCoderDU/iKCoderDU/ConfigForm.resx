@@ -117,47 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ProfileDocuments.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\ProfileDocuments.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="relationShipParentExplorer.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\relationShipParentExplorer.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="importBinData.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\importBinData.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="encoderMetroData.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\encoderMetroData.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="resourceExplorer.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\resourceExplorer.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="splash.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\splash.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mainform.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\mainform.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="relationShipExplorer.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\relationShipExplorer.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\loading.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="prevImg.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\prevImg.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="importTextData.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\importTextData.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="aggreegateInformation.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\aggreegateInformation.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sencesRecommened.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\sencesRecommened.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="configForm.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\configForm.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

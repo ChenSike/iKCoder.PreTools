@@ -54,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfigForm.Designer.cs">
+      <DependentUpon>ConfigForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EncoderMetrixImage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     <Compile Include="Splash.Designer.cs">
       <DependentUpon>Splash.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ConfigForm.resx">
+      <DependentUpon>ConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EncoderMetrixImage.resx">
       <DependentUpon>EncoderMetrixImage.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,6 +190,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="20170314104646905_easyicon_net_64.ico" />
+    <None Include="img\configForm.fw.png" />
     <None Include="img\ProfileDocuments.fw.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
