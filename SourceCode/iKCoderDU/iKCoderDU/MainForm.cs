@@ -32,6 +32,7 @@ namespace iKCoderDU
         Loading loadingForm = new Loading();
 
         Thread threadForCheckServer;
+        Thread threadForSynProfileTemplate;
 
         public MainForm()
         {
@@ -298,7 +299,7 @@ namespace iKCoderDU
                 string type = selectedItem.SubItems[2].Text;
                 if(type=="text")
                 {
-                    txt_getingdata.Text = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Data/api_GetMetaText.aspx?cid=" + GlobalVars.cid + "&symbol=" + symbol;
+                    txt_getingdata.Text = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Data/api_GetMetaTextBase64Data.aspx?cid=" + GlobalVars.cid + "&symbol=" + symbol;
                     string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", txt_getingdata.Text, 1000 * 60, 100000);
                     XmlDocument resultDoc = new XmlDocument();
                     resultDoc.LoadXml(result);
@@ -1070,7 +1071,7 @@ namespace iKCoderDU
                 if (msgNode != null)
                 {
                     string data = class_XmlHelper.GetAttrValue(msgNode, "msg");
-                    txt_profiledocument.Text = class_CommonUtil.Decoder_Base64(data);
+                    txt_profiledocument.Text = data;
                 }
                 else
                     MessageBox.Show("无法获取数据，请联系系统管理员.");
@@ -1084,13 +1085,107 @@ namespace iKCoderDU
 
         private void button18_Click_1(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(txt_profiledocument.Text))
+            {
+                if (MessageBox.Show("你即将把模板同步到所有相关产品的账户中，请确认是否执行，此执行无法回滚.", "警告", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    threadForSynProfileTemplate = new Thread(new ThreadStart(synTemplateToProfiles));
+                    threadForSynProfileTemplate.Start();
+                    loadingForm.ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show("请先加载文档模板后执行操作.");
+            }
+        }
 
+        private void synTemplateToProfiles()
+        {
+            XmlDocument tmpDocument = new XmlDocument();
+            tmpDocument.LoadXml(txt_profiledocument.Text);
+            List<XmlNode> result = new List<XmlNode>();
+            class_XmlHelper.TraverseAllNodes(tmpDocument.DocumentElement, ref result);                        
+            lsv_analysistemplate.Items.Clear();
+            string getArrUrl = "api_AccountProfile_GetAggList.aspx?cid=" + GlobalVars.cid;
+            string requestURL = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/profile/" + getArrUrl;
+            string strresult = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", requestURL, 1000 * 60, 100000);
+            XmlDocument aggDoc = new XmlDocument();
+            aggDoc.LoadXml(strresult);
+            foreach (XmlNode activeItemNode in aggDoc.SelectNodes("/root/msg"))
+            {
+                string symbol = class_XmlHelper.GetAttrValue(activeItemNode, "symbol");
+                getArrUrl = "api_AccountProfile_SelectProfileBySymbol.aspx?cid=" + GlobalVars.cid + "&symbol=" + symbol;
+                requestURL = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/profile/" + getArrUrl;
+                strresult = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", requestURL, 1000 * 60, 100000);
+                XmlDocument resultDoc = new XmlDocument();
+                resultDoc.LoadXml(strresult);
+                string strprofile = string.Empty;
+                XmlDocument profileDoc = new XmlDocument();
+                profileDoc.LoadXml(strprofile);
+                foreach (XmlNode activeNode in result)
+                {
+                    string xpathfornode = class_XmlHelper.BuildXpath(activeNode);
+                    XmlNode profileNode = profileDoc.SelectSingleNode(xpathfornode);
+                    if (profileNode == null)
+                    {
+                        profileNode = class_XmlHelper.CreateNodeByXpath(profileDoc, xpathfornode, "");
+                    }
+                    Dictionary<string, string> attrsFromTemplateNode = class_XmlHelper.BuildNodeAttributes(activeNode);
+                    foreach (string attrKey in attrsFromTemplateNode.Keys)
+                    {
+                        class_XmlHelper.SetAttrValue(profileNode, attrKey, attrsFromTemplateNode[attrKey]);
+                    }
+                }
+                string strBase64 = string.Empty;
+                strBase64 = class_CommonUtil.Encoder_Base64(profileDoc.OuterXml);
+                StringBuilder inputDoc = new StringBuilder();
+                inputDoc.Append("<root>");
+                inputDoc.Append("<symbol>");
+                inputDoc.Append(symbol);
+                inputDoc.Append("</symbol>");
+                inputDoc.Append("<data>");
+                inputDoc.Append(strBase64);
+                inputDoc.Append("</data>");
+                inputDoc.Append("</root>");
+                getArrUrl = "api_AccountProfile_UpdateBySymbol.aspx?cid=" + GlobalVars.cid + "&symbol=" + symbol;
+                requestURL = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/profile/" + getArrUrl;
+                strresult = object_remote.getRemoteRequestToStringWithCookieHeader(inputDoc.ToString(), requestURL, 1000 * 60, 100000);
+            }          
+            loadingForm.Close();
+            MessageBox.Show("完成同步PROFILE模板到所有账户上.");   
+                       
         }
 
         private void serverConfigToolsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConfigForm obj = new ConfigForm();
             obj.ShowDialog();
+        }
+
+        private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txt_profiledocument.Text))
+            {
+                XmlDocument tmpDocument = new XmlDocument();
+                tmpDocument.LoadXml(txt_profiledocument.Text);
+                List<XmlNode> result = new List<XmlNode>();
+                class_XmlHelper.TraverseAllNodes(tmpDocument.DocumentElement, ref result);
+                lsv_analysistemplate.Items.Clear();
+                foreach(XmlNode activeNode in result)
+                {
+                    ListViewItem newLvi = new ListViewItem();
+                    newLvi.Text = activeNode.Name;
+                    string xpathfornode = class_XmlHelper.BuildXpath(activeNode);
+                    newLvi.SubItems.Add(xpathfornode);
+                    lsv_analysistemplate.Items.Add(newLvi);
+                }
+            }
+        }
+
+        private void linkLabel7_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+          
         }
   
     }

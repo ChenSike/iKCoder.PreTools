@@ -137,6 +137,10 @@
             this.button19 = new System.Windows.Forms.Button();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
+            this.lsv_analysistemplate = new System.Windows.Forms.ListView();
+            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.txt_profiledocument = new System.Windows.Forms.TextBox();
@@ -334,7 +338,7 @@
             this.退出ToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(9, 31);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(324, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(232, 25);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -1184,6 +1188,8 @@
             // tabPage9
             // 
             this.tabPage9.BackgroundImage = global::iKCoderDU.Properties.Resources.ProfileDocuments_fw;
+            this.tabPage9.Controls.Add(this.linkLabel6);
+            this.tabPage9.Controls.Add(this.lsv_analysistemplate);
             this.tabPage9.Controls.Add(this.linkLabel5);
             this.tabPage9.Controls.Add(this.linkLabel4);
             this.tabPage9.Controls.Add(this.txt_profiledocument);
@@ -1198,10 +1204,44 @@
             this.tabPage9.Text = "Account Profile";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
+            // linkLabel6
+            // 
+            this.linkLabel6.AutoSize = true;
+            this.linkLabel6.Location = new System.Drawing.Point(322, 105);
+            this.linkLabel6.Name = "linkLabel6";
+            this.linkLabel6.Size = new System.Drawing.Size(77, 12);
+            this.linkLabel6.TabIndex = 32;
+            this.linkLabel6.TabStop = true;
+            this.linkLabel6.Text = "分析当前文档";
+            this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel6_LinkClicked);
+            // 
+            // lsv_analysistemplate
+            // 
+            this.lsv_analysistemplate.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader19,
+            this.columnHeader20});
+            this.lsv_analysistemplate.GridLines = true;
+            this.lsv_analysistemplate.Location = new System.Drawing.Point(536, 129);
+            this.lsv_analysistemplate.Name = "lsv_analysistemplate";
+            this.lsv_analysistemplate.Size = new System.Drawing.Size(385, 545);
+            this.lsv_analysistemplate.TabIndex = 31;
+            this.lsv_analysistemplate.UseCompatibleStateImageBehavior = false;
+            this.lsv_analysistemplate.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader19
+            // 
+            this.columnHeader19.Text = "Active Node";
+            this.columnHeader19.Width = 137;
+            // 
+            // columnHeader20
+            // 
+            this.columnHeader20.Text = "Xpath For Node";
+            this.columnHeader20.Width = 250;
+            // 
             // linkLabel5
             // 
             this.linkLabel5.AutoSize = true;
-            this.linkLabel5.Location = new System.Drawing.Point(824, 106);
+            this.linkLabel5.Location = new System.Drawing.Point(417, 105);
             this.linkLabel5.Name = "linkLabel5";
             this.linkLabel5.Size = new System.Drawing.Size(89, 12);
             this.linkLabel5.TabIndex = 30;
@@ -1224,14 +1264,12 @@
             this.txt_profiledocument.Location = new System.Drawing.Point(11, 129);
             this.txt_profiledocument.Multiline = true;
             this.txt_profiledocument.Name = "txt_profiledocument";
-            this.txt_profiledocument.Size = new System.Drawing.Size(904, 545);
+            this.txt_profiledocument.Size = new System.Drawing.Size(495, 545);
             this.txt_profiledocument.TabIndex = 28;
             // 
             // cmb_profileresource
             // 
             this.cmb_profileresource.FormattingEnabled = true;
-            this.cmb_profileresource.Items.AddRange(new object[] {
-            "iKCoder"});
             this.cmb_profileresource.Location = new System.Drawing.Point(139, 66);
             this.cmb_profileresource.Name = "cmb_profileresource";
             this.cmb_profileresource.Size = new System.Drawing.Size(498, 20);
@@ -1489,6 +1527,10 @@
         private System.Windows.Forms.LinkLabel linkLabel4;
         private System.Windows.Forms.LinkLabel linkLabel5;
         private System.Windows.Forms.ToolStripMenuItem calcBuilderToolStripMenuItem;
+        private System.Windows.Forms.ListView lsv_analysistemplate;
+        private System.Windows.Forms.ColumnHeader columnHeader19;
+        private System.Windows.Forms.ColumnHeader columnHeader20;
+        private System.Windows.Forms.LinkLabel linkLabel6;
     }
 }
 
