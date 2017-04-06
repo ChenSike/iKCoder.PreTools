@@ -315,7 +315,7 @@ namespace iKCoderDU
                 else if (type == "png" || type == "jpg" || type == "jpeg" || type == "gif")
                 {
                     txt_getingdata.Text = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Data/api_GetBinData.aspx?cid=" + GlobalVars.cid + "&symbol=" + symbol;
-                    byte[] result = object_remote.getRemoteRequestToByteWithCookieHeader("<root></root>", txt_getingdata.Text, 1000 * 60, 100000);
+                    byte[] result = object_remote.getRemoteRequestToByteWithCookieHeader("<root></root>", txt_getingdata.Text, 1000 * 60, 1024*1024*100);
                     if (result != null && result.Length > 0)
                     {                        
                         FileStream tmpFileStream = new FileStream("tmpimage." + type, FileMode.Create);
