@@ -1353,7 +1353,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::iKCoderDU.Properties.Resources.mainform_fw;
-            this.ClientSize = new System.Drawing.Size(1200, 900);
+            this.ClientSize = new System.Drawing.Size(1200, 772);
             this.Controls.Add(this.lb_serverconnected);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button2);

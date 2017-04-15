@@ -41,9 +41,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.cmb_produce = new System.Windows.Forms.ComboBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.txt_url = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.cmb_relationshipchild_symbolsearching = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -53,7 +54,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(89, 74);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 13);
+            this.label1.Size = new System.Drawing.Size(101, 12);
             this.label1.TabIndex = 0;
             this.label1.Text = "Symbol / 标识 ：";
             // 
@@ -64,7 +65,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(59, 101);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 13);
+            this.label2.Size = new System.Drawing.Size(131, 12);
             this.label2.TabIndex = 1;
             this.label2.Text = "Produce / 归属产品 ：";
             // 
@@ -75,7 +76,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(70, 131);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 13);
+            this.label3.Size = new System.Drawing.Size(119, 12);
             this.label3.TabIndex = 2;
             this.label3.Text = "isDES / 是否加密 ：";
             // 
@@ -86,7 +87,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(65, 160);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 13);
+            this.label4.Size = new System.Drawing.Size(119, 12);
             this.label4.TabIndex = 3;
             this.label4.Text = "DESKey / 加密Key ：";
             // 
@@ -97,7 +98,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(28, 190);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(152, 13);
+            this.label5.Size = new System.Drawing.Size(161, 12);
             this.label5.TabIndex = 4;
             this.label5.Text = "isBase64 / 是否用BASE64 ：";
             // 
@@ -111,9 +112,9 @@
             // 
             // txt_symbol
             // 
-            this.txt_symbol.Location = new System.Drawing.Point(186, 71);
+            this.txt_symbol.Location = new System.Drawing.Point(535, 70);
             this.txt_symbol.Name = "txt_symbol";
-            this.txt_symbol.Size = new System.Drawing.Size(415, 20);
+            this.txt_symbol.Size = new System.Drawing.Size(226, 21);
             this.txt_symbol.TabIndex = 6;
             // 
             // txt_DESKey
@@ -121,7 +122,7 @@
             this.txt_DESKey.Enabled = false;
             this.txt_DESKey.Location = new System.Drawing.Point(186, 157);
             this.txt_DESKey.Name = "txt_DESKey";
-            this.txt_DESKey.Size = new System.Drawing.Size(575, 20);
+            this.txt_DESKey.Size = new System.Drawing.Size(575, 21);
             this.txt_DESKey.TabIndex = 7;
             // 
             // chk_isDES
@@ -173,28 +174,15 @@
             "iKCoder"});
             this.cmb_produce.Location = new System.Drawing.Point(186, 99);
             this.cmb_produce.Name = "cmb_produce";
-            this.cmb_produce.Size = new System.Drawing.Size(176, 21);
+            this.cmb_produce.Size = new System.Drawing.Size(176, 20);
             this.cmb_produce.TabIndex = 13;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel1.ForeColor = System.Drawing.Color.White;
-            this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(622, 74);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(127, 13);
-            this.linkLabel1.TabIndex = 14;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "如何命名一个数据资源";
             // 
             // txt_url
             // 
             this.txt_url.Enabled = false;
             this.txt_url.Location = new System.Drawing.Point(228, 528);
             this.txt_url.Name = "txt_url";
-            this.txt_url.Size = new System.Drawing.Size(533, 20);
+            this.txt_url.Size = new System.Drawing.Size(533, 21);
             this.txt_url.TabIndex = 33;
             // 
             // label7
@@ -204,19 +192,38 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(38, 528);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(184, 13);
+            this.label7.Size = new System.Drawing.Size(185, 12);
             this.label7.TabIndex = 32;
             this.label7.Text = "取数据的API URL （自动生成）：";
             // 
+            // cmb_relationshipchild_symbolsearching
+            // 
+            this.cmb_relationshipchild_symbolsearching.FormattingEnabled = true;
+            this.cmb_relationshipchild_symbolsearching.Location = new System.Drawing.Point(186, 71);
+            this.cmb_relationshipchild_symbolsearching.Name = "cmb_relationshipchild_symbolsearching";
+            this.cmb_relationshipchild_symbolsearching.Size = new System.Drawing.Size(238, 20);
+            this.cmb_relationshipchild_symbolsearching.TabIndex = 45;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(442, 69);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 46;
+            this.button3.Text = "Add";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // ImportTextData
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::iKCoderDU.Properties.Resources.importTextData_fw;
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.cmb_relationshipchild_symbolsearching);
             this.Controls.Add(this.txt_url);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.cmb_produce);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -253,8 +260,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox cmb_produce;
-        private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.TextBox txt_url;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cmb_relationshipchild_symbolsearching;
+        private System.Windows.Forms.Button button3;
     }
 }
