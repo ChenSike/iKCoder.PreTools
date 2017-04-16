@@ -19,8 +19,8 @@ namespace iKCoderDU
         class_Net_RemoteRequest object_remote;
         bool isLoaded = false;
         string extendsname;
-        string filename;       
-
+        string filename;
+        string base64data;
 
         public string activeServerUrl
         {
@@ -56,8 +56,8 @@ namespace iKCoderDU
                 byte[] newBuffer = newBR.ReadBytes((int)newFS.Length);
                 newBR.Close();
                 newFS.Close();
-                string base64data = class_CommonUtil.Encoder_Base64(newBuffer);
-                txt_base64data.Text = base64data;
+                base64data = class_CommonUtil.Encoder_Base64(newBuffer);
+                
             }
         }
 
@@ -82,7 +82,7 @@ namespace iKCoderDU
                         }
                         else
                         {
-                            string inputDoc = "<root><symbol>" + txt_symbol.Text + "</symbol><data>" + txt_base64data.Text + "</data><type>" + cmb_type.Text + "</type></root>";
+                            string inputDoc = "<root><symbol>" + txt_symbol.Text + "</symbol><data>" + base64data + "</data><type>" + cmb_type.Text + "</type></root>";
                             verifiedSymbolExistedURL = activeServerUrl + "/Data/api_SetBinBase64Data.aspx?cid=" + GlobalVars.cid;
                             result = object_remote.getRemoteRequestToStringWithCookieHeader(inputDoc, verifiedSymbolExistedURL, 1000 * 60, 100000);
                             if (result.Contains("true"))
@@ -110,6 +110,11 @@ namespace iKCoderDU
             {
                 MessageBox.Show("没有选择正确的服务器配置，请先选择后再导入数据。");
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            txt_base64data.Text = base64data;
         }
     }
 }
