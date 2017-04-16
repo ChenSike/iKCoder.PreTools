@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.cmb_produce = new System.Windows.Forms.ComboBox();
             this.chk_isBase64 = new System.Windows.Forms.CheckBox();
             this.chk_isDES = new System.Windows.Forms.CheckBox();
@@ -52,21 +51,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.cmb_type = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.cmb_relationshipchild_symbolsearching = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel1.ForeColor = System.Drawing.Color.White;
-            this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(606, 65);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(125, 12);
-            this.linkLabel1.TabIndex = 25;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "如何命名一个数据资源";
             // 
             // cmb_produce
             // 
@@ -110,9 +97,9 @@
             // 
             // txt_symbol
             // 
-            this.txt_symbol.Location = new System.Drawing.Point(170, 62);
+            this.txt_symbol.Location = new System.Drawing.Point(523, 62);
             this.txt_symbol.Name = "txt_symbol";
-            this.txt_symbol.Size = new System.Drawing.Size(415, 21);
+            this.txt_symbol.Size = new System.Drawing.Size(222, 21);
             this.txt_symbol.TabIndex = 20;
             // 
             // label5
@@ -297,13 +284,21 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(348, 227);
+            this.button4.Location = new System.Drawing.Point(426, 60);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(164, 23);
-            this.button4.TabIndex = 36;
-            this.button4.Text = "Show Data Code";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 48;
+            this.button4.Text = "Add";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // cmb_relationshipchild_symbolsearching
+            // 
+            this.cmb_relationshipchild_symbolsearching.FormattingEnabled = true;
+            this.cmb_relationshipchild_symbolsearching.Location = new System.Drawing.Point(170, 62);
+            this.cmb_relationshipchild_symbolsearching.Name = "cmb_relationshipchild_symbolsearching";
+            this.cmb_relationshipchild_symbolsearching.Size = new System.Drawing.Size(238, 20);
+            this.cmb_relationshipchild_symbolsearching.TabIndex = 47;
             // 
             // ImportBinData
             // 
@@ -312,6 +307,7 @@
             this.BackgroundImage = global::iKCoderDU.Properties.Resources.importBinData_fw;
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.button4);
+            this.Controls.Add(this.cmb_relationshipchild_symbolsearching);
             this.Controls.Add(this.cmb_type);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button2);
@@ -322,7 +318,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.cmb_produce);
             this.Controls.Add(this.chk_isBase64);
             this.Controls.Add(this.chk_isDES);
@@ -345,7 +340,6 @@
 
         #endregion
 
-        private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.ComboBox cmb_produce;
         private System.Windows.Forms.CheckBox chk_isBase64;
         private System.Windows.Forms.CheckBox chk_isDES;
@@ -369,5 +363,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmb_type;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ComboBox cmb_relationshipchild_symbolsearching;
     }
 }

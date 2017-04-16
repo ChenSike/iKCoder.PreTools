@@ -1187,6 +1187,36 @@ namespace iKCoderDU
         {
           
         }
+
+        private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            if (!string.IsNullOrEmpty(cmb_profileresource.Text))
+            {
+                string verifiedSymbolExistedURL = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Data/api_GetVerifySymbolExisted.aspx?symbol=" + cmb_profileresource.Text + "&cid=" + GlobalVars.cid;
+                string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", verifiedSymbolExistedURL, 1000 * 60, 100000);
+                if (result.Contains("true"))
+                {
+                    MessageBox.Show("您输入的标识数据已经存在，会刷新数据。");
+                }
+                string inputData = class_CommonUtil.Encoder_Base64(txt_profiledocument.Text);
+                string inputDoc = "<root><symbol>" + cmb_profileresource.Text + "</symbol><data>" + inputData + "</data><type>text</type></root>";
+                verifiedSymbolExistedURL = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Data/api_SetOverMetaTextData.aspx?cid=" + GlobalVars.cid;
+                result = object_remote.getRemoteRequestToStringWithCookieHeader(inputDoc, verifiedSymbolExistedURL, 1000 * 60, 100000);
+                if (result.Contains("true"))
+                {
+                    MessageBox.Show("您已经成功保存用户PROFILE。");
+                }
+                else
+                {
+                    MessageBox.Show("很抱歉，导入数据失败，无法处理此错误，请联系管理员。");
+                }
+            }
+            else
+            {
+                MessageBox.Show("很抱歉，归属产品不可空。");
+            }
+        }
   
     }
 }

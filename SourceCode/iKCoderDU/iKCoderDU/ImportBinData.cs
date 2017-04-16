@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using iKCoder_Platform_SDK_Kit;
 using System.Net;
 using System.IO;
+using System.Xml;
 
 namespace iKCoderDU
 {
@@ -19,8 +20,8 @@ namespace iKCoderDU
         class_Net_RemoteRequest object_remote;
         bool isLoaded = false;
         string extendsname;
-        string filename;
-        string base64data;
+        string filename;       
+
 
         public string activeServerUrl
         {
@@ -37,6 +38,37 @@ namespace iKCoderDU
         private void ImportBinData_Load(object sender, EventArgs e)
         {
 
+            try
+            {
+                string getArrUrl = "api_GetDataAggInfo.aspx?cid=" + GlobalVars.cid;
+                string requestURL = activeServerUrl + "/data/" + getArrUrl;
+                string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", requestURL, 1000 * 60, 100000);
+                XmlDocument resultDoc = new XmlDocument();
+                resultDoc.LoadXml(result);
+                cmb_relationshipchild_symbolsearching.Items.Clear();
+                if (cmb_relationshipchild_symbolsearching.Text == "")
+                {
+                    XmlNodeList msgNodeList = resultDoc.SelectNodes("/root/msg");
+                    foreach (XmlNode activeMsgNode in msgNodeList)
+                    {
+                        string symbol = class_XmlHelper.GetAttrValue(activeMsgNode, "symbol");
+                        cmb_relationshipchild_symbolsearching.Items.Add(symbol);
+                    }
+                }
+                else
+                {
+                    XmlNode searchNode = resultDoc.SelectSingleNode("/root/msg[@symbol='" + cmb_relationshipchild_symbolsearching.Text + "']");
+                    if (searchNode != null)
+                    {
+                        cmb_relationshipchild_symbolsearching.Items.Add(cmb_relationshipchild_symbolsearching.Text);
+                    }
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("系统访问API出差，请检查参数或者网络。");
+            }
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -56,8 +88,8 @@ namespace iKCoderDU
                 byte[] newBuffer = newBR.ReadBytes((int)newFS.Length);
                 newBR.Close();
                 newFS.Close();
-                base64data = class_CommonUtil.Encoder_Base64(newBuffer);
-                
+                string base64data = class_CommonUtil.Encoder_Base64(newBuffer);
+                txt_base64data.Text = base64data;
             }
         }
 
@@ -82,7 +114,7 @@ namespace iKCoderDU
                         }
                         else
                         {
-                            string inputDoc = "<root><symbol>" + txt_symbol.Text + "</symbol><data>" + base64data + "</data><type>" + cmb_type.Text + "</type></root>";
+                            string inputDoc = "<root><symbol>" + txt_symbol.Text + "</symbol><data>" + txt_base64data.Text + "</data><type>" + cmb_type.Text + "</type></root>";
                             verifiedSymbolExistedURL = activeServerUrl + "/Data/api_SetBinBase64Data.aspx?cid=" + GlobalVars.cid;
                             result = object_remote.getRemoteRequestToStringWithCookieHeader(inputDoc, verifiedSymbolExistedURL, 1000 * 60, 100000);
                             if (result.Contains("true"))
@@ -114,7 +146,10 @@ namespace iKCoderDU
 
         private void button4_Click(object sender, EventArgs e)
         {
-            txt_base64data.Text = base64data;
+            if (!string.IsNullOrEmpty(cmb_relationshipchild_symbolsearching.Text))
+            {
+                txt_symbol.Text = cmb_relationshipchild_symbolsearching.Text;
+            }
         }
     }
 }
