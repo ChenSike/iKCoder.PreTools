@@ -52,6 +52,7 @@
             this.cmb_type = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
             this.cmb_relationshipchild_symbolsearching = new System.Windows.Forms.ComboBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -300,12 +301,23 @@
             this.cmb_relationshipchild_symbolsearching.Size = new System.Drawing.Size(238, 20);
             this.cmb_relationshipchild_symbolsearching.TabIndex = 47;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(334, 227);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(158, 23);
+            this.button5.TabIndex = 49;
+            this.button5.Text = "Show Data Code";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // ImportBinData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::iKCoderDU.Properties.Resources.importBinData_fw;
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.cmb_relationshipchild_symbolsearching);
             this.Controls.Add(this.cmb_type);
@@ -364,5 +376,6 @@
         private System.Windows.Forms.ComboBox cmb_type;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ComboBox cmb_relationshipchild_symbolsearching;
+        private System.Windows.Forms.Button button5;
     }
 }
