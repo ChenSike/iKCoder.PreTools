@@ -112,9 +112,12 @@ namespace iKCoderDU
                         {
                             MessageBox.Show("您输入的标识数据已经存在，即将刷新数据。");
                         }
-                        string inputDoc = "<root><symbol>" + txt_symbol.Text + "</symbol><data>" + base64data + "</data><type>" + cmb_type.Text + "</type></root>";
-                        verifiedSymbolExistedURL = activeServerUrl + "/Data/api_SetBinBase64Data.aspx.aspx?cid=" + GlobalVars.cid;
-                        result = object_remote.getRemoteRequestToStringWithCookieHeader(inputDoc, verifiedSymbolExistedURL, 1000 * 60, 100000);
+                        //string inputDoc = "<root><symbol>" + txt_symbol.Text + "</symbol><data>" + base64data + "</data><type>" + cmb_type.Text + "</type></root>";
+                        //verifiedSymbolExistedURL = activeServerUrl + "/Data/api_SetBinBase64Data.aspx.aspx?cid=" + GlobalVars.cid;
+                        //result = object_remote.getRemoteRequestToStringWithCookieHeader(inputDoc, verifiedSymbolExistedURL, 1000 * 60, 100000);
+                        byte[] tdata= class_CommonUtil.Decoder_Base64ToByte(base64data);
+                        verifiedSymbolExistedURL = activeServerUrl + "/Data/api_SetOverBinData.aspx?cid=" + GlobalVars.cid + "&symbol=" + txt_symbol.Text;
+                        result = object_remote.sendBinDataToRemoteServer(verifiedSymbolExistedURL, tdata);
                         if (result.Contains("true"))
                         {
                             MessageBox.Show("您已经成功导入数据，点击确定返回主界面。");
