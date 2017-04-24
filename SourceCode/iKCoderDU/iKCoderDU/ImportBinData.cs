@@ -20,8 +20,8 @@ namespace iKCoderDU
         class_Net_RemoteRequest object_remote;
         bool isLoaded = false;
         string extendsname;
-        string filename;       
-
+        string filename;
+        string base64data;
 
         public string activeServerUrl
         {
@@ -88,8 +88,8 @@ namespace iKCoderDU
                 byte[] newBuffer = newBR.ReadBytes((int)newFS.Length);
                 newBR.Close();
                 newFS.Close();
-                string base64data = class_CommonUtil.Encoder_Base64(newBuffer);
-                txt_base64data.Text = base64data;
+                base64data = class_CommonUtil.Encoder_Base64(newBuffer);
+                
             }
         }
 
@@ -110,23 +110,24 @@ namespace iKCoderDU
                         string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", verifiedSymbolExistedURL, 1000 * 60, 100000);
                         if (result.Contains("true"))
                         {
-                            MessageBox.Show("很抱歉，您输入的标识数据已经存在，请更改后导入数据。");
+                            MessageBox.Show("您输入的标识数据已经存在，即将刷新数据。");
+                        }
+                        //string inputDoc = "<root><symbol>" + txt_symbol.Text + "</symbol><data>" + base64data + "</data><type>" + cmb_type.Text + "</type></root>";
+                        //verifiedSymbolExistedURL = activeServerUrl + "/Data/api_SetBinBase64Data.aspx.aspx?cid=" + GlobalVars.cid;
+                        //result = object_remote.getRemoteRequestToStringWithCookieHeader(inputDoc, verifiedSymbolExistedURL, 1000 * 60, 100000);
+                        byte[] tdata= class_CommonUtil.Decoder_Base64ToByte(base64data);
+                        verifiedSymbolExistedURL = activeServerUrl + "/Data/api_SetOverBinData.aspx?cid=" + GlobalVars.cid + "&symbol=" + txt_symbol.Text;
+                        result = object_remote.sendBinDataToRemoteServer(verifiedSymbolExistedURL, tdata);
+                        if (result.Contains("true"))
+                        {
+                            MessageBox.Show("您已经成功导入数据，点击确定返回主界面。");
+                            txt_url.Text = activeServerUrl + "/Data/api_GetBinDataWithBase64.aspx?symbol=" + txt_symbol.Text;
                         }
                         else
                         {
-                            string inputDoc = "<root><symbol>" + txt_symbol.Text + "</symbol><data>" + txt_base64data.Text + "</data><type>" + cmb_type.Text + "</type></root>";
-                            verifiedSymbolExistedURL = activeServerUrl + "/Data/api_SetBinBase64Data.aspx?cid=" + GlobalVars.cid;
-                            result = object_remote.getRemoteRequestToStringWithCookieHeader(inputDoc, verifiedSymbolExistedURL, 1000 * 60, 100000);
-                            if (result.Contains("true"))
-                            {
-                                MessageBox.Show("您已经成功导入数据，点击确定返回主界面。");
-                                txt_url.Text = activeServerUrl + "/Data/api_GetBinDataWithBase64.aspx?symbol=" + txt_symbol.Text;
-                            }
-                            else
-                            {
-                                MessageBox.Show("很抱歉，导入数据失败，无法处理此错误，请联系管理员。");
-                            }
+                            MessageBox.Show("很抱歉，导入数据失败，无法处理此错误，请联系管理员。");
                         }
+
                     }
                     else
                     {
@@ -150,6 +151,11 @@ namespace iKCoderDU
             {
                 txt_symbol.Text = cmb_relationshipchild_symbolsearching.Text;
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            txt_base64data.Text = base64data;
         }
     }
 }
