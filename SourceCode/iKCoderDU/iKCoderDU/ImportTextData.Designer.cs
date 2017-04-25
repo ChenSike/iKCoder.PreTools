@@ -55,7 +55,7 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(12, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 13);
+            this.label1.Size = new System.Drawing.Size(209, 12);
             this.label1.TabIndex = 0;
             this.label1.Text = "Existed Symbol / 已经存在的标识 ：";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -67,7 +67,7 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(12, 112);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 13);
+            this.label2.Size = new System.Drawing.Size(131, 12);
             this.label2.TabIndex = 1;
             this.label2.Text = "Produce / 归属产品 ：";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -79,7 +79,7 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(23, 143);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 13);
+            this.label3.Size = new System.Drawing.Size(119, 12);
             this.label3.TabIndex = 2;
             this.label3.Text = "isDES / 是否加密 ：";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -91,7 +91,7 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(18, 173);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 13);
+            this.label4.Size = new System.Drawing.Size(119, 12);
             this.label4.TabIndex = 3;
             this.label4.Text = "DESKey / 加密Key ：";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -103,7 +103,7 @@
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(540, 144);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(152, 13);
+            this.label5.Size = new System.Drawing.Size(161, 12);
             this.label5.TabIndex = 4;
             this.label5.Text = "isBase64 / 是否用BASE64 ：";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -120,9 +120,9 @@
             // 
             // txt_symbol
             // 
-            this.txt_symbol.Location = new System.Drawing.Point(739, 70);
+            this.txt_symbol.Location = new System.Drawing.Point(751, 70);
             this.txt_symbol.Name = "txt_symbol";
-            this.txt_symbol.Size = new System.Drawing.Size(451, 20);
+            this.txt_symbol.Size = new System.Drawing.Size(439, 21);
             this.txt_symbol.TabIndex = 6;
             // 
             // txt_DESKey
@@ -131,7 +131,7 @@
             this.txt_DESKey.Enabled = false;
             this.txt_DESKey.Location = new System.Drawing.Point(139, 170);
             this.txt_DESKey.Name = "txt_DESKey";
-            this.txt_DESKey.Size = new System.Drawing.Size(1049, 20);
+            this.txt_DESKey.Size = new System.Drawing.Size(1049, 21);
             this.txt_DESKey.TabIndex = 7;
             // 
             // chk_isDES
@@ -183,7 +183,7 @@
             "iKCoder"});
             this.cmb_produce.Location = new System.Drawing.Point(139, 110);
             this.cmb_produce.Name = "cmb_produce";
-            this.cmb_produce.Size = new System.Drawing.Size(176, 21);
+            this.cmb_produce.Size = new System.Drawing.Size(176, 20);
             this.cmb_produce.TabIndex = 13;
             // 
             // txt_url
@@ -191,7 +191,7 @@
             this.txt_url.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_url.Location = new System.Drawing.Point(206, 844);
             this.txt_url.Name = "txt_url";
-            this.txt_url.Size = new System.Drawing.Size(980, 20);
+            this.txt_url.Size = new System.Drawing.Size(980, 21);
             this.txt_url.TabIndex = 33;
             // 
             // label7
@@ -201,7 +201,7 @@
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(16, 847);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(184, 13);
+            this.label7.Size = new System.Drawing.Size(185, 12);
             this.label7.TabIndex = 32;
             this.label7.Text = "取数据的API URL （自动生成）：";
             this.label7.Click += new System.EventHandler(this.label7_Click);
@@ -211,8 +211,9 @@
             this.cmb_relationshipchild_symbolsearching.FormattingEnabled = true;
             this.cmb_relationshipchild_symbolsearching.Location = new System.Drawing.Point(206, 70);
             this.cmb_relationshipchild_symbolsearching.Name = "cmb_relationshipchild_symbolsearching";
-            this.cmb_relationshipchild_symbolsearching.Size = new System.Drawing.Size(338, 21);
+            this.cmb_relationshipchild_symbolsearching.Size = new System.Drawing.Size(338, 20);
             this.cmb_relationshipchild_symbolsearching.TabIndex = 45;
+            this.cmb_relationshipchild_symbolsearching.SelectedIndexChanged += new System.EventHandler(this.cmb_relationshipchild_symbolsearching_SelectedIndexChanged);
             // 
             // button3
             // 
@@ -231,16 +232,16 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(650, 73);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 13);
+            this.label6.Size = new System.Drawing.Size(95, 12);
             this.label6.TabIndex = 47;
             this.label6.Text = "Symbol / 标识：";
             // 
             // ImportTextData
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::iKCoderDU.Properties.Resources.importTextData_fw;
-            this.ClientSize = new System.Drawing.Size(1200, 900);
+            this.ClientSize = new System.Drawing.Size(1200, 780);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.cmb_relationshipchild_symbolsearching);

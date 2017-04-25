@@ -92,6 +92,7 @@ namespace iKCoderDU
                         {
                             MessageBox.Show("您已经成功导入数据，点击确定返回主界面。");
                             txt_url.Text = activeServerUrl + "/Data/api_GetMetaText.aspx?symbol=" + txt_symbol.Text;
+                            
                         }
                         else
                         {
@@ -111,7 +112,7 @@ namespace iKCoderDU
             else
             {
                 MessageBox.Show("没有选择正确的服务器配置，请先选择后再导入数据。");
-            }
+            }          
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -150,6 +151,22 @@ namespace iKCoderDU
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmb_relationshipchild_symbolsearching_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string url = activeServerUrl + "/Data/api_GetMetaTextBase64Data.aspx?cid=" + GlobalVars.cid + "&symbol=" + cmb_relationshipchild_symbolsearching.Text;
+            string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", url, 1000 * 60, 100000);
+            XmlDocument resultDoc = new XmlDocument();
+            resultDoc.LoadXml(result);
+            XmlNode msgNode = resultDoc.SelectSingleNode("/root/msg");
+            if (msgNode != null)
+            {
+                string data = class_XmlHelper.GetAttrValue(msgNode, "msg");
+                txt_data.Text = class_CommonUtil.Decoder_Base64(data);
+            }
+            else
+                MessageBox.Show("无法获取数据，请联系系统管理员.");
         }
     }
 }
