@@ -429,6 +429,7 @@
             this.linkLabel16.TabIndex = 37;
             this.linkLabel16.TabStop = true;
             this.linkLabel16.Text = "保存文档";
+            this.linkLabel16.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel16_LinkClicked);
             // 
             // linkLabel17
             // 
@@ -471,7 +472,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::iKCoderDU.Properties.Resources.configForm_fw;
-            this.ClientSize = new System.Drawing.Size(900, 800);
+            this.ClientSize = new System.Drawing.Size(900, 772);
             this.Controls.Add(this.linkLabel18);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.linkLabel17);

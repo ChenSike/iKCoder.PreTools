@@ -333,8 +333,7 @@ namespace iKCoderDU
 
         private void imageCoderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EncoderMetrixImage obj = new EncoderMetrixImage(object_remote);
-            obj.ShowDialog();
+          
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -1121,15 +1120,24 @@ namespace iKCoderDU
                 XmlDocument resultDoc = new XmlDocument();
                 resultDoc.LoadXml(strresult);
                 string strprofile = string.Empty;
+                strprofile = class_XmlHelper.GetAttrValue(resultDoc.SelectSingleNode("/root/msg"), "msg");
                 XmlDocument profileDoc = new XmlDocument();
                 profileDoc.LoadXml(strprofile);
                 foreach (XmlNode activeNode in result)
                 {
                     string xpathfornode = class_XmlHelper.BuildXpath(activeNode);
+                    XmlNode fromTemplateNode = tmpDocument.SelectSingleNode(xpathfornode);
+                    string valueFromTemplateNode = class_XmlHelper.GetNodeValue(fromTemplateNode);
                     XmlNode profileNode = profileDoc.SelectSingleNode(xpathfornode);
                     if (profileNode == null)
                     {
                         profileNode = class_XmlHelper.CreateNodeByXpath(profileDoc, xpathfornode, "");
+                        class_XmlHelper.SetNodeValue(profileNode, valueFromTemplateNode);
+                    }
+                    else
+                    {
+                        if (!string.IsNullOrEmpty(valueFromTemplateNode))
+                            class_XmlHelper.SetNodeValue(profileNode, valueFromTemplateNode);
                     }
                     Dictionary<string, string> attrsFromTemplateNode = class_XmlHelper.BuildNodeAttributes(activeNode);
                     foreach (string attrKey in attrsFromTemplateNode.Keys)
@@ -1216,6 +1224,18 @@ namespace iKCoderDU
             {
                 MessageBox.Show("很抱歉，归属产品不可空。");
             }
+        }
+
+        private void 服务器配置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConfigForm obj = new ConfigForm();
+            obj.ShowDialog();
+        }
+
+        private void 图形矩阵生成ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EncoderMetrixImage obj = new EncoderMetrixImage(object_remote);
+            obj.ShowDialog();
         }
   
     }

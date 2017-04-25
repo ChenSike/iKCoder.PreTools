@@ -34,7 +34,8 @@ namespace iKCoderDU
             if(openFileDialog1.ShowDialog()==DialogResult.OK)
             {
                 objConfig.DoOpen(openFileDialog1.FileName);
-                isLoaded = true;                
+                isLoaded = true;
+                flushSessions();
             }
         }
 
@@ -188,6 +189,12 @@ namespace iKCoderDU
                 XmlNode activeItemNode = objConfig.GetItemNode(cmbSessions.Text,cmbItemNodes.Text);
                 flushItemNodes();
             }
+        }
+
+        private void linkLabel16_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            objConfig.DoSave();
+            MessageBox.Show("成功保存文档.");
         }
 
         
