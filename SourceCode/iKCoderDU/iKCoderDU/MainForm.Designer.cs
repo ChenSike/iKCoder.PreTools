@@ -49,6 +49,13 @@
             this.重新创建对应服务器的所有SPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.请客服务器长驻留对象ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.辅助工具ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.二维码生成ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.日志管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.图形矩阵生成ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.配置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.服务器配置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.数据ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.场景管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.课程场景ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -141,17 +148,7 @@
             this.button17 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lb_serverconnected = new System.Windows.Forms.Label();
-            this.辅助工具ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.二维码生成ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.日志管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.配置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.数据ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.图形矩阵生成ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.服务器配置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
@@ -287,9 +284,9 @@
             this.columnHeader1,
             this.columnHeader2});
             this.lst_cookies.GridLines = true;
-            this.lst_cookies.Location = new System.Drawing.Point(12, 277);
+            this.lst_cookies.Location = new System.Drawing.Point(12, 285);
             this.lst_cookies.Name = "lst_cookies";
-            this.lst_cookies.Size = new System.Drawing.Size(235, 134);
+            this.lst_cookies.Size = new System.Drawing.Size(235, 93);
             this.lst_cookies.TabIndex = 0;
             this.lst_cookies.UseCompatibleStateImageBehavior = false;
             this.lst_cookies.View = System.Windows.Forms.View.Details;
@@ -320,10 +317,11 @@
             // 
             // txtInput
             // 
-            this.txtInput.Location = new System.Drawing.Point(0, 3);
+            this.txtInput.Location = new System.Drawing.Point(0, 0);
             this.txtInput.Multiline = true;
             this.txtInput.Name = "txtInput";
-            this.txtInput.Size = new System.Drawing.Size(931, 681);
+            this.txtInput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtInput.Size = new System.Drawing.Size(926, 493);
             this.txtInput.TabIndex = 1;
             // 
             // menuStrip1
@@ -373,6 +371,56 @@
             this.退出ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.退出ToolStripMenuItem.Text = "平台工具";
             // 
+            // 辅助工具ToolStripMenuItem
+            // 
+            this.辅助工具ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.二维码生成ToolStripMenuItem,
+            this.日志管理ToolStripMenuItem,
+            this.图形矩阵生成ToolStripMenuItem});
+            this.辅助工具ToolStripMenuItem.Name = "辅助工具ToolStripMenuItem";
+            this.辅助工具ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.辅助工具ToolStripMenuItem.Text = "辅助工具";
+            // 
+            // 二维码生成ToolStripMenuItem
+            // 
+            this.二维码生成ToolStripMenuItem.Name = "二维码生成ToolStripMenuItem";
+            this.二维码生成ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.二维码生成ToolStripMenuItem.Text = "二维码生成";
+            // 
+            // 日志管理ToolStripMenuItem
+            // 
+            this.日志管理ToolStripMenuItem.Name = "日志管理ToolStripMenuItem";
+            this.日志管理ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.日志管理ToolStripMenuItem.Text = "日志管理";
+            // 
+            // 图形矩阵生成ToolStripMenuItem
+            // 
+            this.图形矩阵生成ToolStripMenuItem.Name = "图形矩阵生成ToolStripMenuItem";
+            this.图形矩阵生成ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.图形矩阵生成ToolStripMenuItem.Text = "图形矩阵生成";
+            this.图形矩阵生成ToolStripMenuItem.Click += new System.EventHandler(this.图形矩阵生成ToolStripMenuItem_Click);
+            // 
+            // 配置ToolStripMenuItem
+            // 
+            this.配置ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.服务器配置ToolStripMenuItem});
+            this.配置ToolStripMenuItem.Name = "配置ToolStripMenuItem";
+            this.配置ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.配置ToolStripMenuItem.Text = "配置";
+            // 
+            // 服务器配置ToolStripMenuItem
+            // 
+            this.服务器配置ToolStripMenuItem.Name = "服务器配置ToolStripMenuItem";
+            this.服务器配置ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.服务器配置ToolStripMenuItem.Text = "服务器配置";
+            this.服务器配置ToolStripMenuItem.Click += new System.EventHandler(this.服务器配置ToolStripMenuItem_Click);
+            // 
+            // 数据ToolStripMenuItem1
+            // 
+            this.数据ToolStripMenuItem1.Name = "数据ToolStripMenuItem1";
+            this.数据ToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.数据ToolStripMenuItem1.Text = "数据";
+            // 
             // 数据ToolStripMenuItem
             // 
             this.数据ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -386,13 +434,13 @@
             this.场景管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.课程场景ToolStripMenuItem});
             this.场景管理ToolStripMenuItem.Name = "场景管理ToolStripMenuItem";
-            this.场景管理ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.场景管理ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.场景管理ToolStripMenuItem.Text = "IKCoder";
             // 
             // 课程场景ToolStripMenuItem
             // 
             this.课程场景ToolStripMenuItem.Name = "课程场景ToolStripMenuItem";
-            this.课程场景ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.课程场景ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.课程场景ToolStripMenuItem.Text = "课程场景";
             // 
             // 退出ToolStripMenuItem1
@@ -424,10 +472,10 @@
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage9);
-            this.tabControl1.Location = new System.Drawing.Point(262, 185);
+            this.tabControl1.Location = new System.Drawing.Point(262, 181);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(935, 713);
+            this.tabControl1.Size = new System.Drawing.Size(934, 515);
             this.tabControl1.TabIndex = 18;
             // 
             // tabPage7
@@ -439,7 +487,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(927, 687);
+            this.tabPage7.Size = new System.Drawing.Size(926, 489);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Start";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -481,7 +529,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(927, 687);
+            this.tabPage2.Size = new System.Drawing.Size(926, 489);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Input Document";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -493,7 +541,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(927, 687);
+            this.tabPage1.Size = new System.Drawing.Size(926, 489);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Response Result";
             // 
@@ -503,7 +551,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(927, 687);
+            this.tabPage3.Size = new System.Drawing.Size(926, 489);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Image Viewer";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1262,29 +1310,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader12,
-            this.columnHeader13});
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(12, 454);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(235, 427);
-            this.listView1.TabIndex = 22;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Text = "Status Name";
-            this.columnHeader12.Width = 119;
-            // 
-            // columnHeader13
-            // 
-            this.columnHeader13.Text = "Value";
-            this.columnHeader13.Width = 93;
-            // 
             // lb_serverconnected
             // 
             this.lb_serverconnected.AutoSize = true;
@@ -1295,63 +1320,12 @@
             this.lb_serverconnected.TabIndex = 23;
             this.lb_serverconnected.Text = "远程服务器通信状态：中断";
             // 
-            // 辅助工具ToolStripMenuItem
-            // 
-            this.辅助工具ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.二维码生成ToolStripMenuItem,
-            this.日志管理ToolStripMenuItem,
-            this.图形矩阵生成ToolStripMenuItem});
-            this.辅助工具ToolStripMenuItem.Name = "辅助工具ToolStripMenuItem";
-            this.辅助工具ToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.辅助工具ToolStripMenuItem.Text = "辅助工具";
-            // 
-            // 二维码生成ToolStripMenuItem
-            // 
-            this.二维码生成ToolStripMenuItem.Name = "二维码生成ToolStripMenuItem";
-            this.二维码生成ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.二维码生成ToolStripMenuItem.Text = "二维码生成";
-            // 
-            // 日志管理ToolStripMenuItem
-            // 
-            this.日志管理ToolStripMenuItem.Name = "日志管理ToolStripMenuItem";
-            this.日志管理ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.日志管理ToolStripMenuItem.Text = "日志管理";
-            // 
-            // 配置ToolStripMenuItem
-            // 
-            this.配置ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.服务器配置ToolStripMenuItem});
-            this.配置ToolStripMenuItem.Name = "配置ToolStripMenuItem";
-            this.配置ToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.配置ToolStripMenuItem.Text = "配置";
-            // 
-            // 数据ToolStripMenuItem1
-            // 
-            this.数据ToolStripMenuItem1.Name = "数据ToolStripMenuItem1";
-            this.数据ToolStripMenuItem1.Size = new System.Drawing.Size(194, 22);
-            this.数据ToolStripMenuItem1.Text = "数据";
-            // 
-            // 图形矩阵生成ToolStripMenuItem
-            // 
-            this.图形矩阵生成ToolStripMenuItem.Name = "图形矩阵生成ToolStripMenuItem";
-            this.图形矩阵生成ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.图形矩阵生成ToolStripMenuItem.Text = "图形矩阵生成";
-            this.图形矩阵生成ToolStripMenuItem.Click += new System.EventHandler(this.图形矩阵生成ToolStripMenuItem_Click);
-            // 
-            // 服务器配置ToolStripMenuItem
-            // 
-            this.服务器配置ToolStripMenuItem.Name = "服务器配置ToolStripMenuItem";
-            this.服务器配置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.服务器配置ToolStripMenuItem.Text = "服务器配置";
-            this.服务器配置ToolStripMenuItem.Click += new System.EventHandler(this.服务器配置ToolStripMenuItem_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::iKCoderDU.Properties.Resources.mainform_fw;
-            this.ClientSize = new System.Drawing.Size(1200, 741);
+            this.ClientSize = new System.Drawing.Size(1200, 700);
             this.Controls.Add(this.lb_serverconnected);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.tabControl1);
@@ -1453,9 +1427,6 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader12;
-        private System.Windows.Forms.ColumnHeader columnHeader13;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TextBox txt_relationParentSymbol;
         private System.Windows.Forms.Button button10;
