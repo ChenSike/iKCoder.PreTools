@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuildSPForDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuildSPForDB.Designer.cs">
+      <DependentUpon>BuildSPForDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConfigForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     <Compile Include="tipsManagement.Designer.cs">
       <DependentUpon>tipsManagement.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BuildSPForDB.resx">
+      <DependentUpon>BuildSPForDB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConfigForm.resx">
       <DependentUpon>ConfigForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,6 +218,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="20170314104646905_easyicon_net_64.ico" />
+    <None Include="img\autoBuildAllSPS.fw.png" />
     <None Include="img\tipsManager.fw.png" />
     <None Include="img\configForm.fw.png" />
     <None Include="img\ProfileDocuments.fw.png" />

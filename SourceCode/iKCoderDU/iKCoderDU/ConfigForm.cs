@@ -197,6 +197,14 @@ namespace iKCoderDU
             MessageBox.Show("成功保存文档.");
         }
 
-        
+        private void linkLabel12_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void linkLabel15_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }
