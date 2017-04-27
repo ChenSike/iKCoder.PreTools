@@ -153,10 +153,10 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(76, 176);
+            this.textBox2.Location = new System.Drawing.Point(12, 209);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(1112, 146);
+            this.textBox2.Size = new System.Drawing.Size(1176, 208);
             this.textBox2.TabIndex = 11;
             // 
             // linkLabel8
@@ -174,7 +174,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::iKCoderDU.Properties.Resources.tipsManager_fw;
             this.ClientSize = new System.Drawing.Size(1200, 780);
             this.Controls.Add(this.linkLabel8);
             this.Controls.Add(this.textBox2);

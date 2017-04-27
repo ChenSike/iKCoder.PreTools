@@ -63,16 +63,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.pic_bindata = new System.Windows.Forms.PictureBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.txt_getingdata = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -91,7 +87,6 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tree_parentDocumnets = new System.Windows.Forms.TreeView();
             this.button16 = new System.Windows.Forms.Button();
@@ -149,16 +144,22 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.lb_serverconnected = new System.Windows.Forms.Label();
-            this.menuStrip1.SuspendLayout();
+            this.平台配置工具ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.产品配置工具ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.退出ToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.button24 = new System.Windows.Forms.Button();
+            this.button32 = new System.Windows.Forms.Button();
+            this.平台配置工具ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.平台配置工具ToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.产品配置工具ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.退出ToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
-            this.tabPage7.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_bindata)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_previmg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.tabPage9.SuspendLayout();
@@ -240,10 +241,11 @@
             // txtResult
             // 
             this.txtResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtResult.Location = new System.Drawing.Point(0, 0);
+            this.txtResult.Location = new System.Drawing.Point(0, 36);
             this.txtResult.Multiline = true;
             this.txtResult.Name = "txtResult";
-            this.txtResult.Size = new System.Drawing.Size(931, 687);
+            this.txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtResult.Size = new System.Drawing.Size(926, 453);
             this.txtResult.TabIndex = 0;
             // 
             // label4
@@ -286,7 +288,7 @@
             this.lst_cookies.GridLines = true;
             this.lst_cookies.Location = new System.Drawing.Point(12, 285);
             this.lst_cookies.Name = "lst_cookies";
-            this.lst_cookies.Size = new System.Drawing.Size(235, 93);
+            this.lst_cookies.Size = new System.Drawing.Size(235, 103);
             this.lst_cookies.TabIndex = 0;
             this.lst_cookies.UseCompatibleStateImageBehavior = false;
             this.lst_cookies.View = System.Windows.Forms.View.Details;
@@ -305,11 +307,6 @@
             // cmb_URL
             // 
             this.cmb_URL.FormattingEnabled = true;
-            this.cmb_URL.Items.AddRange(new object[] {
-            "/Account/SET_Reg.aspx",
-            "/Data/GET_CheckCodeNUA.aspx?length=5&name=regusr&width=300&height=50",
-            "/Account/api_VerifyAccountExisted.aspx?username=18675521735",
-            "/Data/api_GetCalcDataPonit.aspx"});
             this.cmb_URL.Location = new System.Drawing.Point(304, 89);
             this.cmb_URL.Name = "cmb_URL";
             this.cmb_URL.Size = new System.Drawing.Size(884, 20);
@@ -317,25 +314,20 @@
             // 
             // txtInput
             // 
-            this.txtInput.Location = new System.Drawing.Point(0, 0);
+            this.txtInput.Location = new System.Drawing.Point(0, 41);
             this.txtInput.Multiline = true;
             this.txtInput.Name = "txtInput";
             this.txtInput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtInput.Size = new System.Drawing.Size(926, 493);
+            this.txtInput.Size = new System.Drawing.Size(926, 448);
             this.txtInput.TabIndex = 1;
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.操作ToolStripMenuItem,
-            this.退出ToolStripMenuItem,
-            this.数据ToolStripMenuItem,
-            this.退出ToolStripMenuItem1});
-            this.menuStrip1.Location = new System.Drawing.Point(9, 31);
+            this.menuStrip1.Location = new System.Drawing.Point(96, 31);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(232, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(202, 24);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -454,7 +446,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Location = new System.Drawing.Point(274, 93);
+            this.label6.Location = new System.Drawing.Point(275, 93);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 12);
             this.label6.TabIndex = 17;
@@ -472,7 +464,7 @@
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage9);
-            this.tabControl1.Location = new System.Drawing.Point(262, 181);
+            this.tabControl1.Location = new System.Drawing.Point(254, 185);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(934, 515);
@@ -480,10 +472,7 @@
             // 
             // tabPage7
             // 
-            this.tabPage7.BackgroundImage = global::iKCoderDU.Properties.Resources.aggreegateInformation_fw;
-            this.tabPage7.Controls.Add(this.label13);
-            this.tabPage7.Controls.Add(this.label12);
-            this.tabPage7.Controls.Add(this.label11);
+            this.tabPage7.BackgroundImage = global::iKCoderDU.Properties.Resources.tab_start_fw;
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
@@ -493,72 +482,45 @@
             this.tabPage7.UseVisualStyleBackColor = true;
             this.tabPage7.Click += new System.EventHandler(this.tabPage7_Click);
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label13.Location = new System.Drawing.Point(191, 169);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(17, 16);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "0";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label12.Location = new System.Drawing.Point(698, 110);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(17, 16);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "0";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(172, 111);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(17, 16);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "0";
-            // 
             // tabPage2
             // 
+            this.tabPage2.BackgroundImage = global::iKCoderDU.Properties.Resources.tab_input_fw;
             this.tabPage2.Controls.Add(this.txtInput);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(926, 489);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Input Document";
+            this.tabPage2.Text = "请求文档";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Silver;
+            this.tabPage1.BackgroundImage = global::iKCoderDU.Properties.Resources.tab_response_fw;
             this.tabPage1.Controls.Add(this.txtResult);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(926, 489);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Response Result";
+            this.tabPage1.Text = "响应文档";
             // 
             // tabPage3
             // 
+            this.tabPage3.BackgroundImage = global::iKCoderDU.Properties.Resources.tab_previewImage_fw;
             this.tabPage3.Controls.Add(this.pic_bindata);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(926, 489);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Image Viewer";
+            this.tabPage3.Text = "图片预览器";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // pic_bindata
             // 
-            this.pic_bindata.Location = new System.Drawing.Point(0, 0);
+            this.pic_bindata.Location = new System.Drawing.Point(3, 42);
             this.pic_bindata.Name = "pic_bindata";
             this.pic_bindata.Size = new System.Drawing.Size(100, 50);
             this.pic_bindata.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -567,8 +529,8 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.BackgroundImage = global::iKCoderDU.Properties.Resources.tab_resource_fw;
             this.tabPage4.Controls.Add(this.txt_getingdata);
-            this.tabPage4.Controls.Add(this.label10);
             this.tabPage4.Controls.Add(this.button8);
             this.tabPage4.Controls.Add(this.button7);
             this.tabPage4.Controls.Add(this.button6);
@@ -579,37 +541,26 @@
             this.tabPage4.Controls.Add(this.pic_previmg);
             this.tabPage4.Controls.Add(this.button4);
             this.tabPage4.Controls.Add(this.lst_resource);
-            this.tabPage4.Controls.Add(this.pictureBox1);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(927, 687);
+            this.tabPage4.Size = new System.Drawing.Size(926, 489);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Resource Explorer";
+            this.tabPage4.Text = "资源管理器";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // txt_getingdata
             // 
-            this.txt_getingdata.Location = new System.Drawing.Point(150, 128);
+            this.txt_getingdata.Location = new System.Drawing.Point(48, 34);
             this.txt_getingdata.Name = "txt_getingdata";
-            this.txt_getingdata.Size = new System.Drawing.Size(459, 21);
+            this.txt_getingdata.Size = new System.Drawing.Size(511, 21);
             this.txt_getingdata.TabIndex = 24;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Location = new System.Drawing.Point(7, 131);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(137, 12);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "URL For Getting Data :";
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(206, 62);
+            this.button8.Location = new System.Drawing.Point(663, 6);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(116, 23);
+            this.button8.Size = new System.Drawing.Size(97, 23);
             this.button8.TabIndex = 10;
             this.button8.Text = "导入二进制数据";
             this.button8.UseVisualStyleBackColor = true;
@@ -617,7 +568,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(456, 99);
+            this.button7.Location = new System.Drawing.Point(764, 6);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 9;
@@ -627,7 +578,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(534, 99);
+            this.button6.Location = new System.Drawing.Point(842, 6);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 8;
@@ -637,16 +588,18 @@
             // 
             // txt_datasearchkey
             // 
-            this.txt_datasearchkey.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_datasearchkey.Location = new System.Drawing.Point(119, 20);
+            this.txt_datasearchkey.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_datasearchkey.Location = new System.Drawing.Point(68, 6);
             this.txt_datasearchkey.Name = "txt_datasearchkey";
-            this.txt_datasearchkey.Size = new System.Drawing.Size(713, 14);
+            this.txt_datasearchkey.Size = new System.Drawing.Size(372, 21);
             this.txt_datasearchkey.TabIndex = 7;
             // 
             // linkLabel1
             // 
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.White;
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(860, 20);
+            this.linkLabel1.LinkColor = System.Drawing.Color.White;
+            this.linkLabel1.Location = new System.Drawing.Point(446, 11);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(41, 12);
             this.linkLabel1.TabIndex = 6;
@@ -656,9 +609,9 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(84, 62);
+            this.button5.Location = new System.Drawing.Point(571, 6);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(116, 23);
+            this.button5.Size = new System.Drawing.Size(88, 23);
             this.button5.TabIndex = 5;
             this.button5.Text = "导入文本数据";
             this.button5.UseVisualStyleBackColor = true;
@@ -667,26 +620,26 @@
             // txt_prevText
             // 
             this.txt_prevText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_prevText.Location = new System.Drawing.Point(626, 328);
+            this.txt_prevText.Location = new System.Drawing.Point(53, 304);
             this.txt_prevText.Multiline = true;
             this.txt_prevText.Name = "txt_prevText";
             this.txt_prevText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_prevText.Size = new System.Drawing.Size(290, 353);
+            this.txt_prevText.Size = new System.Drawing.Size(870, 185);
             this.txt_prevText.TabIndex = 4;
             // 
             // pic_previmg
             // 
             this.pic_previmg.BackColor = System.Drawing.Color.Transparent;
-            this.pic_previmg.Location = new System.Drawing.Point(626, 62);
+            this.pic_previmg.Location = new System.Drawing.Point(574, 35);
             this.pic_previmg.Name = "pic_previmg";
-            this.pic_previmg.Size = new System.Drawing.Size(290, 260);
+            this.pic_previmg.Size = new System.Drawing.Size(343, 254);
             this.pic_previmg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_previmg.TabIndex = 3;
             this.pic_previmg.TabStop = false;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(3, 62);
+            this.button4.Location = new System.Drawing.Point(492, 6);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 2;
@@ -706,9 +659,9 @@
             this.columnHeader9,
             this.columnHeader10});
             this.lst_resource.GridLines = true;
-            this.lst_resource.Location = new System.Drawing.Point(3, 155);
+            this.lst_resource.Location = new System.Drawing.Point(3, 62);
             this.lst_resource.Name = "lst_resource";
-            this.lst_resource.Size = new System.Drawing.Size(608, 526);
+            this.lst_resource.Size = new System.Drawing.Size(564, 227);
             this.lst_resource.TabIndex = 1;
             this.lst_resource.UseCompatibleStateImageBehavior = false;
             this.lst_resource.View = System.Windows.Forms.View.Details;
@@ -749,19 +702,9 @@
             this.columnHeader10.Text = "DESKey";
             this.columnHeader10.Width = 90;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::iKCoderDU.Properties.Resources.resourceExplorer_fw;
-            this.pictureBox1.Location = new System.Drawing.Point(-3, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(930, 680);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // tabPage5
             // 
-            this.tabPage5.BackgroundImage = global::iKCoderDU.Properties.Resources.relationShipExplorer_fw;
+            this.tabPage5.BackgroundImage = global::iKCoderDU.Properties.Resources.tab_relationparent_fw;
             this.tabPage5.Controls.Add(this.tree_parentDocumnets);
             this.tabPage5.Controls.Add(this.button16);
             this.tabPage5.Controls.Add(this.button15);
@@ -778,34 +721,34 @@
             this.tabPage5.Controls.Add(this.button9);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(927, 687);
+            this.tabPage5.Size = new System.Drawing.Size(926, 489);
             this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "RelationShip For Parents";
+            this.tabPage5.Text = "基础关系文档";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // tree_parentDocumnets
             // 
-            this.tree_parentDocumnets.Location = new System.Drawing.Point(5, 173);
+            this.tree_parentDocumnets.Location = new System.Drawing.Point(9, 126);
             this.tree_parentDocumnets.Name = "tree_parentDocumnets";
-            this.tree_parentDocumnets.Size = new System.Drawing.Size(387, 501);
+            this.tree_parentDocumnets.Size = new System.Drawing.Size(564, 355);
             this.tree_parentDocumnets.TabIndex = 29;
             // 
             // button16
             // 
-            this.button16.Location = new System.Drawing.Point(415, 289);
+            this.button16.Location = new System.Drawing.Point(663, 458);
             this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(68, 23);
+            this.button16.Size = new System.Drawing.Size(201, 23);
             this.button16.TabIndex = 27;
-            this.button16.Text = ">>";
+            this.button16.Text = ">> 从选定的基础关系中移除";
             this.button16.UseVisualStyleBackColor = true;
             // 
             // button15
             // 
-            this.button15.Location = new System.Drawing.Point(415, 247);
+            this.button15.Location = new System.Drawing.Point(663, 429);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(68, 23);
+            this.button15.Size = new System.Drawing.Size(201, 23);
             this.button15.TabIndex = 26;
-            this.button15.Text = "<<";
+            this.button15.Text = "<< 添加到选定的基础关系文档";
             this.button15.UseVisualStyleBackColor = true;
             // 
             // lst_relationParentChildList
@@ -815,9 +758,9 @@
             this.columnHeader14,
             this.columnHeader15});
             this.lst_relationParentChildList.GridLines = true;
-            this.lst_relationParentChildList.Location = new System.Drawing.Point(509, 167);
+            this.lst_relationParentChildList.Location = new System.Drawing.Point(590, 34);
             this.lst_relationParentChildList.Name = "lst_relationParentChildList";
-            this.lst_relationParentChildList.Size = new System.Drawing.Size(404, 507);
+            this.lst_relationParentChildList.Size = new System.Drawing.Size(328, 375);
             this.lst_relationParentChildList.TabIndex = 25;
             this.lst_relationParentChildList.UseCompatibleStateImageBehavior = false;
             this.lst_relationParentChildList.View = System.Windows.Forms.View.Details;
@@ -825,20 +768,21 @@
             // columnHeader11
             // 
             this.columnHeader11.Text = "id";
+            this.columnHeader11.Width = 39;
             // 
             // columnHeader14
             // 
             this.columnHeader14.Text = "symbol";
-            this.columnHeader14.Width = 257;
+            this.columnHeader14.Width = 137;
             // 
             // columnHeader15
             // 
             this.columnHeader15.Text = "groups";
-            this.columnHeader15.Width = 77;
+            this.columnHeader15.Width = 142;
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(112, 136);
+            this.button14.Location = new System.Drawing.Point(470, 88);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(97, 23);
             this.button14.TabIndex = 24;
@@ -848,7 +792,7 @@
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(9, 136);
+            this.button12.Location = new System.Drawing.Point(365, 88);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(97, 23);
             this.button12.TabIndex = 23;
@@ -858,7 +802,7 @@
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(9, 62);
+            this.button13.Location = new System.Drawing.Point(19, 44);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(125, 23);
             this.button13.TabIndex = 22;
@@ -869,15 +813,15 @@
             // txt_relationParentChildSearchKey
             // 
             this.txt_relationParentChildSearchKey.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_relationParentChildSearchKey.Location = new System.Drawing.Point(509, 125);
+            this.txt_relationParentChildSearchKey.Location = new System.Drawing.Point(590, 7);
             this.txt_relationParentChildSearchKey.Name = "txt_relationParentChildSearchKey";
-            this.txt_relationParentChildSearchKey.Size = new System.Drawing.Size(350, 21);
+            this.txt_relationParentChildSearchKey.Size = new System.Drawing.Size(274, 21);
             this.txt_relationParentChildSearchKey.TabIndex = 17;
             // 
             // linkLabel3
             // 
             this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Location = new System.Drawing.Point(872, 129);
+            this.linkLabel3.Location = new System.Drawing.Point(877, 10);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(41, 12);
             this.linkLabel3.TabIndex = 15;
@@ -888,14 +832,14 @@
             // txt_relationParentGroup
             // 
             this.txt_relationParentGroup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_relationParentGroup.Location = new System.Drawing.Point(103, 99);
+            this.txt_relationParentGroup.Location = new System.Drawing.Point(77, 88);
             this.txt_relationParentGroup.Name = "txt_relationParentGroup";
             this.txt_relationParentGroup.Size = new System.Drawing.Size(282, 21);
             this.txt_relationParentGroup.TabIndex = 14;
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(140, 62);
+            this.button11.Location = new System.Drawing.Point(160, 44);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(125, 23);
             this.button11.TabIndex = 12;
@@ -905,7 +849,7 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(271, 62);
+            this.button10.Location = new System.Drawing.Point(303, 44);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(125, 23);
             this.button10.TabIndex = 11;
@@ -915,14 +859,14 @@
             // txt_relationParentSymbol
             // 
             this.txt_relationParentSymbol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_relationParentSymbol.Location = new System.Drawing.Point(110, 31);
+            this.txt_relationParentSymbol.Location = new System.Drawing.Point(67, 5);
             this.txt_relationParentSymbol.Name = "txt_relationParentSymbol";
-            this.txt_relationParentSymbol.Size = new System.Drawing.Size(681, 21);
+            this.txt_relationParentSymbol.Size = new System.Drawing.Size(372, 21);
             this.txt_relationParentSymbol.TabIndex = 4;
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(796, 30);
+            this.button9.Location = new System.Drawing.Point(448, 4);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(125, 23);
             this.button9.TabIndex = 1;
@@ -932,7 +876,7 @@
             // 
             // tabPage8
             // 
-            this.tabPage8.BackgroundImage = global::iKCoderDU.Properties.Resources.relationShipParentExplorer_fw;
+            this.tabPage8.BackgroundImage = global::iKCoderDU.Properties.Resources.tab_relationchild_fw;
             this.tabPage8.Controls.Add(this.linkLabel2);
             this.tabPage8.Controls.Add(this.lst_relationshipchild_doclist);
             this.tabPage8.Controls.Add(this.txt_relationshipchild_docsource);
@@ -955,15 +899,15 @@
             this.tabPage8.Controls.Add(this.button19);
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(927, 687);
+            this.tabPage8.Size = new System.Drawing.Size(926, 489);
             this.tabPage8.TabIndex = 7;
-            this.tabPage8.Text = "RelationShip For Childs";
+            this.tabPage8.Text = "子关系文档";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(409, 352);
+            this.linkLabel2.Location = new System.Drawing.Point(592, 466);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(101, 12);
             this.linkLabel2.TabIndex = 50;
@@ -978,9 +922,9 @@
             this.columnHeader17,
             this.columnHeader18});
             this.lst_relationshipchild_doclist.GridLines = true;
-            this.lst_relationshipchild_doclist.Location = new System.Drawing.Point(9, 116);
+            this.lst_relationshipchild_doclist.Location = new System.Drawing.Point(9, 71);
             this.lst_relationshipchild_doclist.Name = "lst_relationshipchild_doclist";
-            this.lst_relationshipchild_doclist.Size = new System.Drawing.Size(383, 565);
+            this.lst_relationshipchild_doclist.Size = new System.Drawing.Size(565, 415);
             this.lst_relationshipchild_doclist.TabIndex = 49;
             this.lst_relationshipchild_doclist.UseCompatibleStateImageBehavior = false;
             this.lst_relationshipchild_doclist.View = System.Windows.Forms.View.Details;
@@ -1003,15 +947,15 @@
             // txt_relationshipchild_docsource
             // 
             this.txt_relationshipchild_docsource.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_relationshipchild_docsource.Location = new System.Drawing.Point(408, 372);
+            this.txt_relationshipchild_docsource.Location = new System.Drawing.Point(595, 279);
             this.txt_relationshipchild_docsource.Multiline = true;
             this.txt_relationshipchild_docsource.Name = "txt_relationshipchild_docsource";
-            this.txt_relationshipchild_docsource.Size = new System.Drawing.Size(513, 309);
+            this.txt_relationshipchild_docsource.Size = new System.Drawing.Size(335, 178);
             this.txt_relationshipchild_docsource.TabIndex = 48;
             // 
             // button31
             // 
-            this.button31.Location = new System.Drawing.Point(716, 312);
+            this.button31.Location = new System.Drawing.Point(783, 250);
             this.button31.Name = "button31";
             this.button31.Size = new System.Drawing.Size(129, 23);
             this.button31.TabIndex = 47;
@@ -1021,9 +965,9 @@
             // 
             // button30
             // 
-            this.button30.Location = new System.Drawing.Point(581, 312);
+            this.button30.Location = new System.Drawing.Point(668, 250);
             this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(129, 23);
+            this.button30.Size = new System.Drawing.Size(103, 23);
             this.button30.TabIndex = 46;
             this.button30.Text = "Add To Group";
             this.button30.UseVisualStyleBackColor = true;
@@ -1031,7 +975,7 @@
             // 
             // button29
             // 
-            this.button29.Location = new System.Drawing.Point(823, 276);
+            this.button29.Location = new System.Drawing.Point(595, 200);
             this.button29.Name = "button29";
             this.button29.Size = new System.Drawing.Size(98, 23);
             this.button29.TabIndex = 45;
@@ -1042,22 +986,22 @@
             // cmb_relationshipchild_symbolsearching
             // 
             this.cmb_relationshipchild_symbolsearching.FormattingEnabled = true;
-            this.cmb_relationshipchild_symbolsearching.Location = new System.Drawing.Point(534, 278);
+            this.cmb_relationshipchild_symbolsearching.Location = new System.Drawing.Point(595, 172);
             this.cmb_relationshipchild_symbolsearching.Name = "cmb_relationshipchild_symbolsearching";
-            this.cmb_relationshipchild_symbolsearching.Size = new System.Drawing.Size(280, 20);
+            this.cmb_relationshipchild_symbolsearching.Size = new System.Drawing.Size(325, 20);
             this.cmb_relationshipchild_symbolsearching.TabIndex = 44;
             // 
             // txt_relationshipchild_attrvalue
             // 
             this.txt_relationshipchild_attrvalue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_relationshipchild_attrvalue.Location = new System.Drawing.Point(534, 205);
+            this.txt_relationshipchild_attrvalue.Location = new System.Drawing.Point(595, 110);
             this.txt_relationshipchild_attrvalue.Name = "txt_relationshipchild_attrvalue";
-            this.txt_relationshipchild_attrvalue.Size = new System.Drawing.Size(387, 21);
+            this.txt_relationshipchild_attrvalue.Size = new System.Drawing.Size(325, 21);
             this.txt_relationshipchild_attrvalue.TabIndex = 43;
             // 
             // button26
             // 
-            this.button26.Location = new System.Drawing.Point(729, 241);
+            this.button26.Location = new System.Drawing.Point(777, 140);
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(85, 23);
             this.button26.TabIndex = 42;
@@ -1067,7 +1011,7 @@
             // 
             // button27
             // 
-            this.button27.Location = new System.Drawing.Point(638, 241);
+            this.button27.Location = new System.Drawing.Point(686, 140);
             this.button27.Name = "button27";
             this.button27.Size = new System.Drawing.Size(85, 23);
             this.button27.TabIndex = 41;
@@ -1077,7 +1021,7 @@
             // 
             // button28
             // 
-            this.button28.Location = new System.Drawing.Point(547, 241);
+            this.button28.Location = new System.Drawing.Point(595, 140);
             this.button28.Name = "button28";
             this.button28.Size = new System.Drawing.Size(85, 23);
             this.button28.TabIndex = 40;
@@ -1088,14 +1032,14 @@
             // cmb_relationshipchild_attrname
             // 
             this.cmb_relationshipchild_attrname.FormattingEnabled = true;
-            this.cmb_relationshipchild_attrname.Location = new System.Drawing.Point(534, 171);
+            this.cmb_relationshipchild_attrname.Location = new System.Drawing.Point(595, 75);
             this.cmb_relationshipchild_attrname.Name = "cmb_relationshipchild_attrname";
-            this.cmb_relationshipchild_attrname.Size = new System.Drawing.Size(387, 20);
+            this.cmb_relationshipchild_attrname.Size = new System.Drawing.Size(325, 20);
             this.cmb_relationshipchild_attrname.TabIndex = 39;
             // 
             // button25
             // 
-            this.button25.Location = new System.Drawing.Point(625, 132);
+            this.button25.Location = new System.Drawing.Point(686, 41);
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(85, 23);
             this.button25.TabIndex = 38;
@@ -1105,7 +1049,7 @@
             // 
             // button23
             // 
-            this.button23.Location = new System.Drawing.Point(534, 132);
+            this.button23.Location = new System.Drawing.Point(595, 41);
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(85, 23);
             this.button23.TabIndex = 36;
@@ -1116,14 +1060,14 @@
             // cmb_relationshipchild_groupname
             // 
             this.cmb_relationshipchild_groupname.FormattingEnabled = true;
-            this.cmb_relationshipchild_groupname.Location = new System.Drawing.Point(509, 98);
+            this.cmb_relationshipchild_groupname.Location = new System.Drawing.Point(595, 13);
             this.cmb_relationshipchild_groupname.Name = "cmb_relationshipchild_groupname";
-            this.cmb_relationshipchild_groupname.Size = new System.Drawing.Size(412, 20);
+            this.cmb_relationshipchild_groupname.Size = new System.Drawing.Size(325, 20);
             this.cmb_relationshipchild_groupname.TabIndex = 35;
             // 
             // button20
             // 
-            this.button20.Location = new System.Drawing.Point(5, 62);
+            this.button20.Location = new System.Drawing.Point(9, 44);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(125, 23);
             this.button20.TabIndex = 34;
@@ -1133,7 +1077,7 @@
             // 
             // button21
             // 
-            this.button21.Location = new System.Drawing.Point(136, 62);
+            this.button21.Location = new System.Drawing.Point(140, 44);
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(125, 23);
             this.button21.TabIndex = 33;
@@ -1143,7 +1087,7 @@
             // 
             // button22
             // 
-            this.button22.Location = new System.Drawing.Point(267, 62);
+            this.button22.Location = new System.Drawing.Point(271, 44);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(125, 23);
             this.button22.TabIndex = 32;
@@ -1154,14 +1098,14 @@
             // txt_relationship_childsymbol
             // 
             this.txt_relationship_childsymbol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_relationship_childsymbol.Location = new System.Drawing.Point(109, 31);
+            this.txt_relationship_childsymbol.Location = new System.Drawing.Point(61, 5);
             this.txt_relationship_childsymbol.Name = "txt_relationship_childsymbol";
-            this.txt_relationship_childsymbol.Size = new System.Drawing.Size(681, 21);
+            this.txt_relationship_childsymbol.Size = new System.Drawing.Size(382, 21);
             this.txt_relationship_childsymbol.TabIndex = 30;
             // 
             // button19
             // 
-            this.button19.Location = new System.Drawing.Point(796, 29);
+            this.button19.Location = new System.Drawing.Point(449, 4);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(125, 23);
             this.button19.TabIndex = 29;
@@ -1173,14 +1117,13 @@
             // 
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(927, 687);
+            this.tabPage6.Size = new System.Drawing.Size(926, 489);
             this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Account Managment";
+            this.tabPage6.Text = "账户";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // tabPage9
             // 
-            this.tabPage9.BackgroundImage = global::iKCoderDU.Properties.Resources.ProfileDocuments_fw;
             this.tabPage9.Controls.Add(this.linkLabel6);
             this.tabPage9.Controls.Add(this.lsv_analysistemplate);
             this.tabPage9.Controls.Add(this.linkLabel5);
@@ -1192,9 +1135,9 @@
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(927, 687);
+            this.tabPage9.Size = new System.Drawing.Size(926, 489);
             this.tabPage9.TabIndex = 8;
-            this.tabPage9.Text = "Account Profile";
+            this.tabPage9.Text = "账户Profile";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
             // linkLabel6
@@ -1320,11 +1263,73 @@
             this.lb_serverconnected.TabIndex = 23;
             this.lb_serverconnected.Text = "远程服务器通信状态：中断";
             // 
+            // 平台配置工具ToolStripMenuItem
+            // 
+            this.平台配置工具ToolStripMenuItem.Name = "平台配置工具ToolStripMenuItem";
+            this.平台配置工具ToolStripMenuItem.Size = new System.Drawing.Size(92, 21);
+            this.平台配置工具ToolStripMenuItem.Text = "平台配置工具";
+            // 
+            // 产品配置工具ToolStripMenuItem
+            // 
+            this.产品配置工具ToolStripMenuItem.Name = "产品配置工具ToolStripMenuItem";
+            this.产品配置工具ToolStripMenuItem.Size = new System.Drawing.Size(92, 21);
+            this.产品配置工具ToolStripMenuItem.Text = "产品配置工具";
+            // 
+            // 退出ToolStripMenuItem2
+            // 
+            this.退出ToolStripMenuItem2.Name = "退出ToolStripMenuItem2";
+            this.退出ToolStripMenuItem2.Size = new System.Drawing.Size(44, 21);
+            this.退出ToolStripMenuItem2.Text = "退出";
+            // 
+            // button24
+            // 
+            this.button24.Location = new System.Drawing.Point(12, 428);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(235, 23);
+            this.button24.TabIndex = 25;
+            this.button24.Text = "为PLATFORM数据库创建默认SP";
+            this.button24.UseVisualStyleBackColor = true;
+            // 
+            // button32
+            // 
+            this.button32.Location = new System.Drawing.Point(13, 457);
+            this.button32.Name = "button32";
+            this.button32.Size = new System.Drawing.Size(235, 23);
+            this.button32.TabIndex = 26;
+            this.button32.Text = "清除PLATFORM内存中的持久存储数据";
+            this.button32.UseVisualStyleBackColor = true;
+            // 
+            // 平台配置工具ToolStripMenuItem1
+            // 
+            this.平台配置工具ToolStripMenuItem1.Name = "平台配置工具ToolStripMenuItem1";
+            this.平台配置工具ToolStripMenuItem1.Size = new System.Drawing.Size(92, 21);
+            this.平台配置工具ToolStripMenuItem1.Text = "平台配置工具";
+            // 
+            // 平台配置工具ToolStripMenuItem2
+            // 
+            this.平台配置工具ToolStripMenuItem2.Name = "平台配置工具ToolStripMenuItem2";
+            this.平台配置工具ToolStripMenuItem2.Size = new System.Drawing.Size(92, 21);
+            this.平台配置工具ToolStripMenuItem2.Text = "平台配置工具";
+            // 
+            // 产品配置工具ToolStripMenuItem1
+            // 
+            this.产品配置工具ToolStripMenuItem1.Name = "产品配置工具ToolStripMenuItem1";
+            this.产品配置工具ToolStripMenuItem1.Size = new System.Drawing.Size(92, 21);
+            this.产品配置工具ToolStripMenuItem1.Text = "产品配置工具";
+            // 
+            // 退出ToolStripMenuItem3
+            // 
+            this.退出ToolStripMenuItem3.Name = "退出ToolStripMenuItem3";
+            this.退出ToolStripMenuItem3.Size = new System.Drawing.Size(44, 21);
+            this.退出ToolStripMenuItem3.Text = "退出";
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::iKCoderDU.Properties.Resources.mainform_fw;
             this.ClientSize = new System.Drawing.Size(1200, 700);
+            this.Controls.Add(this.button32);
+            this.Controls.Add(this.button24);
             this.Controls.Add(this.lb_serverconnected);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
@@ -1347,11 +1352,7 @@
             this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage7.ResumeLayout(false);
-            this.tabPage7.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
@@ -1362,7 +1363,6 @@
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_previmg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             this.tabPage8.ResumeLayout(false);
@@ -1406,7 +1406,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pic_bindata;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ListView lst_resource;
         private System.Windows.Forms.TextBox txt_prevText;
@@ -1435,15 +1434,10 @@
         private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.TextBox txt_relationParentGroup;
         private System.Windows.Forms.TextBox txt_getingdata;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ToolStripMenuItem 请客服务器长驻留对象ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 数据ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 场景管理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 课程场景ToolStripMenuItem;
-        private System.Windows.Forms.TabPage tabPage7;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button14;
@@ -1497,6 +1491,16 @@
         private System.Windows.Forms.ToolStripMenuItem 配置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 数据ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 服务器配置ToolStripMenuItem;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.ToolStripMenuItem 平台配置工具ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 产品配置工具ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem2;
+        private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.Button button32;
+        private System.Windows.Forms.ToolStripMenuItem 平台配置工具ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 平台配置工具ToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem 产品配置工具ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem3;
     }
 }
 

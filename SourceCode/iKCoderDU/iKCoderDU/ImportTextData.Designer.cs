@@ -111,11 +111,11 @@
             // txt_data
             // 
             this.txt_data.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_data.Location = new System.Drawing.Point(21, 209);
+            this.txt_data.Location = new System.Drawing.Point(12, 197);
             this.txt_data.Multiline = true;
             this.txt_data.Name = "txt_data";
             this.txt_data.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_data.Size = new System.Drawing.Size(1167, 617);
+            this.txt_data.Size = new System.Drawing.Size(1176, 465);
             this.txt_data.TabIndex = 5;
             // 
             // txt_symbol
@@ -241,7 +241,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::iKCoderDU.Properties.Resources.importTextData_fw;
-            this.ClientSize = new System.Drawing.Size(1200, 780);
+            this.ClientSize = new System.Drawing.Size(1200, 700);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.cmb_relationshipchild_symbolsearching);

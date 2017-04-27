@@ -41,7 +41,7 @@
     </Reference>
     <Reference Include="iKCoder_Platform_SDK_Kit, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\BinaryPackage\iKCoder_Platform_SDK_Kit.dll</HintPath>
+      <HintPath>..\..\..\..\BinaryPackage\iKCoder_Platform_SDK_Kit.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -67,12 +67,6 @@
     <Compile Include="ConfigForm.Designer.cs">
       <DependentUpon>ConfigForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EncoderMetrixImage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EncoderMetrixImage.Designer.cs">
-      <DependentUpon>EncoderMetrixImage.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormTipManagerment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,12 +86,6 @@
     <Compile Include="ImportTextData.Designer.cs">
       <DependentUpon>ImportTextData.cs</DependentUpon>
     </Compile>
-    <Compile Include="ImportWordSound.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ImportWordSound.Designer.cs">
-      <DependentUpon>ImportWordSound.cs</DependentUpon>
-    </Compile>
     <Compile Include="Loading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,26 +100,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Splash.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Splash.Designer.cs">
       <DependentUpon>Splash.cs</DependentUpon>
     </Compile>
-    <Compile Include="tipsManagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="tipsManagement.Designer.cs">
-      <DependentUpon>tipsManagement.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="BuildSPForDB.resx">
       <DependentUpon>BuildSPForDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConfigForm.resx">
       <DependentUpon>ConfigForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EncoderMetrixImage.resx">
-      <DependentUpon>EncoderMetrixImage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTipManagerment.resx">
       <DependentUpon>FormTipManagerment.cs</DependentUpon>
@@ -142,9 +126,6 @@
     <EmbeddedResource Include="ImportTextData.resx">
       <DependentUpon>ImportTextData.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="importWordSound.resx">
-      <DependentUpon>ImportWordSound.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Loading.resx">
       <DependentUpon>Loading.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,19 +134,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="tipsManagement.resx">
-      <DependentUpon>tipsManagement.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -218,6 +191,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="20170314104646905_easyicon_net_64.ico" />
+    <None Include="img\tab_resource.fw.png" />
+    <None Include="img\tab_previewImage.fw.png" />
+    <None Include="img\tab_response.fw.png" />
+    <None Include="img\tab_input.fw.png" />
+    <None Include="img\tab_start.fw.png" />
     <None Include="img\autoBuildAllSPS.fw.png" />
     <None Include="img\tipsManager.fw.png" />
     <None Include="img\configForm.fw.png" />

@@ -1234,8 +1234,7 @@ namespace iKCoderDU
 
         private void 图形矩阵生成ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EncoderMetrixImage obj = new EncoderMetrixImage(object_remote);
-            obj.ShowDialog();
+            
         }
   
     }
