@@ -1236,6 +1236,18 @@ namespace iKCoderDU
         {
             
         }
-  
+
+        private void 退出ToolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            threadForCheckServer.Abort();
+            Application.ExitThread();
+            Application.Exit();
+        }
+
+        private void button33_Click(object sender, EventArgs e)
+        {
+            ConfigForm obj = new ConfigForm();
+            obj.ShowDialog();
+        }
     }
 }

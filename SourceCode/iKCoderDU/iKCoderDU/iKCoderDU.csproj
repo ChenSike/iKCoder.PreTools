@@ -67,12 +67,19 @@
     <Compile Include="ConfigForm.Designer.cs">
       <DependentUpon>ConfigForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="config_ikcoder\form_toolbox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="config_ikcoder\form_toolbox.Designer.cs">
+      <DependentUpon>form_toolbox.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTipManagerment.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormTipManagerment.Designer.cs">
       <DependentUpon>FormTipManagerment.cs</DependentUpon>
     </Compile>
+    <Compile Include="GlobalDefined.cs" />
     <Compile Include="GlobalVars.cs" />
     <Compile Include="ImportBinData.cs">
       <SubType>Form</SubType>
@@ -116,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConfigForm.resx">
       <DependentUpon>ConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="config_ikcoder\form_toolbox.resx">
+      <DependentUpon>form_toolbox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTipManagerment.resx">
       <DependentUpon>FormTipManagerment.cs</DependentUpon>
@@ -185,6 +195,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="20170314104646905_easyicon_net_64.ico" />
+    <None Include="img\IKCoder\Form_ikcoder_config_workspace_toolbox.fw.png" />
     <None Include="img\tab_accountprofile.fw.png" />
     <None Include="img\tab_relationchild.fw.png" />
     <None Include="img\tab_relationparent.fw.png" />

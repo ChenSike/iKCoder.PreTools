@@ -93,6 +93,16 @@ namespace iKCoderDU.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap Form_ikcoder_config_workspace_toolbox_fw {
+            get {
+                object obj = ResourceManager.GetObject("Form_ikcoder_config_workspace_toolbox.fw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap importBinData_fw {
             get {
                 object obj = ResourceManager.GetObject("importBinData.fw", resourceCulture);

@@ -184,7 +184,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(19, 231);
+            this.button1.Location = new System.Drawing.Point(18, 221);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(158, 23);
             this.button1.TabIndex = 28;
@@ -198,9 +198,9 @@
             this.groupBox1.Controls.Add(this.txt_base64data);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txt_url);
-            this.groupBox1.Location = new System.Drawing.Point(13, 270);
+            this.groupBox1.Location = new System.Drawing.Point(12, 260);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1175, 588);
+            this.groupBox1.Size = new System.Drawing.Size(1174, 402);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Base64 数据";
@@ -208,11 +208,11 @@
             // txt_base64data
             // 
             this.txt_base64data.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_base64data.Location = new System.Drawing.Point(16, 17);
+            this.txt_base64data.Location = new System.Drawing.Point(8, 20);
             this.txt_base64data.Multiline = true;
             this.txt_base64data.Name = "txt_base64data";
             this.txt_base64data.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_base64data.Size = new System.Drawing.Size(1142, 517);
+            this.txt_base64data.Size = new System.Drawing.Size(1160, 338);
             this.txt_base64data.TabIndex = 0;
             // 
             // label7
@@ -220,7 +220,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(13, 556);
+            this.label7.Location = new System.Drawing.Point(13, 373);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(185, 12);
             this.label7.TabIndex = 30;
@@ -231,7 +231,7 @@
             // 
             this.txt_url.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_url.Enabled = false;
-            this.txt_url.Location = new System.Drawing.Point(203, 553);
+            this.txt_url.Location = new System.Drawing.Point(204, 369);
             this.txt_url.Name = "txt_url";
             this.txt_url.Size = new System.Drawing.Size(955, 21);
             this.txt_url.TabIndex = 31;
@@ -309,7 +309,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(183, 231);
+            this.button5.Location = new System.Drawing.Point(182, 221);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(158, 23);
             this.button5.TabIndex = 49;
@@ -333,7 +333,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::iKCoderDU.Properties.Resources.importBinData_fw;
-            this.ClientSize = new System.Drawing.Size(1200, 780);
+            this.ClientSize = new System.Drawing.Size(1200, 700);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);

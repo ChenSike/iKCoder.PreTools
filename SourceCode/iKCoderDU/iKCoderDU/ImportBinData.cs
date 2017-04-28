@@ -40,7 +40,7 @@ namespace iKCoderDU
 
             try
             {
-                string getArrUrl = "api_GetDataAggInfo.aspx?cid=" + GlobalVars.cid;
+                string getArrUrl = "api_GetDataAggInfo.aspx";
                 string requestURL = activeServerUrl + "/data/" + getArrUrl;
                 string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", requestURL, 1000 * 60, 100000);
                 XmlDocument resultDoc = new XmlDocument();
@@ -106,7 +106,7 @@ namespace iKCoderDU
                 {
                     if (!string.IsNullOrEmpty(cmb_produce.Text))
                     {
-                        string verifiedSymbolExistedURL = activeServerUrl + "/Data/api_GetVerifySymbolExisted.aspx?symbol=" + txt_symbol.Text + "&cid=" + GlobalVars.cid;
+                        string verifiedSymbolExistedURL = activeServerUrl + "/Data/api_GetVerifySymbolExisted.aspx?symbol=" + txt_symbol.Text;
                         string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", verifiedSymbolExistedURL, 1000 * 60, 100000);
                         if (result.Contains("true"))
                         {

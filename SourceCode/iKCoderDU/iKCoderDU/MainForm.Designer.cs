@@ -45,6 +45,9 @@
             this.cmb_URL = new System.Windows.Forms.ComboBox();
             this.txtInput = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.平台配置ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.产品配置ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.退出ToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.操作ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.重新创建对应服务器的所有SPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.请客服务器长驻留对象ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -156,6 +159,8 @@
             this.平台配置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.产品配置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.服务器配置ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.button33 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -329,11 +334,36 @@
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.平台配置ToolStripMenuItem1,
+            this.产品配置ToolStripMenuItem1,
+            this.退出ToolStripMenuItem5});
             this.menuStrip1.Location = new System.Drawing.Point(96, 31);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(188, 25);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 平台配置ToolStripMenuItem1
+            // 
+            this.平台配置ToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.服务器配置ToolStripMenuItem1});
+            this.平台配置ToolStripMenuItem1.Name = "平台配置ToolStripMenuItem1";
+            this.平台配置ToolStripMenuItem1.Size = new System.Drawing.Size(68, 21);
+            this.平台配置ToolStripMenuItem1.Text = "平台配置";
+            // 
+            // 产品配置ToolStripMenuItem1
+            // 
+            this.产品配置ToolStripMenuItem1.Name = "产品配置ToolStripMenuItem1";
+            this.产品配置ToolStripMenuItem1.Size = new System.Drawing.Size(68, 21);
+            this.产品配置ToolStripMenuItem1.Text = "产品配置";
+            // 
+            // 退出ToolStripMenuItem5
+            // 
+            this.退出ToolStripMenuItem5.Name = "退出ToolStripMenuItem5";
+            this.退出ToolStripMenuItem5.Size = new System.Drawing.Size(44, 21);
+            this.退出ToolStripMenuItem5.Text = "退出";
+            this.退出ToolStripMenuItem5.Click += new System.EventHandler(this.退出ToolStripMenuItem5_Click);
             // 
             // 操作ToolStripMenuItem
             // 
@@ -468,7 +498,7 @@
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage9);
-            this.tabControl1.Location = new System.Drawing.Point(254, 185);
+            this.tabControl1.Location = new System.Drawing.Point(262, 185);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(934, 515);
@@ -1300,7 +1330,7 @@
             // 
             // button32
             // 
-            this.button32.Location = new System.Drawing.Point(13, 457);
+            this.button32.Location = new System.Drawing.Point(12, 457);
             this.button32.Name = "button32";
             this.button32.Size = new System.Drawing.Size(235, 23);
             this.button32.TabIndex = 26;
@@ -1349,11 +1379,28 @@
             this.退出ToolStripMenuItem4.Size = new System.Drawing.Size(44, 21);
             this.退出ToolStripMenuItem4.Text = "退出";
             // 
+            // 服务器配置ToolStripMenuItem1
+            // 
+            this.服务器配置ToolStripMenuItem1.Name = "服务器配置ToolStripMenuItem1";
+            this.服务器配置ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.服务器配置ToolStripMenuItem1.Text = "服务器配置";
+            // 
+            // button33
+            // 
+            this.button33.Location = new System.Drawing.Point(12, 485);
+            this.button33.Name = "button33";
+            this.button33.Size = new System.Drawing.Size(235, 23);
+            this.button33.TabIndex = 27;
+            this.button33.Text = "服务器配置工具";
+            this.button33.UseVisualStyleBackColor = true;
+            this.button33.Click += new System.EventHandler(this.button33_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::iKCoderDU.Properties.Resources.mainform_fw;
             this.ClientSize = new System.Drawing.Size(1200, 700);
+            this.Controls.Add(this.button33);
             this.Controls.Add(this.button32);
             this.Controls.Add(this.button24);
             this.Controls.Add(this.lb_serverconnected);
@@ -1532,6 +1579,11 @@
         private System.Windows.Forms.ToolStripMenuItem 平台配置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 产品配置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem 平台配置ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 产品配置ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem 服务器配置ToolStripMenuItem1;
+        private System.Windows.Forms.Button button33;
     }
 }
 
