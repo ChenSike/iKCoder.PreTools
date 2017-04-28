@@ -153,6 +153,10 @@
             this.平台配置工具ToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.产品配置工具ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.平台配置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.产品配置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.退出ToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -327,7 +331,7 @@
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Location = new System.Drawing.Point(96, 31);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(202, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(188, 25);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -1124,6 +1128,7 @@
             // 
             // tabPage9
             // 
+            this.tabPage9.BackgroundImage = global::iKCoderDU.Properties.Resources.tab_accountprofile_fw;
             this.tabPage9.Controls.Add(this.linkLabel6);
             this.tabPage9.Controls.Add(this.lsv_analysistemplate);
             this.tabPage9.Controls.Add(this.linkLabel5);
@@ -1143,7 +1148,7 @@
             // linkLabel6
             // 
             this.linkLabel6.AutoSize = true;
-            this.linkLabel6.Location = new System.Drawing.Point(322, 105);
+            this.linkLabel6.Location = new System.Drawing.Point(394, 46);
             this.linkLabel6.Name = "linkLabel6";
             this.linkLabel6.Size = new System.Drawing.Size(77, 12);
             this.linkLabel6.TabIndex = 32;
@@ -1157,9 +1162,9 @@
             this.columnHeader19,
             this.columnHeader20});
             this.lsv_analysistemplate.GridLines = true;
-            this.lsv_analysistemplate.Location = new System.Drawing.Point(536, 129);
+            this.lsv_analysistemplate.Location = new System.Drawing.Point(589, 7);
             this.lsv_analysistemplate.Name = "lsv_analysistemplate";
-            this.lsv_analysistemplate.Size = new System.Drawing.Size(385, 545);
+            this.lsv_analysistemplate.Size = new System.Drawing.Size(334, 479);
             this.lsv_analysistemplate.TabIndex = 31;
             this.lsv_analysistemplate.UseCompatibleStateImageBehavior = false;
             this.lsv_analysistemplate.View = System.Windows.Forms.View.Details;
@@ -1177,7 +1182,7 @@
             // linkLabel5
             // 
             this.linkLabel5.AutoSize = true;
-            this.linkLabel5.Location = new System.Drawing.Point(417, 105);
+            this.linkLabel5.Location = new System.Drawing.Point(477, 46);
             this.linkLabel5.Name = "linkLabel5";
             this.linkLabel5.Size = new System.Drawing.Size(89, 12);
             this.linkLabel5.TabIndex = 30;
@@ -1187,8 +1192,10 @@
             // 
             // linkLabel4
             // 
+            this.linkLabel4.ActiveLinkColor = System.Drawing.Color.White;
             this.linkLabel4.AutoSize = true;
-            this.linkLabel4.Location = new System.Drawing.Point(646, 70);
+            this.linkLabel4.LinkColor = System.Drawing.Color.White;
+            this.linkLabel4.Location = new System.Drawing.Point(489, 13);
             this.linkLabel4.Name = "linkLabel4";
             this.linkLabel4.Size = new System.Drawing.Size(77, 12);
             this.linkLabel4.TabIndex = 29;
@@ -1198,26 +1205,27 @@
             // 
             // txt_profiledocument
             // 
-            this.txt_profiledocument.Location = new System.Drawing.Point(11, 129);
+            this.txt_profiledocument.Location = new System.Drawing.Point(4, 76);
             this.txt_profiledocument.Multiline = true;
             this.txt_profiledocument.Name = "txt_profiledocument";
-            this.txt_profiledocument.Size = new System.Drawing.Size(495, 545);
+            this.txt_profiledocument.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txt_profiledocument.Size = new System.Drawing.Size(577, 411);
             this.txt_profiledocument.TabIndex = 28;
             // 
             // cmb_profileresource
             // 
             this.cmb_profileresource.FormattingEnabled = true;
-            this.cmb_profileresource.Location = new System.Drawing.Point(139, 66);
+            this.cmb_profileresource.Location = new System.Drawing.Point(70, 9);
             this.cmb_profileresource.Name = "cmb_profileresource";
-            this.cmb_profileresource.Size = new System.Drawing.Size(498, 20);
+            this.cmb_profileresource.Size = new System.Drawing.Size(395, 20);
             this.cmb_profileresource.TabIndex = 23;
             this.cmb_profileresource.SelectedIndexChanged += new System.EventHandler(this.cmb_profileresource_SelectedIndexChanged);
             // 
             // button18
             // 
-            this.button18.Location = new System.Drawing.Point(307, 32);
+            this.button18.Location = new System.Drawing.Point(194, 41);
             this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(227, 23);
+            this.button18.Size = new System.Drawing.Size(169, 23);
             this.button18.TabIndex = 24;
             this.button18.Text = "同步模板到所选产品的每一个ACCOUNT";
             this.button18.UseVisualStyleBackColor = true;
@@ -1225,9 +1233,9 @@
             // 
             // button17
             // 
-            this.button17.Location = new System.Drawing.Point(88, 32);
+            this.button17.Location = new System.Drawing.Point(11, 41);
             this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(213, 23);
+            this.button17.Size = new System.Drawing.Size(177, 23);
             this.button17.TabIndex = 23;
             this.button17.Text = "从资源中加载所有的PROFILES模板";
             this.button17.UseVisualStyleBackColor = true;
@@ -1323,6 +1331,24 @@
             this.退出ToolStripMenuItem3.Size = new System.Drawing.Size(44, 21);
             this.退出ToolStripMenuItem3.Text = "退出";
             // 
+            // 平台配置ToolStripMenuItem
+            // 
+            this.平台配置ToolStripMenuItem.Name = "平台配置ToolStripMenuItem";
+            this.平台配置ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.平台配置ToolStripMenuItem.Text = "平台配置";
+            // 
+            // 产品配置ToolStripMenuItem
+            // 
+            this.产品配置ToolStripMenuItem.Name = "产品配置ToolStripMenuItem";
+            this.产品配置ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.产品配置ToolStripMenuItem.Text = "产品配置";
+            // 
+            // 退出ToolStripMenuItem4
+            // 
+            this.退出ToolStripMenuItem4.Name = "退出ToolStripMenuItem4";
+            this.退出ToolStripMenuItem4.Size = new System.Drawing.Size(44, 21);
+            this.退出ToolStripMenuItem4.Text = "退出";
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1352,6 +1378,8 @@
             this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -1501,6 +1529,9 @@
         private System.Windows.Forms.ToolStripMenuItem 平台配置工具ToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem 产品配置工具ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem 平台配置ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 产品配置ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem4;
     }
 }
 

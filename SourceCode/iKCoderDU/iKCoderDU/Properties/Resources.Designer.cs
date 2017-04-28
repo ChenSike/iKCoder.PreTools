@@ -193,6 +193,16 @@ namespace iKCoderDU.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap tab_accountprofile_fw {
+            get {
+                object obj = ResourceManager.GetObject("tab_accountprofile.fw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap tab_input_fw {
             get {
                 object obj = ResourceManager.GetObject("tab_input.fw", resourceCulture);

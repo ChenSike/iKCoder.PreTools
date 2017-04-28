@@ -178,12 +178,6 @@
     <None Include="img\encoderMetroData.fw.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\sencesRecommened.fw.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\aggreegateInformation.fw.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="img\relationShipParentExplorer.fw.png" />
   </ItemGroup>
   <ItemGroup>
@@ -191,13 +185,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="20170314104646905_easyicon_net_64.ico" />
+    <None Include="img\tab_accountprofile.fw.png" />
+    <None Include="img\tab_relationchild.fw.png" />
+    <None Include="img\tab_relationparent.fw.png" />
     <None Include="img\tab_resource.fw.png" />
     <None Include="img\tab_previewImage.fw.png" />
     <None Include="img\tab_response.fw.png" />
     <None Include="img\tab_input.fw.png" />
     <None Include="img\tab_start.fw.png" />
     <None Include="img\autoBuildAllSPS.fw.png" />
-    <None Include="img\tipsManager.fw.png" />
     <None Include="img\configForm.fw.png" />
     <None Include="img\ProfileDocuments.fw.png" />
   </ItemGroup>
