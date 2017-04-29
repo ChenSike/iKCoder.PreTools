@@ -66,6 +66,10 @@ namespace iKCoderDU.config_ikcoder
             {
                 string stage = txtStage.Text;
                 string optionalHeader = txtHeader.Text;
+                string getArrUrl = "api_iKCoder_Workspace_Set_Blockly.aspx?operation=" + GlobalDefined.iKCoderOperationCode + "&fullysymbol=" + cmbSymbol.Text;
+                string requestURL = activeServerUrl + "/Bus/Workspace/" + getArrUrl;
+                string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", requestURL, 1000 * 60, 1024 * 1024);
+                txtConfig.Text = result;
             }
         }
 
@@ -78,6 +82,11 @@ namespace iKCoderDU.config_ikcoder
                 string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", requestURL, 1000 * 60, 1024 * 1024);
                 txtConfig.Text = result;
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
