@@ -1249,5 +1249,70 @@ namespace iKCoderDU
             ConfigForm obj = new ConfigForm();
             obj.ShowDialog();
         }
+
+        private void 第二步Toolbox配置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            iKCoderDU.config_ikcoder.form_toolbox formObj = new config_ikcoder.form_toolbox(object_remote);
+            formObj.activeServerUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text;
+            formObj.ShowDialog();
+        }
+
+        private void 第一步Sence配置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void 第一步Sence配置ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            config_ikcoder.form_sence formObject = new config_ikcoder.form_sence(object_remote);
+            formObject.activeServerUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text;
+            formObject.ShowDialog();
+        }
+
+        private void 第二步ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            config_ikcoder.form_toolbox formObject = new config_ikcoder.form_toolbox(object_remote);
+            formObject.activeServerUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text;
+            formObject.ShowDialog();
+        }
+
+        private void 第三步TipsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //config_ikcoder.form_tips formObject = new config_ikcoder.form_tips(object_remote);
+            //formObject.ShowDialog();
+        }
+
+        private void 服务器配置ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ConfigForm formObject = new ConfigForm();
+            formObject.ShowDialog();
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            if (is_connected)
+            {
+                string requestURL = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Data/api_BuildAllSPS.aspx?keycode=AllowPlatformOperation";
+                string responseFromServer = object_remote.getRemoteRequestToString("<root></root>", requestURL, 1000, 1000, null);
+                XmlDocument responseDoc = new XmlDocument();
+                responseDoc.LoadXml(responseFromServer);
+                XmlNode msgNode = responseDoc.SelectSingleNode("/root/msg[@code='executed']");
+                if (msgNode != null)
+                    MessageBox.Show("已经成功完成自定动作.");
+                else
+                {
+                    MessageBox.Show("无法完成指定动作,请点击确定后查看文档.");
+                    MessageBox.Show(responseFromServer);
+                }
+            }
+            else
+                MessageBox.Show("请先取得服务器授权后再进行动作.");
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+

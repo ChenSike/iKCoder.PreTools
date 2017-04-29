@@ -67,6 +67,30 @@
     <Compile Include="ConfigForm.Designer.cs">
       <DependentUpon>ConfigForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="config_ikcoder\form_importBinary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="config_ikcoder\form_importBinary.Designer.cs">
+      <DependentUpon>form_importBinary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="config_ikcoder\form_importText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="config_ikcoder\form_importText.Designer.cs">
+      <DependentUpon>form_importText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="config_ikcoder\form_sence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="config_ikcoder\form_sence.Designer.cs">
+      <DependentUpon>form_sence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="config_ikcoder\form_tips.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="config_ikcoder\form_tips.Designer.cs">
+      <DependentUpon>form_tips.cs</DependentUpon>
+    </Compile>
     <Compile Include="config_ikcoder\form_toolbox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +147,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConfigForm.resx">
       <DependentUpon>ConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="config_ikcoder\form_importBinary.resx">
+      <DependentUpon>form_importBinary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="config_ikcoder\form_importText.resx">
+      <DependentUpon>form_importText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="config_ikcoder\form_sence.resx">
+      <DependentUpon>form_sence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="config_ikcoder\form_tips.resx">
+      <DependentUpon>form_tips.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="config_ikcoder\form_toolbox.resx">
       <DependentUpon>form_toolbox.cs</DependentUpon>
@@ -195,6 +231,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="20170314104646905_easyicon_net_64.ico" />
+    <None Include="img\IKCoder\Form_ikcoder_config_workspace_tips.fw.png" />
+    <None Include="img\IKCoder\Form_ikcoder_config_workspace_words.fw.png" />
+    <None Include="img\IKCoder\Form_ikcoder_resource_text.fw.png" />
+    <None Include="img\IKCoder\Form_ikcoder_config_workspace_sence.fw.png" />
     <None Include="img\IKCoder\Form_ikcoder_config_workspace_toolbox.fw.png" />
     <None Include="img\tab_accountprofile.fw.png" />
     <None Include="img\tab_relationchild.fw.png" />
