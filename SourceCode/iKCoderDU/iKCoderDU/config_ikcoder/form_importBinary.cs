@@ -11,7 +11,7 @@ using iKCoder_Platform_SDK_Kit;
 
 namespace iKCoderDU.config_ikcoder
 {
-    public partial class form_importBinary : Form
+    public partial class form_importBinary : Forms_NoBorderBaseform
     {
 
         class_Net_RemoteRequest object_remote;
@@ -29,6 +29,11 @@ namespace iKCoderDU.config_ikcoder
         }
 
         private void form_importBinary_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
