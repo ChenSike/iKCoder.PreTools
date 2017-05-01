@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using iKCoder_Platform_SDK_Kit;
 using System.Xml;
-using System.Text;
 
 namespace iKCoderDU.config_ikcoder
 {

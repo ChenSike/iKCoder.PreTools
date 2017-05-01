@@ -63,9 +63,8 @@ namespace iKCoderDU.config_ikcoder
         {
             if (!string.IsNullOrEmpty(cmbSymbol.Text))
             {
-                string isfree = chkFreeSence.Checked ? "1" : "0";
-                string getArrUrl = "api_iKCoder_Data_Set_TextData.aspx?operation=" + GlobalDefined.iKCoderOperationCode + "&isfree=" + isfree;
-                string requestURL = activeServerUrl + "/Bus/Workspace/" + getArrUrl;
+                string getArrUrl = "api_iKCoder_Data_Set_TextData.aspx?operation=" + GlobalDefined.iKCoderOperationCode + "&symbol=" + cmbSymbol.Text;
+                string requestURL = activeServerUrl + "/Data/" + getArrUrl;
                 string result = object_remote.getRemoteRequestToStringWithCookieHeader(txtConfig.Text, requestURL, 1000 * 60, 1024 * 1024);
                 if (result.Contains("err"))
                 {
@@ -75,6 +74,17 @@ namespace iKCoderDU.config_ikcoder
                 {
                     MessageBox.Show("更新成功。");
                 }
+            }
+        }
+
+        private void cmbSymbol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(cmbSymbol.Text))
+            {
+                string getArrUrl = "api_iKCoder_Data_Get_ResourceText.aspx?operation=" + GlobalDefined.iKCoderOperationCode + "&symbol=" + cmbSymbol.Text;
+                string requestURL = activeServerUrl + "/Data/" + getArrUrl;
+                string result = object_remote.getRemoteRequestToStringWithCookieHeader(txtConfig.Text, requestURL, 1000 * 60, 1024 * 1024);
+                txtConfig.Text = result;
             }
         }
     }

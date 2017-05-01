@@ -41,7 +41,7 @@ namespace iKCoderDU.config_ikcoder
         {
             try
             {
-                string getArrUrl = "api_iKCoder_Workspace_Get_DefaultWorkspaceStatus.aspx?operation=" + GlobalDefined.iKCoderOperationCode;
+                string getArrUrl = "api_iKCoder_Workspace_Get_AggDefaultWorkspaceStatus.aspx?operation=" + GlobalDefined.iKCoderOperationCode;
                 string requestURL = activeServerUrl + "/Bus/Workspace/" + getArrUrl;
                 string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", requestURL, 1000 * 60, 1024 * 1024);
                 XmlDocument toolBoxDoc = new XmlDocument();

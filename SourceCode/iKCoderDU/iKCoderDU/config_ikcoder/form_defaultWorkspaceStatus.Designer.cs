@@ -40,18 +40,18 @@
             // 
             // txtStage
             // 
-            this.txtStage.Location = new System.Drawing.Point(443, 66);
+            this.txtStage.Location = new System.Drawing.Point(443, 70);
             this.txtStage.Name = "txtStage";
-            this.txtStage.Size = new System.Drawing.Size(120, 29);
+            this.txtStage.Size = new System.Drawing.Size(120, 22);
             this.txtStage.TabIndex = 17;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(396, 70);
+            this.label2.Location = new System.Drawing.Point(396, 73);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 21);
+            this.label2.Size = new System.Drawing.Size(40, 16);
             this.label2.TabIndex = 16;
             this.label2.Text = "Stage:";
             // 
@@ -90,7 +90,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(176, 23);
             this.button1.TabIndex = 12;
-            this.button1.Text = "更新一个TOOLBOX的配置";
+            this.button1.Text = "更新配置";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -99,7 +99,7 @@
             this.cmbSymbol.FormattingEnabled = true;
             this.cmbSymbol.Location = new System.Drawing.Point(64, 69);
             this.cmbSymbol.Name = "cmbSymbol";
-            this.cmbSymbol.Size = new System.Drawing.Size(321, 29);
+            this.cmbSymbol.Size = new System.Drawing.Size(321, 24);
             this.cmbSymbol.TabIndex = 11;
             this.cmbSymbol.SelectedIndexChanged += new System.EventHandler(this.cmbSymbol_SelectedIndexChanged);
             // 
@@ -109,13 +109,13 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(13, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 21);
+            this.label1.Size = new System.Drawing.Size(50, 16);
             this.label1.TabIndex = 10;
             this.label1.Text = "Symbol:";
             // 
             // form_defaultWorkspaceStatus
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::iKCoderDU.Properties.Resources.Form_ikcoder_config_workspace_status_fw;
             this.ClientSize = new System.Drawing.Size(1200, 700);

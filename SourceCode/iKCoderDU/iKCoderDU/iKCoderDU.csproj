@@ -67,6 +67,12 @@
     <Compile Include="ConfigForm.Designer.cs">
       <DependentUpon>ConfigForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="config_ikcoder\form_defaultWorkspaceStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="config_ikcoder\form_defaultWorkspaceStatus.designer.cs">
+      <DependentUpon>form_defaultWorkspaceStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="config_ikcoder\form_importBinary.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConfigForm.resx">
       <DependentUpon>ConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="config_ikcoder\form_defaultWorkspaceStatus.resx">
+      <DependentUpon>form_defaultWorkspaceStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="config_ikcoder\form_importBinary.resx">
       <DependentUpon>form_importBinary.cs</DependentUpon>
@@ -231,6 +240,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="20170314104646905_easyicon_net_64.ico" />
+    <None Include="img\IKCoder\Form_ikcoder_resource_binary.fw.png" />
+    <None Include="img\IKCoder\Form_ikcoder_config_workspace_status.fw.png" />
     <None Include="img\IKCoder\Form_ikcoder_config_workspace_tips.fw.png" />
     <None Include="img\IKCoder\Form_ikcoder_config_workspace_words.fw.png" />
     <None Include="img\IKCoder\Form_ikcoder_resource_text.fw.png" />

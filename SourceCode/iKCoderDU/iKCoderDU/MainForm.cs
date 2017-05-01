@@ -1252,7 +1252,7 @@ namespace iKCoderDU
 
         private void 第二步Toolbox配置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            iKCoderDU.config_ikcoder.form_toolbox formObj = new config_ikcoder.form_toolbox(object_remote);
+            iKCoderDU.config_ikcoder.form_importText formObj = new config_ikcoder.form_importText(object_remote);
             formObj.activeServerUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text;
             formObj.ShowDialog();
         }
@@ -1278,8 +1278,9 @@ namespace iKCoderDU
 
         private void 第三步TipsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //config_ikcoder.form_tips formObject = new config_ikcoder.form_tips(object_remote);
-            //formObject.ShowDialog();
+            config_ikcoder.form_tips formObject = new config_ikcoder.form_tips(object_remote);
+            formObject.activeServerUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text;
+            formObject.ShowDialog();
         }
 
         private void 服务器配置ToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -1312,6 +1313,20 @@ namespace iKCoderDU
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void 导入二进制数据ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            iKCoderDU.config_ikcoder.form_importBinary formObj = new config_ikcoder.form_importBinary(object_remote);
+            formObj.activeServerUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text;
+            formObj.ShowDialog();
+        }
+
+        private void 第四步ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            config_ikcoder.form_defaultWorkspaceStatus formObj = new config_ikcoder.form_defaultWorkspaceStatus(object_remote);
+            formObj.activeServerUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text;
+            formObj.ShowDialog();
         }
     }
 }
