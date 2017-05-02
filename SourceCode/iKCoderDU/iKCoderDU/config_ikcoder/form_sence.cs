@@ -68,8 +68,7 @@ namespace iKCoderDU.config_ikcoder
         private void button1_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(cmbSymbol.Text))
-            {
-                StringBuilder inputDocument = new StringBuilder();               
+            {                          
                 string isfree = chkFreeSence.Checked ? "1" : "0";
                 string getArrUrl = "api_iKCoder_Workspace_Set_Sence.aspx?operation=" + GlobalDefined.iKCoderOperationCode + "&isfree=" + isfree + "&symbol=" + cmbSymbol.Text;
                 string requestURL = activeServerUrl + "/Bus/Workspace/" + getArrUrl;
@@ -88,6 +87,24 @@ namespace iKCoderDU.config_ikcoder
         private void button2_Click(object sender, EventArgs e)
         {
             flushSence();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(cmbSymbol.Text))
+            {               
+                string getArrUrl = "api_iKCoder_Workspace_Set_RemoveSence.aspx?operation=" + GlobalDefined.iKCoderOperationCode + "&symbol=" + cmbSymbol.Text;
+                string requestURL = activeServerUrl + "/Bus/Workspace/" + getArrUrl;
+                string result = object_remote.getRemoteRequestToStringWithCookieHeader(txtConfig.Text, requestURL, 1000 * 60, 1024 * 1024);
+                if (result.Contains("err"))
+                {
+                    MessageBox.Show("更新失败。");
+                }
+                else
+                {
+                    MessageBox.Show("更新成功。");
+                }
+            }
         }
     }
 }

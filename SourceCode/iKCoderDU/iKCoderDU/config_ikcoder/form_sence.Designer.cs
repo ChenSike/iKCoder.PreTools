@@ -35,6 +35,7 @@
             this.cmbSymbol = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.chkFreeSence = new System.Windows.Forms.CheckBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtConfig
@@ -58,7 +59,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(832, 68);
+            this.button2.Location = new System.Drawing.Point(653, 67);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(175, 23);
             this.button2.TabIndex = 13;
@@ -68,7 +69,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1013, 68);
+            this.button1.Location = new System.Drawing.Point(834, 67);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(176, 23);
             this.button1.TabIndex = 12;
@@ -81,7 +82,7 @@
             this.cmbSymbol.FormattingEnabled = true;
             this.cmbSymbol.Location = new System.Drawing.Point(67, 65);
             this.cmbSymbol.Name = "cmbSymbol";
-            this.cmbSymbol.Size = new System.Drawing.Size(544, 29);
+            this.cmbSymbol.Size = new System.Drawing.Size(467, 24);
             this.cmbSymbol.TabIndex = 11;
             this.cmbSymbol.SelectedIndexChanged += new System.EventHandler(this.cmbSymbol_SelectedIndexChanged);
             // 
@@ -91,7 +92,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(16, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 21);
+            this.label1.Size = new System.Drawing.Size(50, 16);
             this.label1.TabIndex = 10;
             this.label1.Text = "Symbol:";
             // 
@@ -99,19 +100,30 @@
             // 
             this.chkFreeSence.AutoSize = true;
             this.chkFreeSence.BackColor = System.Drawing.Color.Transparent;
-            this.chkFreeSence.Location = new System.Drawing.Point(631, 69);
+            this.chkFreeSence.Location = new System.Drawing.Point(540, 67);
             this.chkFreeSence.Name = "chkFreeSence";
-            this.chkFreeSence.Size = new System.Drawing.Size(132, 25);
+            this.chkFreeSence.Size = new System.Drawing.Size(93, 20);
             this.chkFreeSence.TabIndex = 16;
             this.chkFreeSence.Text = "是否免费课程";
             this.chkFreeSence.UseVisualStyleBackColor = false;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(1015, 67);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(176, 23);
+            this.button4.TabIndex = 17;
+            this.button4.Text = "删除选定数据";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // form_sence
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::iKCoderDU.Properties.Resources.Form_ikcoder_config_workspace_sence_fw;
             this.ClientSize = new System.Drawing.Size(1200, 700);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.chkFreeSence);
             this.Controls.Add(this.txtConfig);
             this.Controls.Add(this.button3);
@@ -136,5 +148,6 @@
         private System.Windows.Forms.ComboBox cmbSymbol;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox chkFreeSence;
+        private System.Windows.Forms.Button button4;
     }
 }

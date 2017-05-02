@@ -38,30 +38,31 @@
             this.txtStage = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtHeader = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(14, 74);
+            this.label1.Location = new System.Drawing.Point(14, 72);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 12);
+            this.label1.Size = new System.Drawing.Size(50, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Symbol:";
             // 
             // cmbSymbol
             // 
             this.cmbSymbol.FormattingEnabled = true;
-            this.cmbSymbol.Location = new System.Drawing.Point(65, 70);
+            this.cmbSymbol.Location = new System.Drawing.Point(65, 68);
             this.cmbSymbol.Name = "cmbSymbol";
-            this.cmbSymbol.Size = new System.Drawing.Size(208, 20);
+            this.cmbSymbol.Size = new System.Drawing.Size(175, 24);
             this.cmbSymbol.TabIndex = 1;
             this.cmbSymbol.SelectedIndexChanged += new System.EventHandler(this.cmbSymbol_SelectedIndexChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1013, 68);
+            this.button1.Location = new System.Drawing.Point(856, 66);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(176, 23);
             this.button1.TabIndex = 2;
@@ -71,7 +72,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(832, 68);
+            this.button2.Location = new System.Drawing.Point(675, 66);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(175, 23);
             this.button2.TabIndex = 3;
@@ -102,42 +103,53 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(293, 73);
+            this.label2.Location = new System.Drawing.Point(255, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.Size = new System.Drawing.Size(40, 16);
             this.label2.TabIndex = 6;
             this.label2.Text = "Stage:";
             // 
             // txtStage
             // 
-            this.txtStage.Location = new System.Drawing.Point(340, 69);
+            this.txtStage.Location = new System.Drawing.Point(302, 69);
             this.txtStage.Name = "txtStage";
-            this.txtStage.Size = new System.Drawing.Size(120, 21);
+            this.txtStage.Size = new System.Drawing.Size(120, 22);
             this.txtStage.TabIndex = 7;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(475, 74);
+            this.label3.Location = new System.Drawing.Point(437, 73);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 12);
+            this.label3.Size = new System.Drawing.Size(98, 16);
             this.label3.TabIndex = 8;
             this.label3.Text = "Optional Header:";
             // 
             // txtHeader
             // 
-            this.txtHeader.Location = new System.Drawing.Point(578, 69);
+            this.txtHeader.Location = new System.Drawing.Point(540, 69);
             this.txtHeader.Name = "txtHeader";
-            this.txtHeader.Size = new System.Drawing.Size(120, 21);
+            this.txtHeader.Size = new System.Drawing.Size(120, 22);
             this.txtHeader.TabIndex = 9;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(1038, 66);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(150, 23);
+            this.button4.TabIndex = 24;
+            this.button4.Text = "删除选定数据";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // form_toolbox
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::iKCoderDU.Properties.Resources.Form_ikcoder_config_workspace_toolbox_fw;
             this.ClientSize = new System.Drawing.Size(1200, 700);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.txtHeader);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtStage);
@@ -168,5 +180,6 @@
         private System.Windows.Forms.TextBox txtStage;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtHeader;
+        private System.Windows.Forms.Button button4;
     }
 }
