@@ -1328,6 +1328,29 @@ namespace iKCoderDU
             formObj.activeServerUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text;
             formObj.ShowDialog();
         }
+
+        private void 为iKCoder数据库创建SPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string requestURL = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text + "/Sys/api_iKCoder_Sys_Set_AutoBuildSPS.aspx?operation=AllowedOperation";
+                string responseFromServer = object_remote.getRemoteRequestToString("<root></root>", requestURL, 1000, 1000, null);
+                XmlDocument responseDoc = new XmlDocument();
+                responseDoc.LoadXml(responseFromServer);
+                XmlNode msgNode = responseDoc.SelectSingleNode("/root/msg[@code='executed']");
+                if (msgNode != null)
+                    MessageBox.Show("已经成功完成自定动作.");
+                else
+                {
+                    MessageBox.Show("无法完成指定动作,请点击确定后查看文档.");
+                    MessageBox.Show(responseFromServer);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("无法完成指定动作,请检查网络设置.");
+            }
+        }
     }
 }
 
