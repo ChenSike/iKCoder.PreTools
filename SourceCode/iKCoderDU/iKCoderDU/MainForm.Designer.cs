@@ -141,7 +141,6 @@
             this.cmb_profileresource = new System.Windows.Forms.ComboBox();
             this.button18 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
-            this.tabPage10 = new System.Windows.Forms.TabPage();
             this.cmb_URL = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.lst_cookies = new System.Windows.Forms.ListView();
@@ -196,14 +195,14 @@
             // 重新创建对应服务器的所有SPToolStripMenuItem
             // 
             this.重新创建对应服务器的所有SPToolStripMenuItem.Name = "重新创建对应服务器的所有SPToolStripMenuItem";
-            this.重新创建对应服务器的所有SPToolStripMenuItem.Size = new System.Drawing.Size(282, 26);
+            this.重新创建对应服务器的所有SPToolStripMenuItem.Size = new System.Drawing.Size(284, 26);
             this.重新创建对应服务器的所有SPToolStripMenuItem.Text = "重新创建对应服务器的所有SP";
             this.重新创建对应服务器的所有SPToolStripMenuItem.Click += new System.EventHandler(this.重新创建对应服务器的所有SPToolStripMenuItem_Click);
             // 
             // 请客服务器长驻留对象ToolStripMenuItem
             // 
             this.请客服务器长驻留对象ToolStripMenuItem.Name = "请客服务器长驻留对象ToolStripMenuItem";
-            this.请客服务器长驻留对象ToolStripMenuItem.Size = new System.Drawing.Size(282, 26);
+            this.请客服务器长驻留对象ToolStripMenuItem.Size = new System.Drawing.Size(284, 26);
             this.请客服务器长驻留对象ToolStripMenuItem.Text = "清空服务器长驻留对象";
             // 
             // 退出ToolStripMenuItem
@@ -223,25 +222,25 @@
             this.日志管理ToolStripMenuItem,
             this.图形矩阵生成ToolStripMenuItem});
             this.辅助工具ToolStripMenuItem.Name = "辅助工具ToolStripMenuItem";
-            this.辅助工具ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.辅助工具ToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
             this.辅助工具ToolStripMenuItem.Text = "辅助工具";
             // 
             // 二维码生成ToolStripMenuItem
             // 
             this.二维码生成ToolStripMenuItem.Name = "二维码生成ToolStripMenuItem";
-            this.二维码生成ToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
+            this.二维码生成ToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
             this.二维码生成ToolStripMenuItem.Text = "二维码生成";
             // 
             // 日志管理ToolStripMenuItem
             // 
             this.日志管理ToolStripMenuItem.Name = "日志管理ToolStripMenuItem";
-            this.日志管理ToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
+            this.日志管理ToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
             this.日志管理ToolStripMenuItem.Text = "日志管理";
             // 
             // 图形矩阵生成ToolStripMenuItem
             // 
             this.图形矩阵生成ToolStripMenuItem.Name = "图形矩阵生成ToolStripMenuItem";
-            this.图形矩阵生成ToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
+            this.图形矩阵生成ToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
             this.图形矩阵生成ToolStripMenuItem.Text = "图形矩阵生成";
             this.图形矩阵生成ToolStripMenuItem.Click += new System.EventHandler(this.图形矩阵生成ToolStripMenuItem_Click);
             // 
@@ -250,20 +249,20 @@
             this.配置ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.服务器配置ToolStripMenuItem});
             this.配置ToolStripMenuItem.Name = "配置ToolStripMenuItem";
-            this.配置ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.配置ToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
             this.配置ToolStripMenuItem.Text = "配置";
             // 
             // 服务器配置ToolStripMenuItem
             // 
             this.服务器配置ToolStripMenuItem.Name = "服务器配置ToolStripMenuItem";
-            this.服务器配置ToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
+            this.服务器配置ToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
             this.服务器配置ToolStripMenuItem.Text = "服务器配置";
             this.服务器配置ToolStripMenuItem.Click += new System.EventHandler(this.服务器配置ToolStripMenuItem_Click);
             // 
             // 数据ToolStripMenuItem1
             // 
             this.数据ToolStripMenuItem1.Name = "数据ToolStripMenuItem1";
-            this.数据ToolStripMenuItem1.Size = new System.Drawing.Size(144, 26);
+            this.数据ToolStripMenuItem1.Size = new System.Drawing.Size(145, 26);
             this.数据ToolStripMenuItem1.Text = "数据";
             // 
             // 数据ToolStripMenuItem
@@ -279,13 +278,13 @@
             this.场景管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.课程场景ToolStripMenuItem});
             this.场景管理ToolStripMenuItem.Name = "场景管理ToolStripMenuItem";
-            this.场景管理ToolStripMenuItem.Size = new System.Drawing.Size(143, 26);
+            this.场景管理ToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
             this.场景管理ToolStripMenuItem.Text = "IKCoder";
             // 
             // 课程场景ToolStripMenuItem
             // 
             this.课程场景ToolStripMenuItem.Name = "课程场景ToolStripMenuItem";
-            this.课程场景ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.课程场景ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.课程场景ToolStripMenuItem.Text = "课程场景";
             // 
             // 退出ToolStripMenuItem1
@@ -425,7 +424,6 @@
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage9);
-            this.tabControl1.Controls.Add(this.tabPage10);
             this.tabControl1.Location = new System.Drawing.Point(262, 185);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -1218,16 +1216,6 @@
             this.button17.UseVisualStyleBackColor = true;
             this.button17.Click += new System.EventHandler(this.button17_Click_1);
             // 
-            // tabPage10
-            // 
-            this.tabPage10.Location = new System.Drawing.Point(4, 28);
-            this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(926, 483);
-            this.tabPage10.TabIndex = 9;
-            this.tabPage10.Text = "系统消息";
-            this.tabPage10.UseVisualStyleBackColor = true;
-            // 
             // cmb_URL
             // 
             this.cmb_URL.FormattingEnabled = true;
@@ -1387,7 +1375,7 @@
             this.退出ToolStripMenuItem5});
             this.menuStrip1.Location = new System.Drawing.Point(96, 31);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(336, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(222, 28);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -1402,7 +1390,7 @@
             // 服务器配置ToolStripMenuItem1
             // 
             this.服务器配置ToolStripMenuItem1.Name = "服务器配置ToolStripMenuItem1";
-            this.服务器配置ToolStripMenuItem1.Size = new System.Drawing.Size(159, 26);
+            this.服务器配置ToolStripMenuItem1.Size = new System.Drawing.Size(160, 26);
             this.服务器配置ToolStripMenuItem1.Text = "服务器配置";
             this.服务器配置ToolStripMenuItem1.Click += new System.EventHandler(this.服务器配置ToolStripMenuItem1_Click);
             // 
@@ -1411,7 +1399,7 @@
             this.产品配置ToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem2});
             this.产品配置ToolStripMenuItem1.Name = "产品配置ToolStripMenuItem1";
-            this.产品配置ToolStripMenuItem1.Size = new System.Drawing.Size(81, 24);
+            this.产品配置ToolStripMenuItem1.Size = new System.Drawing.Size(82, 24);
             this.产品配置ToolStripMenuItem1.Text = "产品配置";
             // 
             // toolStripMenuItem2
@@ -1422,7 +1410,7 @@
             this.导入二进制数据ToolStripMenuItem,
             this.为iKCoder数据库创建SPToolStripMenuItem});
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(181, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(167, 26);
             this.toolStripMenuItem2.Text = "Ikcoder 配置";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
@@ -1434,56 +1422,56 @@
             this.第三步TipsToolStripMenuItem,
             this.第四步ToolStripMenuItem});
             this.第一步Sence配置ToolStripMenuItem.Name = "第一步Sence配置ToolStripMenuItem";
-            this.第一步Sence配置ToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
+            this.第一步Sence配置ToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
             this.第一步Sence配置ToolStripMenuItem.Text = "课程配置";
             this.第一步Sence配置ToolStripMenuItem.Click += new System.EventHandler(this.第一步Sence配置ToolStripMenuItem_Click);
             // 
             // 第一步Sence配置ToolStripMenuItem1
             // 
             this.第一步Sence配置ToolStripMenuItem1.Name = "第一步Sence配置ToolStripMenuItem1";
-            this.第一步Sence配置ToolStripMenuItem1.Size = new System.Drawing.Size(374, 26);
+            this.第一步Sence配置ToolStripMenuItem1.Size = new System.Drawing.Size(356, 26);
             this.第一步Sence配置ToolStripMenuItem1.Text = "第一步 -> Sence 配置";
             this.第一步Sence配置ToolStripMenuItem1.Click += new System.EventHandler(this.第一步Sence配置ToolStripMenuItem1_Click);
             // 
             // 第二步ToolStripMenuItem
             // 
             this.第二步ToolStripMenuItem.Name = "第二步ToolStripMenuItem";
-            this.第二步ToolStripMenuItem.Size = new System.Drawing.Size(374, 26);
+            this.第二步ToolStripMenuItem.Size = new System.Drawing.Size(356, 26);
             this.第二步ToolStripMenuItem.Text = "第二步 -> Toolbox 配置";
             this.第二步ToolStripMenuItem.Click += new System.EventHandler(this.第二步ToolStripMenuItem_Click);
             // 
             // 第三步TipsToolStripMenuItem
             // 
             this.第三步TipsToolStripMenuItem.Name = "第三步TipsToolStripMenuItem";
-            this.第三步TipsToolStripMenuItem.Size = new System.Drawing.Size(374, 26);
+            this.第三步TipsToolStripMenuItem.Size = new System.Drawing.Size(356, 26);
             this.第三步TipsToolStripMenuItem.Text = "第三步 -> Tips";
             this.第三步TipsToolStripMenuItem.Click += new System.EventHandler(this.第三步TipsToolStripMenuItem_Click);
             // 
             // 第四步ToolStripMenuItem
             // 
             this.第四步ToolStripMenuItem.Name = "第四步ToolStripMenuItem";
-            this.第四步ToolStripMenuItem.Size = new System.Drawing.Size(374, 26);
+            this.第四步ToolStripMenuItem.Size = new System.Drawing.Size(356, 26);
             this.第四步ToolStripMenuItem.Text = "第四步 -> Default Workspace Status 配置";
             this.第四步ToolStripMenuItem.Click += new System.EventHandler(this.第四步ToolStripMenuItem_Click);
             // 
             // 第二步Toolbox配置ToolStripMenuItem
             // 
             this.第二步Toolbox配置ToolStripMenuItem.Name = "第二步Toolbox配置ToolStripMenuItem";
-            this.第二步Toolbox配置ToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
+            this.第二步Toolbox配置ToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
             this.第二步Toolbox配置ToolStripMenuItem.Text = "导入文本数据";
             this.第二步Toolbox配置ToolStripMenuItem.Click += new System.EventHandler(this.第二步Toolbox配置ToolStripMenuItem_Click);
             // 
             // 导入二进制数据ToolStripMenuItem
             // 
             this.导入二进制数据ToolStripMenuItem.Name = "导入二进制数据ToolStripMenuItem";
-            this.导入二进制数据ToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
+            this.导入二进制数据ToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
             this.导入二进制数据ToolStripMenuItem.Text = "导入二进制数据";
             this.导入二进制数据ToolStripMenuItem.Click += new System.EventHandler(this.导入二进制数据ToolStripMenuItem_Click);
             // 
             // 为iKCoder数据库创建SPToolStripMenuItem
             // 
             this.为iKCoder数据库创建SPToolStripMenuItem.Name = "为iKCoder数据库创建SPToolStripMenuItem";
-            this.为iKCoder数据库创建SPToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
+            this.为iKCoder数据库创建SPToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
             this.为iKCoder数据库创建SPToolStripMenuItem.Text = "为iKCoder数据库创建SP";
             this.为iKCoder数据库创建SPToolStripMenuItem.Click += new System.EventHandler(this.为iKCoder数据库创建SPToolStripMenuItem_Click);
             // 
@@ -1692,7 +1680,6 @@
         private System.Windows.Forms.ToolStripMenuItem 导入二进制数据ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 第四步ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 为iKCoder数据库创建SPToolStripMenuItem;
-        private System.Windows.Forms.TabPage tabPage10;
     }
 }
 
