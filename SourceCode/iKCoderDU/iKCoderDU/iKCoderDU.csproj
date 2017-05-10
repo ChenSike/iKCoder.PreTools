@@ -135,6 +135,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MessageRegRouter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageRegRouter.Designer.cs">
+      <DependentUpon>MessageRegRouter.cs</DependentUpon>
+    </Compile>
     <Compile Include="MesssageController.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,9 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MessageRegRouter.resx">
+      <DependentUpon>MessageRegRouter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="messsageController.resx">
       <DependentUpon>MesssageController.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,6 +258,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="20170314104646905_easyicon_net_64.ico" />
+    <None Include="img\messageRouterCenter.fw.png" />
     <None Include="img\messageCenter.fw.png" />
     <None Include="img\IKCoder\Form_ikcoder_resource_binary.fw.png" />
     <None Include="img\IKCoder\Form_ikcoder_config_workspace_status.fw.png" />

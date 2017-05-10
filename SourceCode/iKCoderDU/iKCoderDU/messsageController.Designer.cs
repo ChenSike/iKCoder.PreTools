@@ -33,7 +33,7 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label3 = new System.Windows.Forms.Label();
             this.txt_title = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_key = new System.Windows.Forms.TextBox();
             this.istop = new System.Windows.Forms.CheckBox();
             this.cmb_to = new System.Windows.Forms.ComboBox();
             this.txt_message = new System.Windows.Forms.TextBox();
@@ -41,6 +41,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.cmb_produce = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lst_message
@@ -59,10 +60,12 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "id";
+            this.columnHeader1.Width = 135;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "title";
+            this.columnHeader2.Width = 413;
             // 
             // label3
             // 
@@ -81,12 +84,12 @@
             this.txt_title.Size = new System.Drawing.Size(546, 25);
             this.txt_title.TabIndex = 4;
             // 
-            // textBox2
+            // txt_key
             // 
-            this.textBox2.Location = new System.Drawing.Point(95, 66);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(984, 25);
-            this.textBox2.TabIndex = 5;
+            this.txt_key.Location = new System.Drawing.Point(95, 66);
+            this.txt_key.Name = "txt_key";
+            this.txt_key.Size = new System.Drawing.Size(984, 25);
+            this.txt_key.TabIndex = 5;
             // 
             // istop
             // 
@@ -138,7 +141,8 @@
             // 
             this.cmb_produce.FormattingEnabled = true;
             this.cmb_produce.Items.AddRange(new object[] {
-            "everyone"});
+            "ikcoder",
+            "all"});
             this.cmb_produce.Location = new System.Drawing.Point(99, 236);
             this.cmb_produce.Name = "cmb_produce";
             this.cmb_produce.Size = new System.Drawing.Size(513, 27);
@@ -153,12 +157,23 @@
             this.button3.Text = "Delete";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(1049, 5);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(129, 23);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "关闭";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // messsageController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::iKCoderDU.Properties.Resources.messageCenter_fw;
             this.ClientSize = new System.Drawing.Size(1200, 700);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.cmb_produce);
             this.Controls.Add(this.button2);
@@ -166,7 +181,7 @@
             this.Controls.Add(this.txt_message);
             this.Controls.Add(this.cmb_to);
             this.Controls.Add(this.istop);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txt_key);
             this.Controls.Add(this.txt_title);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lst_message);
@@ -184,7 +199,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_title;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_key;
         private System.Windows.Forms.CheckBox istop;
         private System.Windows.Forms.ComboBox cmb_to;
         private System.Windows.Forms.TextBox txt_message;
@@ -192,5 +207,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox cmb_produce;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

@@ -170,6 +170,8 @@
             this.导入二进制数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.为iKCoder数据库创建SPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.button34 = new System.Windows.Forms.Button();
+            this.button35 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1482,11 +1484,32 @@
             this.退出ToolStripMenuItem5.Text = "退出";
             this.退出ToolStripMenuItem5.Click += new System.EventHandler(this.退出ToolStripMenuItem5_Click);
             // 
+            // button34
+            // 
+            this.button34.Location = new System.Drawing.Point(12, 514);
+            this.button34.Name = "button34";
+            this.button34.Size = new System.Drawing.Size(235, 23);
+            this.button34.TabIndex = 28;
+            this.button34.Text = "消息控制器";
+            this.button34.UseVisualStyleBackColor = true;
+            this.button34.Click += new System.EventHandler(this.button34_Click);
+            // 
+            // button35
+            // 
+            this.button35.Location = new System.Drawing.Point(12, 544);
+            this.button35.Name = "button35";
+            this.button35.Size = new System.Drawing.Size(235, 23);
+            this.button35.TabIndex = 29;
+            this.button35.Text = "消息路由控制器";
+            this.button35.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::iKCoderDU.Properties.Resources.mainform_fw;
             this.ClientSize = new System.Drawing.Size(1200, 700);
+            this.Controls.Add(this.button35);
+            this.Controls.Add(this.button34);
             this.Controls.Add(this.button33);
             this.Controls.Add(this.button32);
             this.Controls.Add(this.button24);
@@ -1680,6 +1703,8 @@
         private System.Windows.Forms.ToolStripMenuItem 导入二进制数据ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 第四步ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 为iKCoder数据库创建SPToolStripMenuItem;
+        private System.Windows.Forms.Button button34;
+        private System.Windows.Forms.Button button35;
     }
 }
 

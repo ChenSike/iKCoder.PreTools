@@ -1351,6 +1351,13 @@ namespace iKCoderDU
                 MessageBox.Show("无法完成指定动作,请检查网络设置.");
             }
         }
+
+        private void button34_Click(object sender, EventArgs e)
+        {
+            messsageController formObj = new messsageController(object_remote);
+            formObj.activeServerUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text;
+            formObj.ShowDialog();
+        }
     }
 }
 

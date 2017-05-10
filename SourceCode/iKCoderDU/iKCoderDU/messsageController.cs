@@ -43,24 +43,20 @@ namespace iKCoderDU
                 inputDoc.Append(txt_message.Text);
                 inputDoc.Append("</message>");
                 inputDoc.Append("<type>sys</type>");
-                inputDoc.Append("</root>");
-             
+                inputDoc.Append("</root>");             
                 string getArrUrl = "api_Message_NewMessage.aspx?operation=" + GlobalDefined.iKCoderOperationCode;
                 string requestURL = activeServerUrl + "/Message/" + getArrUrl;
-                string result = object_remote.getRemoteRequestToStringWithCookieHeader("<root></root>", requestURL, 1000 * 60, 1024 * 1024);
-                XmlDocument toolBoxDoc = new XmlDocument();
-                toolBoxDoc.LoadXml(result);
-                XmlNodeList msgNodes = toolBoxDoc.SelectNodes("/root/msg");
-                lst_message.Items.Clear();
-                foreach (XmlNode msgNode in msgNodes)
-                {
-                    string id = class_XmlHelper.GetAttrValue(msgNode, "id");
-                    string title = class_XmlHelper.GetAttrValue(msgNode, "title");
-                    ListViewItem newLVI = new ListViewItem();
-                    newLVI.Text = id;
-                    newLVI.SubItems.Add(title);
-                    lst_message.Items.Add(newLVI);
-                }
+                string result = object_remote.getRemoteRequestToStringWithCookieHeader(inputDoc.ToString(), requestURL, 1000 * 60, 1024 * 1024);
+                XmlDocument resultDoc = new XmlDocument();
+                resultDoc.LoadXml(result);
+                XmlNode msgNode = resultDoc.SelectSingleNode("/root/msg");
+                string messageid = class_XmlHelper.GetAttrValue(msgNode, "id");
+                getArrUrl = "api_Message_Send.aspx?operation=" + GlobalDefined.iKCoderOperationCode+ "&messageid="+messageid;
+                requestURL = activeServerUrl + "/Message/" + getArrUrl;
+                result = object_remote.getRemoteRequestToStringWithCookieHeader(inputDoc.ToString(), requestURL, 1000 * 60, 1024 * 1024);
+                if (!result.Contains("<err"))
+                    MessageBox.Show("发送成功。");
+
             }
             catch
             {
@@ -101,5 +97,9 @@ namespace iKCoderDU
             }
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
