@@ -125,5 +125,22 @@ namespace iKCoderDU
                 MessageBox.Show("请选择需要删除的ROUTER后进行操作.");
             }
         }
+
+        private void cmb_symbols_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmb_symbols.Text != "")
+            {
+                XmlNode activeNode = messageDic[cmb_symbols.Text];
+                if (activeNode != null)
+                {
+                    string pushapi = class_XmlHelper.GetAttrValue(activeNode, "pushapi");
+                    string getapi = class_XmlHelper.GetAttrValue(activeNode, "getapi");
+                    string produce = class_XmlHelper.GetAttrValue(activeNode, "produce");
+                    txt_pushapi.Text = pushapi;
+                    txt_getapi.Text = getapi;
+                    txt_produce.Text = produce;
+                }
+            }
+        }
     }
 }

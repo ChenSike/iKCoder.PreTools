@@ -1356,6 +1356,14 @@ namespace iKCoderDU
         {
             messsageController formObj = new messsageController(object_remote);
             formObj.activeServerUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text;
+            
+            formObj.ShowDialog();
+        }
+
+        private void button35_Click(object sender, EventArgs e)
+        {
+            MessageRegRouter formObj = new MessageRegRouter(object_remote);
+            formObj.activeServerUrl = "http://" + cmb_server.Text + "/" + cmb_vfolder.Text;
             formObj.ShowDialog();
         }
     }

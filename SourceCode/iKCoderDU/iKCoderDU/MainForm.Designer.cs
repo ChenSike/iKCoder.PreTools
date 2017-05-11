@@ -1502,6 +1502,7 @@
             this.button35.TabIndex = 29;
             this.button35.Text = "消息路由控制器";
             this.button35.UseVisualStyleBackColor = true;
+            this.button35.Click += new System.EventHandler(this.button35_Click);
             // 
             // MainForm
             // 

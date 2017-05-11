@@ -48,6 +48,7 @@
             this.cmb_symbols.Name = "cmb_symbols";
             this.cmb_symbols.Size = new System.Drawing.Size(520, 27);
             this.cmb_symbols.TabIndex = 0;
+            this.cmb_symbols.SelectedIndexChanged += new System.EventHandler(this.cmb_symbols_SelectedIndexChanged);
             // 
             // button4
             // 

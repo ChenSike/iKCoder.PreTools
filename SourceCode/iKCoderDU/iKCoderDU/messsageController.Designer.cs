@@ -31,13 +31,10 @@
             this.lst_message = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label3 = new System.Windows.Forms.Label();
             this.txt_title = new System.Windows.Forms.TextBox();
-            this.txt_key = new System.Windows.Forms.TextBox();
             this.istop = new System.Windows.Forms.CheckBox();
             this.cmb_to = new System.Windows.Forms.ComboBox();
             this.txt_message = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.cmb_produce = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -56,6 +53,7 @@
             this.lst_message.TabIndex = 2;
             this.lst_message.UseCompatibleStateImageBehavior = false;
             this.lst_message.View = System.Windows.Forms.View.Details;
+            this.lst_message.SelectedIndexChanged += new System.EventHandler(this.lst_message_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -67,29 +65,12 @@
             this.columnHeader2.Text = "title";
             this.columnHeader2.Width = 413;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(12, 69);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 20);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "KeyWord :";
-            // 
             // txt_title
             // 
             this.txt_title.Location = new System.Drawing.Point(68, 106);
             this.txt_title.Name = "txt_title";
             this.txt_title.Size = new System.Drawing.Size(546, 25);
             this.txt_title.TabIndex = 4;
-            // 
-            // txt_key
-            // 
-            this.txt_key.Location = new System.Drawing.Point(95, 66);
-            this.txt_key.Name = "txt_key";
-            this.txt_key.Size = new System.Drawing.Size(984, 25);
-            this.txt_key.TabIndex = 5;
             // 
             // istop
             // 
@@ -117,15 +98,6 @@
             this.txt_message.Name = "txt_message";
             this.txt_message.Size = new System.Drawing.Size(598, 331);
             this.txt_message.TabIndex = 8;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1099, 68);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Searching";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -156,6 +128,7 @@
             this.button3.TabIndex = 12;
             this.button3.Text = "Delete";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -177,13 +150,10 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.cmb_produce);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.txt_message);
             this.Controls.Add(this.cmb_to);
             this.Controls.Add(this.istop);
-            this.Controls.Add(this.txt_key);
             this.Controls.Add(this.txt_title);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.lst_message);
             this.Name = "messsageController";
             this.Text = "messsageController";
@@ -197,13 +167,10 @@
         private System.Windows.Forms.ListView lst_message;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_title;
-        private System.Windows.Forms.TextBox txt_key;
         private System.Windows.Forms.CheckBox istop;
         private System.Windows.Forms.ComboBox cmb_to;
         private System.Windows.Forms.TextBox txt_message;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox cmb_produce;
         private System.Windows.Forms.Button button3;
